@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript3</title>
+</head>
+<body>
+    데스크탑 모바일입니다
+    <h1>Navigator 객체</h1>
+    <script>
+    for(var key in navigator){
+        document.write(key+" : "+navigator[key]+"<br>");
+    }    
+    console.log(navigator.vendor); 
+    console.log(navigator.platform); 
+    
+    var desk = "win16|win32|win64|mac|macintel|linux"; 
+    if(navigator.platform) {
+        if(desk.indexOf(navigator.platform.toLowerCase()) < 0) { 
+            location.href = "desktop.html";
+        } else {
+            location.href = "mobile.html";
+        }
+    }
+    
+    </script>
+</body>
+</html>
