@@ -7,15 +7,8 @@
     <title>javascript3</title>
 </head>
 <body>
-    데스크탑 모바일입니다
-    <h1>Navigator 객체</h1>
-    <script>
-    for(var key in navigator){
-        document.write(key+" : "+navigator[key]+"<br>");
-    }    
-    console.log(navigator.vendor); 
-    console.log(navigator.platform); 
     
+    <script>
     var desk = "win16|win32|win64|mac|macintel|linux"; 
     if(navigator.platform) {
         if(desk.indexOf(navigator.platform.toLowerCase()) < 0) { 
