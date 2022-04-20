@@ -47,7 +47,7 @@
     <style>
     /* font-family: 'Noto Sans KR', sans-serif;  */
     /* 내게 필요한 스타일 초기화 */
-    * { margin: 0; padding: 0; }
+    * { margin: 0;padding: 0; }
     body, html { font-family: 'Noto Sans KR', sans-serif; width: 100%; } 
     ul { list-style: none; } 
     a { text-decoration: none; color: #333; }
@@ -57,22 +57,24 @@
     i[class*='xi'] { font-size:28px; color:#000; }
     i[class*='xi']:hover { color:rgb(226, 55, 25); }
 
-    .wrap { clear:both; width: 100%; }
+    .wrap { clear:both; width: 100%;}
     #hd { clear:both; width: 100%;  }
-    .hd_wrap { clear:both; width: 1280px; margin: 0 auto; }
-    .logo { display:block; width: 180px; float:left; margin-top: 10px;}
+    .hd_wrap { clear:both; width: 1360px; margin: 0 auto; }
+    .logo { display:block; width: 200px; float:left; margin-top: 20px; margin-left: auto;}
     .logo img { display:block; width: 90%; }
     #gnb { float:left; }
-    #gnb > ul > li { float:left; padding-left: 50px; padding-right: 20px;
+    #gnb > ul > li { float:left; padding-left: 50px; padding-right: 50px; padding-top: 30px;
     position:relative  }
     #gnb > ul > li > span { display:block; line-height: 36px; cursor:pointer; }
-    #gnb ul li .sub { display: none;position:absolute;left:0; top: 34px;;
-    padding-left: 50px; width: 160px; height:200px;}
+    #gnb ul li .sub { display: none;position:absolute;left:0px; top: 34px;;
+    padding-left: 50px; width: 160px; height: 200px; background-color:azure;}
     #gnb ul li .sub li{line-height: 38px;}
     #gnb ul li:hover .sub{display:block;}
 
 
-    #tnb { float:right; }
+    #tnb { float:right; padding-top: 14px;padding-bottom: 14px;padding-top: 45px;}
+    #tnb a { font-size: 0.85em; padding-left: 30px;}
+
 
     #content { clear:both; width: 100%; }
     #ft { clear:both; width: 100%; }
@@ -84,14 +86,14 @@
         <header id="hd">
             <div class="hd_wrap">
                 <a href="index.html" class="logo">
-                    <img src="./pic/logo_on.png" alt="로고">
+                    <img src="./images/logo_on.png" alt="로고">
                 </a>
                 <nav id="gnb">
                     <ul>
                         <li>
                             <span>회사소개</span>
                             <ul class="sub">
-                                <li><a href="">기업개요</a></li>
+                                <li><a href="">개요</a></li>
                                 <li><a href="">CEO 인사말</a></li>
                                 <li><a href="">연혁</a></li>
                                 <li><a href="">사업장 정보</a></li>
@@ -101,34 +103,36 @@
                         <li>
                             <span>사업영역</span>
                             <ul class="sub">
-                                <li><a href="">OLED Display</a></li>
-                                <li><a href="">QD Display</a></li>
+                                <li><a href="/Kor/business/contentsid/289/index.do">물류</a></li>
+                                <li><a href="/Kor/business/contentsid/304/index.do">해운</a></li>
+                                <li><a href="/Kor/business/contentsid/568/index.do">유통</a></li>
+                                <li><a href="/Kor/business/contentsid/579/index.do">미래 신사업</a></li>
                             </ul>
                         </li>
                         <li>
                             <span>ESG경영</span>
                             <ul class="sub">
-                                <li><a href="">지속가능경영</a></li>
-                                <li><a href="">인권정책</a></li>
-                                <li><a href="">녹색경영</a></li>
-                                <li><a href="">사회공헌</a></li>
+                                <li><a href="/Kor/manage/communityid/23/list.do">ESG경영 성과</a></li>
+                                <li><a href="http://csr.glovis.net">사회책임경영</a></li>
+                                <li><a href="/Kor/manage/contentsid/316/index.do">고객만족경영</a></li>
+                                <li><a href="/Kor/manage/contentsid/318/index.do">품질경영</a></li>
                             </ul>
                         </li>
                         <li>
                             <span>인재채용</span>
                             <ul class="sub">
-                                <li><a href="">뉴스</a></li>
-                                <li><a href="">소셜미디어</a></li>
-                                <li><a href="">영상</a></li>
+                                <li><a href="">WHY GLOVIS</a></li>
+                                <li><a href="">MEET GLOVIS</a></li>
+                                <li><a href="">직무소개</a></li>
                             </ul>
                         </li>
                         <li>
                             <span>투자정보</span>
                             <ul class="sub">
-                                <li><a href="">채용정보</a></li>
-                                <li><a href="">직무소개</a></li>
-                                <li><a href="">공지사항</a></li>
-                                <li><a href="">자료실</a></li>
+                                <li><a href="">경영정보</a></li>
+                                <li><a href="">재무정보</a></li>
+                                <li><a href="">주식정보</a></li>
+                                <li><a href="">IR정보</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -144,17 +148,17 @@
             <div id="vs">
                 <ul class="img_box">
                     <li>
-                        <a href="">
-                            <img src="./img/kv-01.jpg" alt="스마트폰" class="pic">
+                        <a href="http://127.0.0.1:5500/web1/index.html">
+                            <img src="./images/m_mainVis_bg3.jpg" width="10%" alt="투자정보" class="pic">
                             <div class="tit_box">
-                                <h2 class="vs_tit">디지털 세상으로 <br>연결해주는 '창(窓)'</h2>
+                                <h2 class="vs_tit">디지털 세상으로 <br>연결해주는 </h2>
                                 <p class="vs_com">디스플레이 기술은 무한한 확장성으로 새로운 일상과 가치를 선사합니다.</p>
                             </div>
                         </a>
                     </li>
                     <li>
                         <a href="">
-                            <img src="./pic/m_mainVis_bg2.jpg" alt="노트북" class="pic">
+                            <img src="" alt="클로벌" class="pic">
                             <div class="tit_box">
                                 <h2 class="vs_tit">현대글로비스, '노트북 OLED'로 달린다</h2>
                                 <p class="vs_com">2021년 노트북용 OLED 라인업 10종 이상으로 확대</p>
@@ -163,7 +167,7 @@
                     </li>
                     <li>
                         <a href="">
-                            <img src="./img/kv-03_1.jpg" alt="폴더폰" class="pic">
+                            <img src="" alt="사회공헌" class="pic">
                             <div class="tit_box">
                                 <h2 class="vs_tit">생활의변화, 미래를 펼치다 Foldable Display</h2>
                                 <p class="vs_com">디스플레이 혁신 기술이 집약된 폴더블 OLED는 한층 더 확장된 화면과 모빌리티 편의성을 제공합니다.</p>
@@ -172,10 +176,10 @@
                     </li>
                     <li>
                         <a href="">
-                            <img src="./img/kv-04_1.jpg" alt="스마트폰화소자" class="pic">
+                            <img src="" alt="윤리경연" class="pic">
                             <div class="tit_box">
                                 <h2 class="vs_tit">OLED Microsite 오픈</h2>
-                                <p class="vs_com">삼성 OLED가 열어갈 새로운 세상을 만나보세요!</p>
+                                <p class="vs_com">현대글로비스 만나보세요!</p>
                             </div>
                         </a>
                     </li>
