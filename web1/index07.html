@@ -8,15 +8,15 @@
     <link rel="apple-touch-icon" href="./img/favicon.ico">
     <!-- 검색(메타) 정보 -->
     <meta name="url" content="https://www.samsungdisplay.co.kr">
-    <meta name="title" content="현대글로비스">
-    <meta name="description" content="현대글로비스의 기업정보,제품정보,미디어,커뮤니티">
-    <meta name="keywords" content="현대글로비스,HD,퀀텀">
+    <meta name="title" content="삼성디스플레이">
+    <meta name="description" content="삼성디스플레이의 기업정보,제품정보,미디어,커뮤니티">
+    <meta name="keywords" content="삼성디스플레이,HD,퀀텀">
     <!-- 오픈 그래프 -->
     <meta property="og:url" content="https://www.samsungdisplay.co.kr">
-    <meta property="og:title" content="현대글로비스">
-    <meta property="og:description" content="현대글로비스의 기업정보,제품정보,미디어,커뮤니티">
+    <meta property="og:title" content="삼성디스플레이">
+    <meta property="og:description" content="삼성디스플레이의 기업정보,제품정보,미디어,커뮤니티">
     <meta property="og:image" content="./img/logo-square-letter.png">
-    <title>현대 글로비스</title>
+    <title>삼성 Display</title>
     <!-- 기본 플러그인 연결 -->
     <script src="https://code.jquery.com/jquery-latest.js"></script>
     <!-- 웹 폰트/폰트 모듈 연결 -->
@@ -44,14 +44,10 @@
     <!-- 스타일 초기화 모듈 연결 -->
     <!-- <link rel="stylesheet" href="./css/reset.css"> -->
     <link rel="stylesheet" href="./css/normalize.css">
-    <link rel="stylesheet" href="common.css">
-    <link rel="stylesheet" href="sub_common.css">
-    <link rel="stylesheet" href="grid.css">
-    <link rel="stylesheet" href="normalize.css">
     <style>
     /* font-family: 'Noto Sans KR', sans-serif;  */
     /* 내게 필요한 스타일 초기화 */
-    * { margin: 0;padding: 0; }
+    * { margin: 0; padding: 0; }
     body, html { font-family: 'Noto Sans KR', sans-serif; width: 100%; } 
     ul { list-style: none; } 
     a { text-decoration: none; color: #333; }
@@ -60,53 +56,88 @@
     i[class*='xi'] { font-size:28px; color:#000; }
     i[class*='xi']:hover { color:rgb(226, 55, 25); }
     .wrap { clear:both; width: 100%; }
-    /*비주얼 슬라이더*/
+
+    /* 헤더 */
+    #hd { clear:both; width: 100%;   height:90px; 
+        /*   position:fixed; top: 0; left: 0; height:60px; z-index:999;
+           background-color: rgba(255,255,255,0.75);  */     }
+    .hd_wrap { clear:both; width: 1280px; margin: 0 auto; }
+    .logo { display:block; width: 250px; float:left; margin-top: 20px;  }
+    .logo img { display:block; width: 100%; }
+    #gnb { float:left; margin-top: 22px; }
+    #gnb > ul > li { float:left; padding-left: 50px; padding-right: 20px; 
+    position:relative;   }
+    #gnb > ul > li > span { display:block; line-height: 36px; cursor:pointer; }
+    #gnb ul li .sub { display:none; position:absolute; left:10px; top:36px; z-index:999;
+    padding-left: 10px;  width: 160px; height: 200px; background-color: #eee; }
+    #gnb ul li .sub li { line-height: 38px; }
+    #gnb ul li .sub li:hover a { color:gold; }
+    #gnb ul li:hover .sub { display:block; }
+    #gnb ul li:hover span { color:deepskyblue; }
+
+    #tnb { float:right; padding-top:10px; padding-bottom:14px; margin-top: 20px;  }
+    #tnb a { font-size:0.85em; padding-left: 30px; }
+    #tnb a:hover { color:deeppink; text-decoration: underline; }
+    #content { clear:both; width: 100%; }
+
+    /* 비주얼 슬라이더 */
     #vs { width:100%; overflow:hidden;  } 
     .img_box { width: 400%; }
     .img_box li { float:left; width: 25%; position:relative; }
     .img_box li a { display:block; }
-    .img_box li a img { display:block; width: 100%; }
-    .img_box .tit_box { position:absolute; top: 50px; left:50px; color:#fff; 
+    .img_box li a img { display:block; width: 100%; height:auto; }
+    .img_box .tit_box { position:absolute; top:50px; left:50px; color:#fff; 
     text-shadow:1px 1px 1px #333; padding-left: 40px; z-index:30; }
     .vs_tit { font-size:42px; line-height:1.6; }
-    .vs_com { font-size:16px; padding-top: 10%; }
+    .vs_com { font-size:16px; padding-top: 40px; }
     .btn_group { position:absolute; bottom:0px; left:90px; z-index:40; }
     .btn_group button { display:block; width: 80px; height: 80px; float:left; 
     background-color:rgba(0,0,0,0.6); border:none; outline: none; color:#fff; }
     .btn_group button i[class*='xi'] { color: #fff; }
     .btn_group button:hover i[class*='xi'] { cursor:pointer; color:gold; }
 
-     /*그리드박스*/
+    /* 그리드 박스 */
     .grid_box { clear:both; width: 100%; }
     .grid_wrap { clear:both; width: 100%; }
-    .grid_wrap li { float:left; height:16.66667vw; background-position:center center; }
-    .grid_wrap li.item1 { background-color: #4340dde3; } 
-    .grid_wrap li.item2 { background-color: #00518f; } 
-    .grid_wrap li.item3 { background-color: #326083 } 
-    .grid_wrap li.item4 { background-image: url("./img/mainCon_bg2.jpg"); background-position: 28%;}
-    .grid_wrap li.item5 { background-image: url("./img/susu.jpg");  background-position: 20%;}
-    .grid_wrap li.item6 { background-image: url("./img/mainCon_bg3\ \(1\).jpg"); background-position: 50%; }
+    .grid_wrap li { float:left; height:16.66667vw; 
+    background-position:center center; }
+    .grid_wrap li.item1 { background-color: #d0dee8; } 
+    .grid_wrap li.item2 { background-color: #e5edf3; } 
+    .grid_wrap li.item3 { background-color: #f2f6f9 } 
+    
 
-    /*그리드*/ 
+    /* 그리드 */
     .col1 { width: 8.33333%; }
     .col2 { width: 16.66667%; }
     .col3 { width: 25%; }
     .col4 { width: 33.33333%; }
     .col5 { width: 41.66667%; }
     .col6 { width: 50%; }
-    .grid_wrap li a { display:block; padding: 15px; }
-    .col_tit, .col_com { color:rgb(255, 255, 255); }
-    .col_tit { padding-top: 26px; }
+    .grid_wrap li a { display:block; padding: 28px; }
+    .col_tit, .col_com { color:#000; }
+    .col_tit { padding-top: 18px; }
     .col_tit.w , .col_com.w { color:#fff; text-shadow:1px 1px 1px #333; }
-    .col_tit.w { padding-top: 10%; }
+    .col_tit.w { padding-top: 0; }
     .arrow { display:block; margin-top: 50px; }
     .arrow:before { content:""; display:block; width:2px; height:5px; 
-    border-bottom:0px solid rgb(0, 0, 0); float:left; transition:0.8s; }
-    .arrow:after { content:""; display:block; width: 122px; height: 8px; 
-    background-image: url("./images/main_over_btn.png"); float:left ; }
-    .col_com { font-size:16px; padding-top: 20px; font-weight: 200;  }
+    border-bottom:3px solid #555; float:left; transition:0.4s; }
+    .arrow:after { content:""; display:block; width: 30px; height: 8px; 
+    background-image: url("./img/newsletter_arrow_black.png"); float:left; }
+    .col_com { font-size:12px; padding-top: 20px; font-weight: 200;  }
     .grid_wrap li:hover a .arrow:before { width: 18px;  }
 
+    /* 푸터 */
+    #ft { clear:both; width: 100%; padding-top: 20px; border-top:3px solid #f1f1f1; 
+    height: 100px; background-color: #e1e9cc;}
+    .ft_wrap { clear:both; width: 1280px; margin: 0 auto; }
+    .fnb { float:left; }
+    .fnb a { display:block; float:left; margin:14px; 
+        margin-left: 0; margin-right: 28px; font-size:12px; }
+    .fnb a:after { content:"|"; padding-left: 28px; }
+    .fnb a:last-child::after { content:""; }
+    .snb { float:right; }
+    .snb ul li { float:left; margin-left: 28px; }
+    .copyright { clear:both; padding-bottom: 28px; font-size:12px; }
     </style>
 </head>
 <body>
@@ -114,53 +145,51 @@
         <header id="hd">
             <div class="hd_wrap">
                 <a href="index.html" class="logo">
-                    <img src="./img/logo_on.png" alt="로고">
+                    <img src="./img/samsung_logo.svg" alt="로고">
                 </a>
                 <nav id="gnb">
                     <ul>
                         <li>
-                            <span>회사소개</span>
+                            <span>기업정보</span>
                             <ul class="sub">
-                                <li><a href="company.html#page1">기업개요</a></li>
-                                <li><a href="company.html#page2">경영이념</a></li>
-                                <li><a href="company.html#page3">CEO메시지</a></li>
-                                <li><a href="company.html#page4">연혁</a></li>
-                                <li><a href="company.html#page5">수상인증</a></li>
+                                <li><a href="">기업개요</a></li>
+                                <li><a href="">CEO 인사말</a></li>
+                                <li><a href="">연혁</a></li>
+                                <li><a href="">사업장 정보</a></li>
+                                <li><a href="">전자공고</a></li>
                             </ul>
                         </li>
                         <li>
-                            <span>사업영역</span>
+                            <span>제품정보</span>
                             <ul class="sub">
-                                <li><a href="business.html#page1">물류</a></li>
-                                <li><a href="business.html#page2">해운</a></li>
-                                <li><a href="business.html#page3">유통</a></li>
-                                <li><a href="business.html#page4">미래 신사업</a></li>
+                                <li><a href="">OLED Display</a></li>
+                                <li><a href="">QD Display</a></li>
                             </ul>
                         </li>
                         <li>
-                            <span>ESG경영</span>
+                            <span>경영전략</span>
                             <ul class="sub">
-                                <li><a href="manage.html#page1">ESG경영 성과</a></li>
-                                <li><a href="manage.html#page2">사회책임경영</a></li>
-                                <li><a href="manage.html#page3">고객만족경영</a></li>
-                                <li><a href="manage.html#page4">품질경영</a></li>
+                                <li><a href="">지속가능경영</a></li>
+                                <li><a href="">인권정책</a></li>
+                                <li><a href="">녹색경영</a></li>
+                                <li><a href="">사회공헌</a></li>
                             </ul>
                         </li>
                         <li>
-                            <span>인재채용</span>
+                            <span>미디어센터</span>
                             <ul class="sub">
-                                <li><a href="competent.html#page1">WHY GLOVIS</a></li>
-                                <li><a href="competent.html#page2">MEET GLOVIS</a></li>
-                                <li><a href="competent.html#page3">직무소개</a></li>
+                                <li><a href="">뉴스</a></li>
+                                <li><a href="">소셜미디어</a></li>
+                                <li><a href="">영상</a></li>
                             </ul>
                         </li>
                         <li>
-                            <span>투자정보</span>
+                            <span>커뮤니티</span>
                             <ul class="sub">
-                                <li><a href="investment.html#page1">경영정보</a></li>
-                                <li><a href="investment.html#page2">재무정보</a></li>
-                                <li><a href="investment.html#page3">주식정보</a></li>
-                                <li><a href="investment.html#page4">IR정보</a></li>
+                                <li><a href="">채용정보</a></li>
+                                <li><a href="">직무소개</a></li>
+                                <li><a href="">공지사항</a></li>
+                                <li><a href="">자료실</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -176,26 +205,26 @@
             <div id="vs">
                 <ul class="img_box">
                     <li>
-                        <a href="" >
-                            <img src="./img/hyundaemainbg1.jpg" alt="투자정보" class="pic">
+                        <a href="">
+                            <img src="./img/kv-01.jpg" alt="스마트폰" class="pic">
                             <div class="tit_box">
-                                <h2 class="vs_tit">디지털 세상으로 <br>연결해주는 </h2>
+                                <h2 class="vs_tit">디지털 세상으로 <br>연결해주는 '창(窓)'</h2>
                                 <p class="vs_com">디스플레이 기술은 무한한 확장성으로 새로운 일상과 가치를 선사합니다.</p>
                             </div>
                         </a>
                     </li>
                     <li>
                         <a href="">
-                            <img src="./img/hyundaemainbg2.jpg" alt="클로벌" class="pic">
+                            <img src="./img/kv-02.jpg" alt="노트북" class="pic">
                             <div class="tit_box">
-                                <h2 class="vs_tit">현대글로비스, 'ECOH'로 달린다</h2>
+                                <h2 class="vs_tit">삼성디스플레이, '노트북 OLED'로 달린다</h2>
                                 <p class="vs_com">2021년 노트북용 OLED 라인업 10종 이상으로 확대</p>
                             </div>
                         </a>
                     </li>
                     <li>
                         <a href="">
-                            <img src="./img/hyundaemainbg3.jpg" alt="사회공헌" class="pic">
+                            <img src="./img/kv-03_1.jpg" alt="폴더폰" class="pic">
                             <div class="tit_box">
                                 <h2 class="vs_tit">생활의변화, 미래를 펼치다 Foldable Display</h2>
                                 <p class="vs_com">디스플레이 혁신 기술이 집약된 폴더블 OLED는 한층 더 확장된 화면과 모빌리티 편의성을 제공합니다.</p>
@@ -204,10 +233,10 @@
                     </li>
                     <li>
                         <a href="">
-                            <img src="./img/hyundaemainbg4.jpg" alt="윤리경연" class="pic">
+                            <img src="./img/kv-04_1.jpg" alt="스마트폰화소자" class="pic">
                             <div class="tit_box">
                                 <h2 class="vs_tit">OLED Microsite 오픈</h2>
-                                <p class="vs_com">현대글로비스 만나보세요!</p>
+                                <p class="vs_com">삼성 OLED가 열어갈 새로운 세상을 만나보세요!</p>
                             </div>
                         </a>
                     </li>
@@ -221,14 +250,14 @@
                     wd = $(window).width();
                     var intv = setInterval(function(){
                         ani1();
-                    }, 3000);
+                    }, 5000);
                     function ani1(){
                         $(".img_box").not(":animated").animate({"margin-left":-wd+"px"}, 600, function(){
                             $(".img_box li").eq(0).appendTo($(".img_box"));
                             $(".img_box").css("margin-left","0px");
                         });
                     }
-                        function ani2(){
+                    function ani2(){
                         $(".img_box").css("margin-left",-wd+"px");
                         $(".img_box li:last-child").prependTo($(".img_box"));
                         $(".img_box").not(":animated").animate({"margin-left":"0px"}, 600);
@@ -236,17 +265,14 @@
                     $(".btn_group .next_btn").click(function(){
                         clearInterval(intv);
                         ani1();
-                        intv = setInterval(function(){ ani1(); }, 5000);
-                    });
+                        intv = setInterval(function(){ ani1(); }, 5000);                    });
                     $(".btn_group .prev_btn").click(function(){
                         clearInterval(intv);
                         ani2();
                         intv = setInterval(function(){ ani1(); }, 5000);
                     });
-
-
-                    });    
-                    </script>
+                });    
+                </script>
             </div>
             <div class="grid_box">
                 <ul class="grid_wrap">
@@ -267,14 +293,14 @@
                     <li class="col2 item3">
                         <a href="">
                             <h3 class="col_tit">채용정보</h3>
-                            <p class="col_com">현대글로비스는 도전, 창의, 열정을 가진 전문 인재를 기다립니다.</p>
+                            <p class="col_com">삼성디스플레이는 도전, 창의, 열정을 가진 전문 인재를 기다립니다.</p>
                             <span class="arrow"></span>
                         </a>
                     </li>
                     <li class="col2 item4">
                         <a href="">
                             <h3 class="col_tit w">OLED Display</h3>
-                            <p class="col_com w">Why 현대 글로비스</p>
+                            <p class="col_com w">Why 삼성 OLED</p>
                         </a>
                     </li>
                     <li class="col2 item5">
@@ -314,10 +340,9 @@
                         </li>
                     </ul>
                 </nav>
-                <p class="copyright">Copyright © 현대 글로비스 All rights reserved. 대표번호 : 031-5181-1114</p>
+                <p class="copyright">Copyright © SAMSUNG DISPLAY All rights reserved. 대표번호 : 031-5181-1114</p>
             </div>
         </footer>
     </div>
-</body>
 </body>
 </html>
