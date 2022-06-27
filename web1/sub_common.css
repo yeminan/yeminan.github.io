@@ -1,6 +1,5 @@
 @charset "UTF-8";
-#hd {  position:fixed; top: 0; left: 0; height:60px; z-index:999;
-background-color: rgba(255,255,255,0.75);   }   
+#hd {  position:fixed; top: 0; left: 0; height:60px; z-index:999; background-color: rgba(221, 221, 221, 0.76);  }   
 .page { clear:both; min-height:100vh; display:none; width: 100%; padding-top: 60px; }
 .sub_ban { clear:both; width: 100%; position:relative; }
 .sub_ban img { display:block; width: 100%; height:auto; }
@@ -8,8 +7,8 @@ background-color: rgba(255,255,255,0.75);   }
 padding-left: 100px; color:#fff; text-shadow:1px 1px 1px #333;}
 .sub_tit { font-size:48px; }
 .sub_com { font-size:20px; padding-top: 40px; }
-#page1 .tit_box, #page5 .tit_box { color:#333; text-shadow:1px 1px 1px #fff;}
-.bread_box { clear: both; width: 100%; height: 48px; border-bottom:3px solid #f1f1f1; }
+#page1 .tit_box, #page5 .tit_box { color:rgb(255, 255, 255); text-shadow:1px 1px 1px rgb(0, 0, 0);}
+.bread_box { clear: both; width: 100%; height: 48px; border-bottom:3px solid #ffffff; }
 .bread_wrap { width: 1280px; margin: 0 auto; }
 .bread { height: 48px; line-height: 48px;  }
 .bread li { float:left; padding-right: 30px; }

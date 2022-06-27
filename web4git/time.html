@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- shortcut icon 및 파비콘 연걸 -->
+<link rel="shortcut icon" href="" sizes="">
+<!--  문서 메타 정보-->
+<meta name="application-name" content="">
+<meta name="title" content="">
+<meta name="subject" content="">
+<meta name="description" content="">
+<meta name="keywords" content="">
+<!-- 오픈그래프 -->
+<meta property="og:url" content="">
+<meta property="og:type" content="">
+<meta property="og:image" content="">
+<meta property="og:article:author" content="">
+<meta property="og:article:publisher" content="">
+<meta property="og:article:thumbnailUrl" content="">
+<meta property="og:article:author" content="">
+<meta property="og:article:author:url" content="">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+<!-- 기본플러그인 연결 -->
+<script src="./js/jquery-1.9.1.js"></script>
+<script src="./js/jquery-ui-1.9.2.custom.js"></script>
+<link rel="stylesheet" href="./css/slickstyle.css">
+<link rel="stylesheet" href="./css/slick-theme.css">
+<script src="./js/slick.js"></script>
+    <title>진료시간</title> 
+   <style>
+/* 스타일 초기화 */
+#header {width:100%;}
+*{margin: 0; padding: 0;}
+body, html { width: 100vw;font-family: 'Noto Sans KR', sans-serif; overflow-x: hidden;}
+ul{list-style: none;}
+a{text-decoration: none; }
+input, button{outline: 0; border: 0;}
+table, .table{display: table; border-collapse:collapse;}
+tr, .tr { display: table-row;}
+.wrap { clear:both; width: 100%; }
+
+.clrfx::after{content: 0;display: block; width: 100%; clear: both;}
+.content {clear: both; width: 100%;}
+/* 헤더부분 스타일 */
+/* logo */
+.logo {float: left; padding-top: 25px;}
+/* tnb */
+        .tnb {padding-top: 27px;}
+        .login {float: right; border:2px solid#eee; border-radius: 46px; padding: 10px; font-size: 14px; padding-right: 25px; padding-left: 25px;}
+        .login .sign::before {content: ""; background: url("./img/icon_login.png"); width: 15px; height: 18px;display: inline-block; margin-right: 10px; vertical-align: -3px;}
+        .line {font-size: 12px; vertical-align: 2px; color: #ddd; padding: 5px;}
+        .login span a {color: #000; font-weight: 500; font-size: 14px; font-family: 'Noto Sans KR', sans-serif;}
+        .login span:hover a{color:blue;}
+/* gnb */
+        .top_hd_wrap {height: 50px; clear: both;}
+        .top_nav_wrap {height: 100px; width: 1400px; margin: 0 auto;}
+        .gnb{height: 70px; clear: both; width: 100%; border-top: 1px solid #ddd;background-color: #fbfbfb; z-index: 99; border-bottom: 1px solid #ddd;}
+        .gnb_wrap {margin: 0 auto; height: 300px; z-index: 1;}
+        .background {clear: both;width: 100%; position:absolute; width: 1920px; background-color: #fff; height:0; top:171px; z-index:1; left: 0;} 
+        .main_ul {margin: 0 auto; height: 70px; width: 1400px;}
+        .main_ul .mainmenu {margin: 0 auto; position: relative; width: 16.66%; height: 100%; display: block; float:left; box-sizing: border-box;}
+        .mainmenu>a{font-size: 18px; color: #222222; line-height: 70px; display: block; text-align: center; border-left: 1px solid #ddd; font-family: 'Noto Sans KR', sans-serif; font-weight: 400;}
+        .mainmenu:hover>a{background-color: rgb(31, 117, 176); color: #fff;}
+        .mainmenu:hover .sub_ul {background-color: rgb(244,248,251);}
+        
+        .sub_menu {width: 1400px; margin: 0 auto;}
+        .sub_ul {float:left;width:100%;height: 0px; border-left: 1px solid#ddd; box-sizing: border-box; position: absolute;}
+        .sub_ul1 {border-right: 1px solid#ddd;} 
+        .submenu {width: 100%; line-height: 0px;}
+        .sub_ul a:hover {text-decoration: underline; color: rgb(31, 117, 176);}
+        .submenu a {font-size: 16px; padding-left: 14%; display: none; color:#666}
+        .sub_ul li:first-child a {margin-top: 15px;}
+
+        .main_ul:hover .sub_ul {height: 200px; transition-duration: 0.5s; z-index: 2;}
+        .main_ul:hover .background {height: 200px; transition-duration: 0.5s; box-shadow :  0 8px 8px -6px rgb(73, 72, 72);}
+        .main_ul:hover .submenu {line-height: 40px; transition-duration: 0.5s;}
+        .main_ul:hover .sub_ul a {display: block;}
+        .sm_last, .mm_last { border-right: 1px solid #ddd;}
+
+.content_wrap {width: 1400px; margin: 0 auto; }
+            
+/* 오른쪽 버튼 스타일 */
+.right_btn {width: 65px; height: 200px; position:fixed; right: 55px; bottom: 45px; z-index: 999;}
+.right_btn img {width: 90%; padding-bottom: 11px;}
+/* 게시판 스타일 */
+.medical li{display: block; width: 300px; height: 84px; border: 1px solid #ddd; margin: 0 auto; float: left; text-align: center; font-size: 24px; }
+.medical a{color: #0087ab; line-height: 80px;}
+.medical_box{width: 1350px; margin: 0 auto; height: 400px; margin-top: 40px; margin-bottom: 100px;   border:1px solid #0087ab ; background-image: url("./img/bg_main1.jpg");}
+.medical_leftbox{width: 65%; height: 100%; background-color: rgb(255, 255, 255);}
+.main {display: block;  width: 400px;}
+.medical_title{width: 100%; margin-left: 60px;font-size: 30px; color: #0087ab; padding-top: 15px; }
+.medical_comment{width: 100%; margin-left: 60px;font-size: 26px; color: #000; padding-top: 15px;}
+.medical{padding-left: 60px; padding-top: 20px;}
+.medical li:hover{background-color: #0087ab; }
+.medical li:hover a{color: #fff; }
+.backcolor{position: absolute;left: 0; width: 1920px; top: 750px; height: 520px; background-color: #f6f6fa; z-index: -1;}
+    /* 서브메뉴 */
+.sub_bg_img{height: 142px; background-image: url("./img/bg_sub_top1.jpg");}
+.sub_bg_menu h2 {width: 1120px; margin: 0 auto; line-height: 120px; color: #fff; font-size: 38px;font-weight: 300; font-family: 'Noto Sans KR', sans-serif}
+.sub_bg_line {height: 75px;background: #327cb6;}
+.sub_bg_text {width: 1120px; margin: 0 auto; height: 100%; text-align: center;}
+.sub_bg_line a {font-size: 18px; color:#addcf6; line-height: 90px; width: 33%; height: 20px; display: block; float:left; display: block; font-family: 'Noto Sans KR', sans-serif}  
+.sub_bg_text a b {color: #fff; font-weight: normal; position: relative;}         
+.sub_bg_text a b:after {content:""; background-color: #91e9ff; position: absolute; left: 0;bottom:-18px ;width: 100%; height: 10px; text-align: center;}
+
+.sub_top, .sub_content {width: 1120px; margin: 0 auto;}
+.inner_top {width: 1100px; border-bottom: 1px solid #e4e4e4; height: 110px;line-height: 130px; margin-bottom: 40px; margin: 0 auto;}
+.inner_top h2 {float:left; font-size: 40px; font-weight: 400; font-family: 'Noto Sans KR', sans-serif}
+.inner_top p {float:right; font-size: 14px; line-height: 160px; font-family: 'Noto Sans KR', sans-serif}
+.info_1-1{width: 1120px; margin: 0 auto; line-height: 76px; color: rgb(0, 0, 0); font-size: 14px;font-weight: 100; font-family: 'Noto Sans KR', sans-serif}
+/*푸터*/
+.ft_link1 ,.ft_link2,.ft_link3,.ft_link4,.ft_link5,.ft_link6 {display: inline-block; width: 45px; height: 45px; margin: 0 10px;vertical-align: middle; background-size: cover}
+.ft_link1 {background-image:url("./img/icon_quick_link1.png")}
+.ft_link2 {background-image:url("./img/icon_quick_link2.png")}
+.ft_link3 {background-image:url("./img/icon_quick_link3.png")}
+.ft_link4 {background-image:url("./img/icon_quick_link4.png")}
+.ft_link5 {background-image:url("./img/icon_quick_link5.png")}
+.ft_link6 {background-image:url("./img/icon_quick_link6.png")}
+.ft_line {width: 100%; height: 45px; background-color: #327cb6; padding: 18px; color: #fff; font-size: 16px;}
+.ft_line p {float:left; padding-right: 10px; margin-top: 12px; padding-left: 11%; font-weight: 500;}
+
+#ft { clear: both; width: 100%; height: 300px; }
+.fnb { clear: both; width: 100%; height: 20px; border: 1px solid #ddd; padding: 10px 0; }
+.fnb .inner { width: 1450px; height: 100%; margin-left: 30px; margin: 0 auto; }
+.fnb span { margin: 0 10px; font-size: 13px; }
+.fnb span:after { content: "|"; padding-left: 20px; color: #ddd; }
+.fnb span:last-child:after { content: ""; }
+.snb { clear: both; width: 100%; height: 100px; padding: 20px 10px; }
+.snb .inner{ width: 1450px; height: 100%; margin-left: 40px; margin: 0 auto; }
+.copy_warp { float: left; }
+.ft_logo { float: right; }
+.copy_warp b { display: block; margin-bottom: 10px; }
+.copy_warp p, .copy_warp span { font-size: 13px; padding-right: 10px; color: #666; }
+.copy { margin-top: 10px; color: #444; }
+
+
+/* 진료시간표 수정 time sub수정 */
+.time_sub1{width: 1400px;height: 105px; font-weight: 100; line-height: 1.4; text-align: center; padding: 10px 0 35px;}
+.time_sub1{display: block; font-size: 30px; letter-spacing: -2px;}
+.time_sub1 span>strong{ color: #f39f00;}
+
+/* 진료과 메뉴 수정 */
+#sub_content {width: 1400px; height: 1150px;}
+.sub_timecontent{width: 1400px; height: 1020px; }
+.time_1{width: 100%; height:550px ;}
+.inner_sub{width: 100%; min-height: 100px; margin: 0 auto;}
+.class{width: 1100px; overflow: hidden;  padding-bottom: 42px; margin: 0 auto;}
+.class-1{width: 1100px; }
+/* 홈페이지에 맞게 width늘리시면됩니다. */
+.class dl{float: left; height: 150px;  text-align: center; margin: 0 auto;}
+.class dt{margin-top: 50px;}
+.class .time-a01{width: 275px; background: #f39f00;}
+.class .time-a02{width: 275px; background: #298a47;}
+.class .time-a03{width: 275px;background: #386f90;}
+.class .time-a04{width: 275px;background: #905b5b;}
+
+/* 시간표 구성 */
+
+.sub_top{width: 1400px; height: 1200px;margin: 0 auto;}
+.time_table {width: 1100px; height: 370px;margin: 0 auto;}
+.time_table table{width: 100%;  border-top: 1px solid #000; border-spacing: 0; border-collapse: collapse;}
+.time_table thead{display: table-header-group; border-color: inherit; vertical-align: middle;}
+.time_table tr{display: table-row; vertical-align: inherit; background-color: inherit;}
+.time_table th{background: #f7f7f7; text-align: center; font-size: 17px; font-weight: 500; border-top: 2px solid #333; border-bottom: 1px solid #a3a3a3;}
+
+.time_table-1{width: 1100px; height: 293px;}
+.time_table-1 td{text-align: center; border: 1px solid #dfdfdf; padding: 25px 10px;}
+.time_table-1 .name{color: #679a21;}
+.time_table-1 .break{color: #db0000;}
+
+/* 하단 의사 메뉴 수정*/
+.time_sub02 {width: 1100px; height: 500px; padding: 0px 0 100px; margin: 0 auto; }
+.sub_timecontent{margin: 0 auto; width: 100%; min-height: 100px; }
+.list{margin-left: -1%; overflow: hidden; margin:0 ;padding: 0;list-style: none;}
+.sub_timecontent li{float: left; width: 230px; height: 200px; display: block; position: relative; background: #e1e1e1;
+min-height: 263px; margin: 0 25px 40px 20px;}
+.time_sub02 a{color: #000; text-decoration: none;}
+.time_sub02 h4{padding: 20px 0 0 20px; color: #222; letter-spacing: -1px;}
+.time_sub02 span{display: block; font-weight: 400;}
+.time_sub02 strong {display: block; font-size: 32px;font-weight: 500;}
+/* 의사사진 크기 */
+.img-1 img{ position: absolute; width: 140px; right: 0; bottom: 0;}
+/* 텍스트 조정 */
+.list-1 .txt{position: absolute; color: rgb(255, 255, 255); box-shadow: rgb(255, 255, 255); bottom: 0; margin: 0 auto; background: rgb(0,0,0,.4); width: 100%; padding: 15px 0%; text-align: center;}
+</style>
+<body>
+    <header class="header" id="header">
+        <div class="" id="header_wrap">
+            <div class="top_nav_wrap">
+                <div class="logo">
+                    <a href="index.html"><img src="./img/logo.png" alt="로고"></a> 
+                    <div class="right_btn">
+                        <a href=""><img src="./img/btn-calling.png" alt=""></a>
+                        <a href=""><img src="./img/btn-chat-kakao.png" alt=""></a>
+                        <a href="#header_wrap"><img src="./img/btn_top.png" alt=""></a>
+                    </div>
+                </div>
+                <nav class="tnb">
+                    <div class="login">
+                        <span class="sign">
+                            <a href="login.html">로그인</a>
+                        </span> 
+                        <span class="line">|</span>
+                         <span>
+                            <a href="agree.html">회원가입</a>
+                        </span>
+                    </div>
+                </nav>
+            </div>
+                <nav class="gnb" id="gnb">
+                    <div class="gnb_wrap">
+                        <ul class="main_ul">
+                            <div class="background">
+                            </div>
+                            <ll class="mainmenu"><a href="intro.html">병원소개</a>
+                                <ul class="sub_ul">
+                                    <li class="submenu"><a href="intro.html">병원안내</a></li>
+                                    <li class="submenu"><a href="drintro.html">의료진 소개</a></li>
+                                    <li class="submenu"><a href="map.html">오시는 길</a></li>
+                                </ul>
+                            </ll>  
+                            <ll class="mainmenu"><a href="info.html">진료안내</a>
+                                <ul class="sub_ul">
+                                    <li class="submenu"><a href="info.html">진료안내</a></li>
+                                    <li class="submenu"><a href="reserve.html">진료예약</a></li>
+                                    <li class="submenu"><a href="time.html">진료시간</a></li>
+                                </ul>
+                            </ll>  
+                            <ll class="mainmenu"><a href="treat1.html">진료1</a>
+                                <ul class="sub_ul">
+                                    <li class="submenu"><a href="treat1_sub1.html">진료1</a></li>
+                                    <li class="submenu"><a href="treat1_sub2.html">진료2</a></li>
+                                    <li class="submenu"><a href="treat1_sub3.html">진료3</a></li>
+                                </ul>
+                            </ll>  
+                            <ll class="mainmenu"><a href="treat2.html">진료2</a>
+                                <ul class="sub_ul">
+                                    <li class="submenu"><a href="treat2_sub1.html">진료1</a></li>
+                                    <li class="submenu"><a href="treat2_sub2.html">진료2</a></li>
+                                    <li class="submenu"><a href="treat2_sub3.html">진료3</a></li>
+                                </ul>
+                            </ll>  
+                            <ll class="mainmenu"><a href="treat3.html">진료3</a>
+                                <ul class="sub_ul">
+                                    <li class="submenu"><a href="treat3_sub1.html">진료1</a></li>
+                                    <li class="submenu"><a href="treat3_sub2.html">진료2</a></li>
+                                    <li class="submenu"><a href="treat3_sub3.html">진료3</a></li>
+                                </ul>
+                            </ll>        
+                            <ll class="mainmenu mm_last"><a href="news.html#notice">병원소식</a>
+                                <ul class="sub_ul sub_ul1">
+                                    <li class="submenu"><a href="news.html#notice">공지사항</a></li>
+                                    <li class="submenu"><a href="news.html#data">자료실</a></li>
+                                    <li class="submenu"><a href="board.html">게시판</a></li>
+                                    <li class="submenu"><a href="qna.html">Q&A</a></li>
+                                </ul>
+                            </ll>           
+                        </ul>                          
+                    </div>
+                </nav>
+        </div>
+    </header>
+    <div id="content" class="content clrfx">
+        <div class="sub_wrap">
+            <div class="sub_bg_menu">
+                <div class="sub_bg_img">
+                    <!-- 메인메뉴에 따라 이름을 바꿔주세요 -->
+                    <h2>진료시간</h2> 
+                </div>
+                <div class="sub_bg_line">
+                    <div class="sub_bg_text">
+                        <!-- 현재 페이지에 맞게 <b>태그를 넣어주세요 -->
+                        <!-- 메뉴가 4개인 페이지는 .sub_bg_line a 스타일의 width를 25%로 줄여주세요 -->
+                        <a href="info.html">진료안내</a>
+                        <a href="drintro.html">진료예약</a>
+                        <a href="map.html"><b>진료시간</a>
+                        <!-- <a href="">4번째 메뉴</a> -->
+                  
+                </div>
+            </div>           
+        </div>
+    </div>
+            </div>
+            <div class="sub_top">
+                <div class="inner_top">
+                    <h2>진료 시간</h2>
+                    <p><a href="/">HOME</a> > 진료안내 > 진료시간</p>
+                    <!-- 페이지에 따라 메인메뉴와 서브메뉴 이름을 적어주세요 -->
+                </div>
+                <div class="time_sub">
+                        <h2 class="time_sub1">
+                            <span>
+                        <strong>정석소아청소년과</strong>
+                        병원
+                            </span>    
+                        <p>
+                        "정석소아청소년과 병원은 언제나 최선을 다하겠습니다."    
+                        </p>
+                        </h2>
+                        <div id="sub_content">
+                            <div class="sub_timecontent clrfx">
+                                <div class="time_1">
+                                    <div class="inner_sub">
+                                        <div class="class">
+                                            <div class="class-1">
+                                            <dl class="time-a01" style="opacity: 1; top: 0px;">
+                                                <dt>신생아클리닉<br>
+                                                신생아 황달, 발달성 고관절 이형성증</dt>
+                                            </dl>
+                                            <dl class="time-a02" style="opacity: 1; top: 0px;">
+                                                <dt>알레르기클리닉</dt>
+                                                <dd>비염,아토피 피부염</dd>
+                                            </dl>
+                                            <dl class="time-a03" style="opacity: 1; top: 0px;">
+                                                <dt>성장클리닉</dt>
+                                                <dd>성조숙증,저신장</dd>
+                                            </dl>
+                                            <dl class="time-a04" style="opacity: 1; top: 0px;">
+                                                <dt>비만클리닉</dt>
+                                                <dd>소아비만</dd>
+                                            </dl>
+                                            </div>
+                                        </div>
+                                        <div class="time_table" style="opacity: 1; top:0px;">
+                                            <table>
+                                                <colgroup>
+                                                    <col style="width:15%">
+                                                    <col>
+                                                    <col style="width:10%">
+                                                    <col style="width:10%">
+                                                    <col style="width:10%">
+                                                    <col style="width:10%">
+                                                    <col style="width:10%">
+                                                    <col style="width:10%">
+                                                </colgroup>
+                                                <thead>
+                                                    <tr>
+                                                        <th>진료실</th>
+                                                        <th>의사</th>
+                                                        <th>월</th>
+                                                        <th>화</th>
+                                                        <th>수</th>
+                                                        <th>목</th>
+                                                        <th>금</th>
+                                                        <th>토</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody class="time_table-1">
+                                                    <tr>
+                                                        <td>1진료실</td>
+                                                        <td><span class="name">??? 의사</span>
+                                                        </td>
+                                                        <td>●</td>
+                                                        <td>●</td>
+                                                        <td>
+                                                            <span class="break">오전진료</span>
+                                                        </td>
+                                                        <td>●</td>
+                                                        <td>
+                                                            <span class="break">휴진</span>
+                                                        </td>
+                                                        <td rowspan="4">순환근무</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>2진료실</td>
+                                                        <td><span class="name">??? 의사</span>
+                                                        </td>
+                                                        <td>●</td>
+                                                        <td>●</td>
+                                                        <td>
+                                                            <span class="break">오전진료</span>
+                                                        </td>
+                                                        <td>●</td>
+                                                        <td>
+                                                            <span class="break">휴진</span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>3진료실</td>
+                                                        <td><span class="name">??? 의사</span>
+                                                        </td>
+                                                        <td>●</td>
+                                                        <td>●</td>
+                                                        <td>
+                                                            <span class="break">오전진료</span>
+                                                        </td>
+                                                        <td>●</td>
+                                                        <td>
+                                                            <span class="break">휴진</span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>4진료실</td>
+                                                        <td><span class="name">??? 의사</span>
+                                                        </td>
+                                                        <td>●</td>
+                                                        <td>●</td>
+                                                        <td>
+                                                            <span class="break">오전진료</span>
+                                                        </td>
+                                                        <td>●</td>
+                                                        <td>
+                                                            <span class="break">휴진</span>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                
+                                <div class="time_sub02">
+                                    <div class="time_inner02">
+                                        <ul class="timelist"></ul>
+                                        <li class="list-1" style="opacity: 1;top:0px;">
+                                       <!-- 의사를 누르면 의사 소개페이지로  -->
+                                            <a href="/drintro.html">
+                                            <h4>
+                                                <span>의사 직위</span>
+                                                <strong>의사 이름</strong>
+                                            </h4>
+                                            <div class="img-1">
+                                                <!-- 의사 사진 -->
+                                                <img src="./img/@img_main_doctor01.png" alt="" title>
+                                            </div>
+                                            <span class="txt">매주 목요일 휴진</span>
+                                        </a>
+                                        </li>
+                                        <li class="list-1" style="opacity: 1;top:0px;">
+                                        <!-- 의사를 누르면 의사 소개페이지로  -->
+                                            <a href="/drintro.html">
+                                            <h4>
+                                                <span>의사 직위</span>
+                                                <strong>의사 이름</strong>
+                                            </h4>
+                                            <div class="img-1">
+                                                <!-- 의사 사진 -->
+                                                <img src="./img/@img_main_doctor01.png" alt="" title>
+                                            </div>
+                                            <span class="txt">매주 목요일 휴진</span>
+                                        </a>
+                                        </li>
+                                        <li class="list-1" style="opacity: 1;top:0px;">
+                                        <!-- 의사를 누르면 의사 소개페이지로  -->
+                                            <a href="/drintro.html">
+                                            <h4>
+                                                <span>의사 직위</span>
+                                                <strong>의사 이름</strong>
+                                            </h4>
+                                            <div class="img-1">
+                                                <!-- 의사 사진 -->
+                                                <img src="./img/@img_main_doctor01.png" alt="" title>
+                                            </div>
+                                            <span class="txt">매주 목요일 휴진</span>
+                                        </a>
+                                        </li>
+                                        <li class="list-1" style="opacity: 1;top:0px;">
+                                        <!-- 의사를 누르면 의사 소개페이지로  -->
+                                            <a href="/drintro.html">
+                                            <h4>
+                                                <span>의사 직위</span>
+                                                <strong>의사 이름</strong>
+                                            </h4>
+                                            <div class="img-1">
+                                                <!-- 의사 사진 -->
+                                                <img src="./img/@img_main_doctor01.png" alt="" title>
+                                            </div>
+                                            <span class="txt">매주 목요일 휴진</span>
+                                        </a>
+                                        </li>
+                                    </div>
+                                </div>
+                              
+                            </div>
+
+                        </div>
+                </div>
+                </div>
+                
+                <footer id="ft">
+                    <div class="ftwarp">
+                        <div class="ft_line">
+                            <p>정석소아청소년과병원</p>
+                            <a href="" class="ft_link1"></a>
+                            <a href="" class="ft_link2"></a>
+                            <a href="" class="ft_link3"></a>
+                            <a href="" class="ft_link4"></a>
+                            <a href="" class="ft_link5"></a>
+                            <a href="" class="ft_link6"></a>
+                             </div>
+                            
+                        <div class="fnb">
+                            <div class="inner">
+                                <span><a href="">이용약관</a></span>
+                                <span><a href="">개인정보처리방침</a></span>
+                                <span><a href="">환자의 권리와 의무</a></span>
+                                <span><a href="">비급여안내</a></span>
+                            </div>
+                        </div>
+                        <div class="snb">
+                            <div class="inner">
+                                <div class="copy_warp">
+                                    <b>정석소아청소년과병원</b>
+                                    <p>주소 : 경기도 남양주시 진접음 해밀예당1로 221 지안빌딩 6층
+                                        (경기도 남양주시 진접음 금곡리 1021-2 지안빌딩 6층)
+                                    </p>
+                                    <span>대표자 : 남윤호</span>
+                                    <span>사업자등록번호  132-82-12264</span>
+                                    <span>대표번호. 031-573-6678 팩스번호. 031-573-6604 </span>
+                                    <p class="copy">Copyright ⓒ JUNGSEOK CHILDREN’S HOSPITAL. All Rights Reserved.</p>
+                                </div>
+                                <div class="ft_logo">
+                                    <img src="./img/foot_logo.jpg" alt="ft_logo">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+                </body>
+                </head>
+                </html>
+          
+   
+

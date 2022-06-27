@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 메타포 문서 정보 -->
+    <!-- 파비콘 -->
+    <!-- 오픈그래프 -->
+    <!--폰트-->
+    <style>
+        @font-face {
+      font-family: 'HallymGothic-Regular';
+      src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2204@1.0/HallymGothic-Regular.woff2') format('woff2');
+      font-weight: 400;
+      font-style: normal;
+      }
+  </style>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <!-- API 필수 플러그인 -->
+    <title>로그인페이지</title>
+
+    <!-- 문서 로딩전 스크립트 -->
+    <style>
+    /* 문서 초기화 스타일 */
+        *{ margin: 0; padding: 0; text-decoration: none; list-style: none;  font-family: 'HallymGothic-Regular'; }        
+
+        #header {width:100%;}
+    /* logo */
+        .logo {float: left; padding-top: 25px;}
+    /* tnb */
+        .tnb {padding-top: 27px;}
+        .login {float: right; border:2px solid#eee; border-radius: 46px; padding: 10px; font-size: 14px; padding-right: 25px; padding-left: 25px;}
+        .login .sign::before {content: ""; background: url("./img/icon_login.png"); width: 15px; height: 18px;display: inline-block; margin-right: 10px; vertical-align: -3px;}
+        .line {font-size: 12px; vertical-align: 2px; color: #ddd; padding: 5px;}
+        .login span a {color: #000; font-weight: 500; font-size: 14px; font-family: 'Noto Sans KR', sans-serif;}
+        .login span:hover a{color:blue;}
+    /* gnb */
+        .top_hd_wrap {height: 50px; clear: both;}
+        .top_nav_wrap {height: 100px; width: 1400px; margin: 0 auto;}
+        .gnb{height: 70px; clear: both; width: 100%; border-top: 1px solid #ddd;background-color: #fbfbfb; z-index: 99;}
+        .gnb_wrap {margin: 0 auto; height: 300px; z-index: 1;}
+        .background {clear: both;width: 100%; position:absolute; width: 1920px; background-color: #fff; height:0; top:171px; z-index:1; left: 0;} 
+        .main_ul {margin: 0 auto; height: 70px; width: 1400px;}
+        .main_ul .mainmenu {margin: 0 auto; position: relative; width: 16.66%; height: 100%; display: block; float:left; box-sizing: border-box;}
+        .mainmenu>a{font-size: 18px; color: #222222; line-height: 70px; display: block; text-align: center; border-left: 1px solid #ddd; font-family: 'Noto Sans KR', sans-serif; font-weight: 400;}
+        .mainmenu:hover>a{background-color: rgb(31, 117, 176); color: #fff;}
+        .mainmenu:hover .sub_ul {background-color: rgb(244,248,251);}
+        
+        .sub_menu {width: 1400px; margin: 0 auto;}
+        .sub_ul {float:left;width:100%;height: 0px; border-left: 1px solid#ddd; box-sizing: border-box; position: absolute;}
+        .sub_ul1 {border-right: 1px solid#ddd;} 
+        .submenu {width: 100%; line-height: 0px;}
+        .sub_ul a:hover {text-decoration: underline; color: rgb(31, 117, 176);}
+        .submenu a {font-size: 16px; padding-left: 14%; display: none; color:#666}
+        .sub_ul li:first-child a {margin-top: 15px;}
+
+        .main_ul:hover .sub_ul {height: 200px; transition-duration: 0.5s; z-index: 2;}
+        .main_ul:hover .background {height: 200px; transition-duration: 0.5s; box-shadow :  0 8px 8px -6px rgb(73, 72, 72);}
+        .main_ul:hover .submenu {line-height: 40px; transition-duration: 0.5s;}
+        .main_ul:hover .sub_ul a {display: block;}
+
+        .sm_last, .mm_last { border-right: 1px solid #ddd;}
+
+        /*사이드*/
+        .content_wrap {width: 1400px; margin: 0 auto;} 
+        .right_btn {width: 65px; height: 200px; position:fixed; right: 55px; bottom: 45px; z-index: 999;}
+        .right_btn img {width: 90%; padding-bottom: 11px;}
+                    
+/* 오른쪽 버튼 스타일 */
+.right_btn {width: 65px; height: 200px; position:fixed; right: 55px; bottom: 45px; z-index: 999;}
+.right_btn img {width: 90%; padding-bottom: 11px;}
+        /* login.html */
+        .login_wrap {width: 1060px; margin: 0 auto; padding-bottom: 200px;}
+        .login_box {border: 1px solid #ececec; width: 520px; height: 250px; margin: 0 auto;}
+        .login_form {height: 0px;}
+        .login_form_wrap {width: 530px;  padding: 20px}
+        .login_tb {width: 470px; height: 190px;}
+        .login_form input {width: 350px; padding:11px 6px 11px 6px; float: left; margin-bottom: 10px ;border: 1px solid #d0d0d0; color: #979d9d; ;}
+        .botton_box {float: left;}
+        .button_box button { border:1px solid rgb(31, 117, 176); background-color: rgb(117, 182, 224); color: #222222; width: 100px; height: 87px; margin-top: 67px; margin-left: 20px; font-size: 16px;}
+        .jointitle {clear: both; padding-left: 30px; padding-top: 20px;}
+        .jointitle a {float:right; padding-right: 40px; text-decoration: none; color:#222222}
+        .jointitle span>a:hover {color: blue}
+        .login_form_tit {font-size: 20px; color: #222222; padding-bottom: 20px;}
+        .login_wrap h2 {padding-left: 25%; padding-top: 30px;padding-bottom: 30px;}
+        .button_box button:hover {cursor:pointer; background-color: rgb(31, 117, 176);border:1px solid rgb(117, 182, 224); transition: 1s; color:#fff}
+
+        /*푸터 sns*/
+        .ft_line {width: 100%; height: 45px; background-color: #327cb6; padding: 18px; color: #fff; font-size: 16px;}
+        .ft_line p {float:left; padding-right: 10px; margin-top: 12px; padding-left: 11%; font-weight: 500;}
+        .ft_link1 ,.ft_link2,.ft_link3,.ft_link4,.ft_link5,.ft_link6 {display: inline-block; width: 45px; height: 45px; 
+            margin: 0 10px;vertical-align: middle; background-size: cover}
+        .ft_link1 {background-image:url("./img/icon_quick_link1.png")}
+        .ft_link2 {background-image:url("./img/icon_quick_link2.png")}
+        .ft_link3 {background-image:url("./img/icon_quick_link3.png")}
+        .ft_link4 {background-image:url("./img/icon_quick_link4.png")}
+        .ft_link5 {background-image:url("./img/icon_quick_link5.png")}
+        .ft_link6 {background-image:url("./img/icon_quick_link6.png")}
+
+
+        /*푸터*/
+        #ft { clear: both; width: 100%; height: 300px; }
+        .fnb { clear: both; width: 100%; height: 20px; border: 1px solid #ddd; padding: 10px 0; }
+        .fnb .inner { width: 1400px; height: 100%; margin-left: 30px; margin: 0 auto; }
+        .fnb span { margin: 0 10px; font-size: 13px; }
+        .fnb span:after { content: "|"; padding-left: 20px; color: #ddd; }
+        .fnb span:last-child:after { content: ""; }
+        .snb { clear: both; width: 100%; height: 100px; padding: 20px 10px; }
+        .snb .inner{ width: 1400px; height: 100%; margin-left: 40px; margin: 0 auto; }
+        .copy_wrap { float: left; }
+        .ft_logo { float: right; }
+        .copy_wrap b { display: block; margin-bottom: 10px; }
+        .copy_wrap p, .copy_wrap span { font-size: 13px; padding-right: 10px; color: #666; }
+        .copy { margin-top: 10px; color: #444; }
+
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <header class="header" id="header">
+            <div class="" id="header_wrap">
+                <div class="top_nav_wrap">
+                    <div class="logo">
+                        <a href="index.html"><img src="./img/logo.png" alt="로고"></a> 
+                        <div class="right_btn">
+                            <a href=""><img src="./img/btn-calling.png" alt=""></a>
+                            <a href=""><img src="./img/btn-chat-kakao.png" alt=""></a>
+                            <a href="#header_wrap"><img src="./img/btn_top.png" alt=""></a>
+                        </div>
+                    </div>
+                    <nav class="tnb">
+                        <div class="login">
+                            <span class="sign">
+                                <a href="login.html">로그인</a>
+                            </span> 
+                            <span class="line">|</span>
+                             <span>
+                                <a href="agree.html">회원가입</a>
+                            </span>
+                        </div>
+                    </nav>
+                </div>
+                    <nav class="gnb" id="gnb">
+                        <div class="gnb_wrap">
+                            <ul class="main_ul">
+                                <div class="background">
+                                </div>
+                                <ll class="mainmenu"><a href="intro.html">병원소개</a>
+                                    <ul class="sub_ul">
+                                        <li class="submenu"><a href="intro.html">병원안내</a></li>
+                                        <li class="submenu"><a href="drintro.html">의료진 소개</a></li>
+                                        <li class="submenu"><a href="map.html">오시는 길</a></li>
+                                    </ul>
+                                </ll>  
+                                <ll class="mainmenu"><a href="info.html">진료안내</a>
+                                    <ul class="sub_ul">
+                                        <li class="submenu"><a href="info.html">진료안내</a></li>
+                                        <li class="submenu"><a href="reserve.html">진료예약</a></li>
+                                        <li class="submenu"><a href="time.html">진료시간</a></li>
+                                    </ul>
+                                </ll>  
+                                <ll class="mainmenu"><a href="treat1.html">진료1</a>
+                                    <ul class="sub_ul">
+                                        <li class="submenu"><a href="treat1_sub1.html">진료1</a></li>
+                                        <li class="submenu"><a href="treat1_sub2.html">진료2</a></li>
+                                        <li class="submenu"><a href="treat1_sub3.html">진료3</a></li>
+                                    </ul>
+                                </ll>  
+                                <ll class="mainmenu"><a href="treat2.html">진료2</a>
+                                    <ul class="sub_ul">
+                                        <li class="submenu"><a href="treat2_sub1.html">진료1</a></li>
+                                        <li class="submenu"><a href="treat2_sub2.html">진료2</a></li>
+                                        <li class="submenu"><a href="treat2_sub3.html">진료3</a></li>
+                                    </ul>
+                                </ll>  
+                                <ll class="mainmenu"><a href="treat3.html">진료3</a>
+                                    <ul class="sub_ul">
+                                        <li class="submenu"><a href="treat3_sub1.html">진료1</a></li>
+                                        <li class="submenu"><a href="treat3_sub2.html">진료2</a></li>
+                                        <li class="submenu"><a href="treat3_sub3.html">진료3</a></li>
+                                    </ul>
+                                </ll>        
+                                <ll class="mainmenu mm_last"><a href="news.html#notice">병원소식</a>
+                                    <ul class="sub_ul sub_ul1">
+                                        <li class="submenu"><a href="news.html#notice">공지사항</a></li>
+                                        <li class="submenu"><a href="news.html#data">자료실</a></li>
+                                        <li class="submenu"><a href="board.html">게시판</a></li>
+                                        <li class="submenu"><a href="qna.html">Q&A</a></li>
+                                    </ul>
+                                </ll>            
+                            </ul>                          
+                        </div>
+                    </nav>
+            </div>
+        </header>
+        <div class="content">
+            <div class="content_wrap">
+                <div class="right_btn">
+                    <a href=""><img src="./img/btn-calling.png" alt=""></a>
+                    <a href=""><img src="./img/btn-chat-kakao.png" alt=""></a>
+                    <a href="#header_wrap"><img src="./img/btn_top.png" alt=""></a>
+                 </div>   
+                <section class="con_wrap">
+                    <div class="login_wrap">
+                        <h2>로그인</h2>
+                        <div class="login_box">
+                            <form action="" method="post">
+                                        <div class="login_form">
+                                            <div class="login_form_wrap">
+                                                <div class="login_form_tit">
+                                                    <span>회원 로그인<span>
+                                                </div>
+                                                <input type="text"  required placeholder="아이디">
+                                                <input type="password" required placeholder="비밀번호">		
+                                            </div>						
+                                        </div>
+                                        <div class="button_box">
+                                            <button type="submit">로그인</button>
+                                        </div>
+                            </form>
+                            <div class="jointitle">
+                                <span> 회원이 아니세요? <a href="agree.html">회원가입</a></span>
+                            </div>	
+                        </div>
+                    </div>
+                </section>
+            </div>    
+        </div>
+        <footer id="ft">
+            <div class="ftwrap">
+                <div class="ft_line">
+                    <p>김포아산안과 SNS</p>
+                    <a href="" class="ft_link1"></a>
+                    <a href="" class="ft_link2"></a>
+                    <a href="" class="ft_link3"></a>
+                    <a href="" class="ft_link4"></a>
+                    <a href="" class="ft_link5"></a>
+                    <a href="" class="ft_link6"></a>
+                </div>      
+                <div class="fnb">
+                    <div class="inner">
+                        <span><a href="">이용약관</a></span>
+                        <span><a href="">개인정보처리방침</a></span>
+                        <span><a href="">환자의 권리와 의무</a></span>
+                        <span><a href="">비급여안내</a></span>
+                    </div>
+                </div>
+                <div class="snb">
+                    <div class="inner">
+                        <div class="copy_wrap">
+                            <b>아산안과</b>
+                            <p>주소 : 경기도 김포시 김포한강4로 113, 402호(장기동)
+                                신한프라자(4층)</p>
+                            <span>대표자 : 남윤호</span>
+                            <span>사업자등록번호 : 454-95-00993</span>
+                            <span>대표전화 : T. 031)992-0083 F.031)992-0096</span>
+                            <p class="copy">COPYRIGHT© 2021 ASAN EYE HOSPITAL. ALL RIGHT RESERVED.</p>
+                        </div>
+                        <div class="ft_logo">
+                            <img src="./img/logo2.png" alt="ft_logo">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

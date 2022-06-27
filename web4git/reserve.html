@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- shortcut icon 및 파비콘 연걸 -->
+<link rel="shortcut icon" href="" sizes="">
+<!--  문서 메타 정보-->
+<meta name="application-name" content="">
+<meta name="title" content="">
+<meta name="subject" content="">
+<meta name="description" content="">
+<meta name="keywords" content="">
+<!-- 오픈그래프 -->
+<meta property="og:url" content="">
+<meta property="og:type" content="">
+<meta property="og:image" content="">
+<meta property="og:article:author" content="">
+<meta property="og:article:publisher" content="">
+<meta property="og:article:thumbnailUrl" content="">
+<meta property="og:article:author" content="">
+<meta property="og:article:author:url" content="">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+<!-- 기본플러그인 연결 -->
+<script src="./js/jquery-1.9.1.js"></script>
+<script src="./js/jquery-ui-1.9.2.custom.js"></script>
+<link rel="stylesheet" href="./css/slick.css">
+<link rel="stylesheet" href="./css/slick-theme.css">
+<script src="./js/slick.js"></script>
+
+
+
+    <title>메인 페이지</title> 
+   <style>
+/* 스타일 초기화 */
+#header {width:100%;}
+*{margin: 0; padding: 0;}
+body, html { width: 100vw;font-family: 'Noto Sans KR', sans-serif; overflow-x: hidden;}
+ul{list-style: none;}
+a{text-decoration: none; }
+input, button{outline: 0; border: 0;}
+table, .table{display: table; border-collapse:collapse;}
+tr, .tr { display: table-row;}
+.wrap { clear:both; width: 100%; }
+
+.clrfx::after{content: 0;display: block; width: 100%; clear: both;}
+.content {clear: both; width: 100%;}
+/* 헤더부분 스타일 */
+/* logo */
+.logo {float: left; padding-top: 25px;}
+/* tnb */
+        .tnb {padding-top: 27px;}
+        .login {float: right; border:2px solid#eee; border-radius: 46px; padding: 10px; font-size: 14px; padding-right: 25px; padding-left: 25px;}
+        .login .sign::before {content: ""; background: url("./img/icon_login.png"); width: 15px; height: 18px;display: inline-block; margin-right: 10px; vertical-align: -3px;}
+        .line {font-size: 12px; vertical-align: 2px; color: #ddd; padding: 5px;}
+        .login span a {color: #000; font-weight: 500; font-size: 14px; font-family: 'Noto Sans KR', sans-serif;}
+        .login span:hover a{color:blue;}
+/* gnb */
+        .top_hd_wrap {height: 50px; clear: both;}
+        .top_nav_wrap {height: 100px; width: 1400px; margin: 0 auto;}
+        .gnb{height: 70px; clear: both; width: 100%; border-top: 1px solid #ddd;background-color: #fbfbfb; z-index: 99; border-bottom: 1px solid #ddd;}
+        .gnb_wrap {margin: 0 auto; height: 300px; z-index: 1;}
+        .background {clear: both;width: 100%; position:absolute; width: 1920px; background-color: #fff; height:0; top:171px; z-index:1; left: 0;} 
+        .main_ul {margin: 0 auto; height: 70px; width: 1400px;}
+        .main_ul .mainmenu {margin: 0 auto; position: relative; width: 16.66%; height: 100%; display: block; float:left; box-sizing: border-box;}
+        .mainmenu>a{font-size: 18px; color: #222222; line-height: 70px; display: block; text-align: center; border-left: 1px solid #ddd; font-family: 'Noto Sans KR', sans-serif; font-weight: 400;}
+        .mainmenu:hover>a{background-color: rgb(31, 117, 176); color: #fff;}
+        .mainmenu:hover .sub_ul {background-color: rgb(244,248,251);}
+        
+        .sub_menu {width: 1400px; margin: 0 auto;}
+        .sub_ul {float:left;width:100%;height: 0px; border-left: 1px solid#ddd; box-sizing: border-box; position: absolute;}
+        .sub_ul1 {border-right: 1px solid#ddd;} 
+        .submenu {width: 100%; line-height: 0px;}
+        .sub_ul a:hover {text-decoration: underline; color: rgb(31, 117, 176);}
+        .submenu a {font-size: 16px; padding-left: 14%; display: none; color:#666}
+        .sub_ul li:first-child a {margin-top: 15px;}
+
+        .main_ul:hover .sub_ul {height: 200px; transition-duration: 0.5s; z-index: 2;}
+        .main_ul:hover .background {height: 200px; transition-duration: 0.5s; box-shadow :  0 8px 8px -6px rgb(73, 72, 72);}
+        .main_ul:hover .submenu {line-height: 40px; transition-duration: 0.5s;}
+        .main_ul:hover .sub_ul a {display: block;}
+        .sm_last, .mm_last { border-right: 1px solid #ddd;}
+
+.content_wrap {width: 1400px; margin: 0 auto; }
+            
+/* 오른쪽 버튼 스타일 */
+.right_btn {width: 65px; height: 200px; position:fixed; right: 55px; bottom: 45px; z-index: 999;}
+.right_btn img {width: 90%; padding-bottom: 11px;}
+/* 게시판 스타일 */
+.medical li{display: block; width: 300px; height: 84px; border: 1px solid #ddd; margin: 0 auto; float: left; text-align: center; font-size: 24px; }
+.medical a{color: #0087ab; line-height: 80px;}
+.medical_box{width: 1350px; margin: 0 auto; height: 400px; margin-top: 40px; margin-bottom: 100px;   border:1px solid #0087ab ; background-image: url("./img/bg_main1.jpg");}
+.medical_leftbox{width: 65%; height: 100%; background-color: rgb(255, 255, 255);}
+.main {display: block;  width: 400px;}
+.medical_title{width: 100%; margin-left: 60px;font-size: 30px; color: #0087ab; padding-top: 15px; }
+.medical_comment{width: 100%; margin-left: 60px;font-size: 26px; color: #000; padding-top: 15px;}
+.medical{padding-left: 60px; padding-top: 20px;}
+.medical li:hover{background-color: #0087ab; }
+.medical li:hover a{color: #fff; }
+.backcolor{position: absolute;left: 0; width: 1920px; top: 750px; height: 520px; background-color: #f6f6fa; z-index: -1;}
+    /*푸터*/
+        .ft_link1 ,.ft_link2,.ft_link3,.ft_link4,.ft_link5,.ft_link6 {display: inline-block; width: 45px; height: 45px; margin: 0 10px;vertical-align: middle; background-size: cover}
+        .ft_link1 {background-image:url("./img/icon_quick_link1.png")}
+        .ft_link2 {background-image:url("./img/icon_quick_link2.png")}
+        .ft_link3 {background-image:url("./img/icon_quick_link3.png")}
+        .ft_link4 {background-image:url("./img/icon_quick_link4.png")}
+        .ft_link5 {background-image:url("./img/icon_quick_link5.png")}
+        .ft_link6 {background-image:url("./img/icon_quick_link6.png")}
+        .ft_line {width: 100%; height: 45px; background-color: #327cb6; padding: 18px; color: #fff; font-size: 16px;}
+        .ft_line p {float:left; padding-right: 10px; margin-top: 12px; padding-left: 11%; font-weight: 500;}
+
+        #ft { clear: both; width: 100%; height: 300px; }
+        .fnb { clear: both; width: 100%; height: 20px; border: 1px solid #ddd; padding: 10px 0; }
+        .fnb .inner { width: 1450px; height: 100%; margin-left: 30px; margin: 0 auto; }
+        .fnb span { margin: 0 10px; font-size: 13px; }
+        .fnb span:after { content: "|"; padding-left: 20px; color: #ddd; }
+        .fnb span:last-child:after { content: ""; }
+        .snb { clear: both; width: 100%; height: 100px; padding: 20px 10px; }
+        .snb .inner{ width: 1450px; height: 100%; margin-left: 40px; margin: 0 auto; }
+        .copy_warp { float: left; }
+        .ft_logo { float: right; }
+        .copy_warp b { display: block; margin-bottom: 10px; }
+        .copy_warp p, .copy_warp span { font-size: 13px; padding-right: 10px; color: #666; }
+        .copy { margin-top: 10px; color: #444; }
+
+
+
+
+/* 서브메뉴 */
+.sub_bg_img{height: 142px; background-image: url("/img/bg_sub_top1.jpg");}
+.sub_bg_menu h2 {width: 1120px; margin: 0 auto; line-height: 120px; color: #fff; font-size: 38px;font-weight: 300; font-family: 'Noto Sans KR', sans-serif}
+.sub_bg_line {height: 75px;background: #327cb6;}
+.sub_bg_text {width: 1120px; margin: 0 auto; height: 100%; text-align: center;}
+.sub_bg_line a {font-size: 18px; color:#addcf6; line-height: 90px; width: 33%; height: 20px; display: block; float:left; display: block; font-family: 'Noto Sans KR', sans-serif}  
+.sub_bg_text a b {color: #fff; font-weight: normal; position: relative;}         
+.sub_bg_text a b:after {content:""; background-color: #91e9ff; position: absolute; left: 0;bottom:-18px ;width: 100%; height: 10px; text-align: center;}
+
+.sub_top, .sub_content {width: 1120px; margin: 0 auto;}
+.inner_top {width: 100%; border-bottom: 1px solid #e4e4e4; height: 110px;line-height: 130px; margin-bottom: 40px;}
+.inner_top h2 {float:left; font-size: 40px; font-weight: 400; font-family: 'Noto Sans KR', sans-serif}
+.inner_top p {float:right; font-size: 14px; line-height: 160px; font-family: 'Noto Sans KR', sans-serif}
+.info_1-1{width: 1120px; margin: 0 auto; line-height: 76px; color: rgb(0, 0, 0); font-size: 14px;font-weight: 100; font-family: 'Noto Sans KR', sans-serif}
+
+
+/* 온라인예약 수정 */
+.sub_wrap{width: 100%;}
+#rsvfrm{width: 1120px;height:1440px; display: block;}
+.reservediv {width: 1120px; height: 1360px; margin-top: 30px; border-top: 2px solid #1f75b0; display: block;}
+.reservediv td select{width: 250px; vertical-align: middle;}
+.reserve_wrap{width: 1130px; height: 2000px; margin: 0 auto;}
+.reserve{border-bottom: 2px solid #0087ab ; padding-bottom: 30px;}
+.reserve_1 .text-1{position: relative; border-bottom: 1px solid #ddd ; color: #000; padding-bottom: 20px; font-size: 22px;}
+.reserve_1 .text-2{margin: 40px 0;}
+
+/*테이블태그 수정*/
+table{display: table;   width: 100%;height: 545px; table-layout: fixed; border-collapse: collapse; border: 0;}
+caption{font:0/0 a;}
+label{cursor: default;}
+tbody{display: table-row-group; vertical-align: middle;}
+tr{width: 1120px; height: 64px; display: table-row;vertical-align: inherit;border-color: #333;}
+th{width: 10%; padding: 0 20px; border-bottom: 1px solid #ddd; text-align: center;}
+td{width: 915px; height: 51px; padding: 10px; border-bottom: 1px solid #ddd;  text-align: left;}
+button{overflow: visible; cursor: pointer; border: 0;}
+.calbody td,th{text-align: center;}
+/* select문 inputtext클래스 textarea 수정 */
+select, .inputtext, textarea { font:15px/1.5 "Noto Sans KR";border-radius: 0; box-sizing: border-box;-webkit-appearance: none;}
+.inputtext{height: 40px; padding: 0 20px; background: #fff; box-sizing: border-box; border: 1px solid #ddd;}
+select{height: 40px; border: 1px solid #ddd; padding: 0 0 0 10px; background:#fff url(/img/bg_select.gif) no-repeat 100% 50%;background-size: 13px auto; }
+option{font-weight: normal; display: block; min-height: 1.2em;}
+
+
+/* 달력 수정 */
+.maincalWrap{ width: 912px;height: 550px; padding: 10px;}
+#cal { width: 50%; float: left;}
+p.calHead{padding: 20px 0; text-align: center; background: #ddd;}
+.calHead button{font:0/0 a; width: 20px; height: 20px; background: none; border-top: 2px solid #000; border-right: 2px solid #000;}
+.calHead strong{display: inline-block; margin: 0 auto; font-size: 24px; vertical-align: middle; color: #000;}
+.calHead button.prev{transform: rotate(226deg);}
+.calHead button.next{transform: rotate(45deg);}
+.reservinfo{ float: left; width: 50%; padding: 30px 0 0 20px; box-sizing: border-box;}
+p.reservetit{width: 426px;height:40px; display: block; margin-block-start: 1em; margin-block-end: 1em; margin-inline-start: 1em;margin-inline-end: 1em;}
+.colbody{display: table-column-group;}
+.reservinfo .roundbox{margin: 20px 0 0; padding: 20px; background: #fafafa; border: 1px solid #ddd; border-radius: 20px;}
+.today { background-color: red;}
+.today button {background-color: red;}
+/* 자동입력방지,새로고침 */
+input#zsfCode.inputext{border:1px solid #ddd; box-sizing: border-box; height:  40px;}
+a.btn.btnReplace{text-decoration: none;}
+.F5 td{float: left;}
+/* 등록 취소 수정 */
+.reserveft {width: 1130px;height: 52px; margin: 20px -5px 0; text-align: center;}
+.reserveft-1{float: right; width: 300px; height: auto; }
+.reserveft .button0{display: inline-block; width: 100px;}
+.reserveft .button1{display: inline-block; width: 100px;}
+a.button0{ border: 1px solid #ddd; height: 30px; color: rgb(0, 0, 0); }
+a.button1{border: 1px solid #0087ab; height: 30px; color:#0087ab}
+</style>
+<style>
+    .wrap { width: 100%; }
+    .wrap:after, #header:after, #content:after, #ft:after { content:""; display:block; clear:both; }   
+    </style>
+    </head>
+    <!-- 문서초기화스타일 -->
+    
+    <!-- 문서 로딩전 스크립트 -->
+    <!-- DOM 구조 설계 : 스토리보드에 직접 태그 구조를 설계를 메인 화면과 서브 화면으로 나누어 구성 -->
+    <body>
+    <div class="wrap clrfx">
+        <header class="header" id="header">
+            <div class="" id="header_wrap">
+                <div class="top_nav_wrap">
+                    <div class="logo">
+                        <a href="index.html"><img src="./img/logo.png" alt="로고"></a> 
+                        <div class="right_btn">
+                            <a href=""><img src="./img/btn-calling.png" alt=""></a>
+                            <a href=""><img src="./img/btn-chat-kakao.png" alt=""></a>
+                            <a href="#header_wrap"><img src="./img/btn_top.png" alt=""></a>
+                        </div>
+                    </div>
+                    <nav class="tnb">
+                        <div class="login">
+                            <span class="sign">
+                                <a href="login.html">로그인</a>
+                            </span> 
+                            <span class="line">|</span>
+                             <span>
+                                <a href="agree.html">회원가입</a>
+                            </span>
+                        </div>
+                    </nav>
+                </div>
+                    <nav class="gnb" id="gnb">
+                        <div class="gnb_wrap">
+                            <ul class="main_ul">
+                                <div class="background">
+                                </div>
+                                <ll class="mainmenu"><a href="intro.html">병원소개</a>
+                                    <ul class="sub_ul">
+                                        <li class="submenu"><a href="intro.html">병원안내</a></li>
+                                        <li class="submenu"><a href="drintro.html">의료진 소개</a></li>
+                                        <li class="submenu"><a href="map.html">오시는 길</a></li>
+                                    </ul>
+                                </ll>  
+                                <ll class="mainmenu"><a href="info.html">진료안내</a>
+                                    <ul class="sub_ul">
+                                        <li class="submenu"><a href="info.html">진료안내</a></li>
+                                        <li class="submenu"><a href="reserve.html">진료예약</a></li>
+                                        <li class="submenu"><a href="time.html">진료시간</a></li>
+                                    </ul>
+                                </ll>  
+                                <ll class="mainmenu"><a href="treat1.html">진료1</a>
+                                    <ul class="sub_ul">
+                                        <li class="submenu"><a href="treat1_sub1.html">진료1</a></li>
+                                        <li class="submenu"><a href="treat1_sub2.html">진료2</a></li>
+                                        <li class="submenu"><a href="treat1_sub3.html">진료3</a></li>
+                                    </ul>
+                                </ll>  
+                                <ll class="mainmenu"><a href="treat2.html">진료2</a>
+                                    <ul class="sub_ul">
+                                        <li class="submenu"><a href="treat2_sub1.html">진료1</a></li>
+                                        <li class="submenu"><a href="treat2_sub2.html">진료2</a></li>
+                                        <li class="submenu"><a href="treat2_sub3.html">진료3</a></li>
+                                    </ul>
+                                </ll>  
+                                <ll class="mainmenu"><a href="treat3.html">진료3</a>
+                                    <ul class="sub_ul">
+                                        <li class="submenu"><a href="treat3_sub1.html">진료1</a></li>
+                                        <li class="submenu"><a href="treat3_sub2.html">진료2</a></li>
+                                        <li class="submenu"><a href="treat3_sub3.html">진료3</a></li>
+                                    </ul>
+                                </ll>        
+                                <ll class="mainmenu mm_last"><a href="news.html#notice">병원소식</a>
+                                    <ul class="sub_ul sub_ul1">
+                                        <li class="submenu"><a href="news.html#notice">공지사항</a></li>
+                                        <li class="submenu"><a href="news.html#data">자료실</a></li>
+                                        <li class="submenu"><a href="board.html">게시판</a></li>
+                                        <li class="submenu"><a href="qna.html">Q&A</a></li>
+                                    </ul>
+                                </ll>           
+                            </ul>                          
+                        </div>
+                    </nav>
+            </div>
+        </header>
+        
+        <div id="content" class="content clrfx">
+            <div class="sub_wrap">
+                <div class="sub_bg_menu">
+                    <div class="sub_bg_img">
+                        <!-- 메인메뉴에 따라 이름을 바꿔주세요 -->
+                        <h2>진료예약</h2> 
+                    </div>
+                    <div class="sub_bg_line">
+                        <div class="sub_bg_text">
+                            <!-- 현재 페이지에 맞게 <b>태그를 넣어주세요 -->
+                            <!-- 메뉴가 4개인 페이지는 .sub_bg_line a 스타일의 width를 25%로 줄여주세요 -->
+                            <a href="info.html">진료안내</a>
+                            <a href="drintro.html"><b>온라인예약</b></a>
+                            <a href="map.html">진료시간</a>
+                            <!-- <a href="">4번째 메뉴</a> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="sub_top">
+                    <div class="inner_top">
+                        <h2>온라인 예약</h2>
+                        <p><a href="/">HOME</a> > 진료안내 > 온라인예약</p>
+                        <!-- 페이지에 따라 메인메뉴와 서브메뉴 이름을 적어주세요 -->
+                    </div>
+                </div>
+                <div class="reserve_wrap">
+                    <div class="reserve">
+                <div class="reserve_1">
+                    <!-- 글 색상 바로 바꾸는 곳 -->
+                    <p class="text-1">
+                    온라인 예약은 <span style="color: #0087ab;">회원ㆍ비회원 모두 예약이 가능합니다.</span><br>
+                       예약 신청 이후 예약확정 <span style="color:red">전화를 받으신 경우에 예약이 확정됩니다.</span><br>
+                        <div class="text-2">
+                       신청 때 선택하신 <span style="color: #0087ab;">의료진의 진료상황에 따라 일정이 달라질 수 있습니다.</span><br>
+                        온라인 예약은 <span style="color: #0087ab;">진료 2일 전</span>까지만 가능합니다.
+                        <span style="color: #0087ab;">월요일</span> 환자가 많은 경우가 있으므로 예약 진행이 어려울 수 있습니다.<br>
+                        <span style="color: #0087ab;">빠른 예약</span>을 원하시는 분은 02-6925-1111로 연락 주시면 바로 처리해 드리겠습니다.<br>
+                        <span style="color: #0087ab;">토요일</span>은 온라인 상으로 <span style="color: #0087ab;">예약이 불가</span>합니다.<span style="color: #0087ab;"> 02-6925-1111</span>로 연락 주시기 바랍니다.</p>
+                    </div>
+                </div>
+                <div class="textarea">
+                    <textarea cols="150" rows="10">하나이비인후과병원(이하 "본원"이라 함)의 개인정보처리방침에 대해 알려드립니다.
+
+                        본원이 취급하는 모든 개인정보는 「개인정보 보호법」(이하 "법"이라 함) 등 관련 법령의 개인정보 보호규정을 준수하여 수집․보유․처리되고 있습니다.
+                        
+                        본원은 법에 따라 이용자의 개인정보 및 권익을 보호하고 개인정보와 관련한 이용자의 고충을 원활하게 처리할 수 있도록 다음과 같은 처리방침을 두고 있습니다. 또한 개인정보 처리방침을 변경하는 경우에는 시행의 시기, 변경된 내용을 정보주체가 쉽게 확인할 수 있도록 변경 전․후를 비교하여 공개하도록 할 예정입니다.
+                        1. 수집하는 개인정보의 항목
+                        회원가입 시 필수항목과 선택항목이 있으며, 최소한의 정보 수집을 하고 있습니다. 
+                        메일수신여부 등과 같은 선택항목은 동의하지 않으시더라도, 서비스 이용에는 제한이 없습니다.
+                        ▶ 홈페이지 개인정보 수집항목
+                        ο 필수 항목 : 이름, 로그인ID, 비밀번호, 이메일, 전화번호,
+                        ο 선택 항목 : SMS 서비스 수신여부, 질환분야
+                        ο 서비스 이용 기록이나 서비스 제공 업무 처리 과정에서 다음 정보들이 자동으로 생성되어 수집될 수 있습니다. : 서비스 이용기록, 접속 로그, 쿠키, 접속 IP정보
+                        
+                        ▶ 개인정보 수집방법
+                        ο 다음과 같은 방법으로 개인정보를 수집합니다.
+                        홈페이지 회원가입, 온라인 진료예약, 온라인상담 게시판
+                        2. 개인정보의 수집 및 이용목적
+                        본원은 수집한 개인정보를 다음의 목적을 위해 활용합니다.
+                        이용자가 제공한 모든 정보는 목적에 필요한 용도 이외로는 사용되지 않으며 이용 목적이 변경될 시에는 사전 동의를 구할 것입니다.
+                        성명, 전화번호, 이메일, 로그인 아이디ㆍ비밀번호 : 서비스 이용에 따른 가입 및 본인 식별에 이용, 홈페이지를 통한 진료 예약, 진료상담, 예약조회 및 회원제 서비스 제공
+                        ο 소식 이메일 수신여부 : 소식 및 고지사항 전달, 불만처리 등을 위한 원활한 의사소통 경로의 확보, 의학정보 및 이벤트 정보 등의 안내
+                        3. 개인정보의 보유 및 이용기간
+                        본원은 개인정보의 수집목적 또는 제공받은 목적이 달성된 때에는 귀하의 개인정보를 지체 없이 파기합니다.
+                        다만, 수집목적 또는 제공받은 목적이 달성된 경우에도 상법 등 법령의 규정에 의하여 보존할 필요성이 있는 경우에는 귀하의 개인정보를 별도 분리 하여 보유할 수 있습니다.
+                        ο 소비자의 불만 또는 분쟁처리에 관한 기록 : 3년 (전자상거래 등에서의 소비자보호에 관한 법률)
+                        ο 신용정보의 수집/처리 및 이용 등에 관한 기록 : 3년 (신용정보의 이용 및 보호에 관한 법률)
+                        ο 본인 확인에 관한 기록 : 6개월 (정보통신망 이용촉진 및 정보보호 등에 관한 법률)
+                        ο 방문에 관한 기록 : 3개월 (통신비밀보호법)
+                        4. 개인정보의 목적 외 이용 및 제3자 제공에 관한 사항
+                        개인정보 목적 외 이용 및 제3자 제공 현황 본원은 원칙적으로 정보주체의 개인정보를 수집·이용 목적으로 명시한 범위 내에서 처리하며, 다음의 경우를 제외하고는 정보주체의 사전 동의 없이는 본래의 목적 범위를 초과하여 처리하거나 제3자에게 제공하지 않습니다.
+                        ○ 정보주체로부터 별도의 동의를 받는 경우
+                        ○ 다른 법률에 특별한 규정이 있는 경우 
+                        ○ 정보주체 또는 법정대리인이 의사표시를 할 수 없는 상태에 있거나 주소불명 등으로 사전 동의를 받을 수 없는 경우로서 명백히 정보주체 또는 제3자의 급박한 생명, 신체, 재산의 이익을 위하여 필요하다고 인정되는 경우 
+                        ○ 통계작성 및 학술연구 등의 목적을 위하여 필요한 경우로서 특정 개인을 알아 볼 수 없는 형태로 개인정보를 제공하는 경우 
+                        ○ 개인정보를 목적 외의 용도로 이용하거나 이를 제3자에게 제공하지 아니하면 다른 법률에서 정하는 소관업무를 수행할 수 없는 경우로서 보호위원회의 심의·의결을 거친 경우 
+                        ○ 조약, 그 밖의 국제협정의 이행을 위하여 외국정보 또는 국제기구에 제공하기 위하여 필요한 경우 
+                        ○ 범죄의 수사와 공소의 제기 및 유지를 위하여 필요한 경우 
+                        ○ 법원의 재판업무 수행을 위하여 필요한 경우 
+                        ○ 형(刑) 및 감호, 보호처분의 집행을 위하여 필요한 경우
+                        본원은 위에 따라 다른 기관에 개인정보를 연계·제공할 수 있습니다. 이 경우 개인정보를 이용하거나 제공받고자 하는 기관에게 이용 목적, 이용 방법, 이용 기간, 이용 형태 등을 제한하거나, 개인정보의 안전성 확보를 위하여 필요한 구체적인 조치를 마련하도록 문서로 요청하며, 연계·제공되는 개인정보는 이용 및 제공 목적에 맞게 최소한으로 제공합니다.
+                        5. 개인정보 처리의 위탁에 관한 사항
+                        개인정보 처리 위탁 현황 개인정보의 처리업무를 위탁하는 경우에는 법 제26조에 따라 다음의 내용이 포함된 문서에 의하여 처리하고 있습니다.
+                        ○ 위탁업무 수행 목적 외 개인정보의 처리 금지에 관한 사항
+                        ○ 개인정보의 기술적·관리적 보호조치에 관한 사항 
+                        ○ 그 밖에 개인정보의 안전한 관리에 관한 사항 
+                        ○ 위탁업무의 목적 및 범위 
+                        ○ 재위 탁 제한에 관한 사항 
+                        ○ 개인정보에 대한 접근 제한 등 안전성 확보 조치에 관한 사항 
+                        ○ 위탁업무와 관련하여 보유하고 있는 개인정보의 관리현황 점검 등 감독에 관한 사항 
+                        ○ 개인정보 처리업무를 위탁 받아 처리하는 자(이하 "수탁자"라 함)가 준수하여야 할 의무를 위반한 경우의 손해배상 등 책임에 관한 사항
+                        ○ 본원은 수탁자와 위탁업무의 내용을 당 홈페이지에 공개하고 있습니다.
+                        
+                        위탁사 
+                        
+                        위탁 업무의 내용 
+                        
+                        위탁개인정보 
+                        
+                        개인정보 보유기간 
+                        
+                        녹십자 
+                        
+                        혈액검사, 소변검사, 검체검사 
+                        
+                        이름, 병록번호, 생년월일 
+                        
+                        위탁계약 종료시까지 
+                        
+                        ㈜인피니티헬스케어 
+                        
+                        의료영상정보시스템 관리 
+                        
+                        환자정보(Database), 의료정보영상 
+                        
+                        중외정보 기술 
+                        
+                        OCS/EMR 시스템 관리 
+                        
+                        환자정보(Database)
+                        
+                        가리온 
+                        
+                        서버유지보수 
+                        
+                        서버접근권한 
+                        
+                        온피아 
+                        
+                        전화상담시스템 관리 
+                        
+                        이름, 전화번호, 녹취파일 
+                        
+                        휴먼푸드 
+                        
+                        식이 
+                        
+                        이름, 병록번호, 생년월일 
+                        
+                        동심컴퓨터 
+                        
+                        직원 공인인증서 발급
+                        
+                        이름, 주민등록번호 연락처
+                        
+                        ㈜메디인사이드 
+                        
+                        홈페이지 유지보수 
+                        
+                        홈페이지 회원정보 
+                        
+                        ㈜에스헬스케어
+                        
+                        전화상담
+                        
+                        환자정보
+                        
+                        디투베이스
+                        
+                        홈페이지유지보수
+                        
+                        이름, 연락처
+                        
+                        청라고려의원
+                        
+                        CT판독
+                        
+                        이름, 병록번호, 생년월일
+                        
+                        
+                        6. 정보주체의 권리·의무 및 그 행사방법에 관한 사항
+                        정보주체는 다음과 같은 권리를 행사 할 수 있으며, 만14세 미만 아동의 법정대리인은 그 아동의 개인정보에 대한 열람, 정정·삭제, 처리정지를 요구할 수 있습니다.
+                        가. 개인정보의 열람 요구
+                        정보주체는 법 제35조에 따라 자신의 개인정보에 대한 열람을 요구할 수 있습니다. 다만, 다음의 경우에는 열람이 제한되거나 거절될 수 있습니다.
+                        ○ 법률에 따라 열람이 금지되거나 제한되는 경우 
+                        ○ 다른 사람의 생명·신체를 해할 우려가 있거나 다른 사람의 재산과 그 밖의 이익을 부당하게 침해할 우려가 있는 경우 
+                        ○ 공공기관이 다음에 해당하는 업무를 수행할 때 중대한 지장을 초래하는 경우 
+                        ○ 조세의 부과·징수 또는 환급에 관한 업무 
+                        ○ 「초·중등교육법」및「고등교육법」에 따른 각급 학교,「평생교육법」에 따른 평생교육시설, 그 밖의 다른 법률에 따라 설치 된 고등교육기관에서의 성적 평가 또는 입학자 선발에 관한 업무 
+                        ○ 학력·기능 및 채용에 관한 시험, 자격 심사에 관한 업무 
+                        ○ 보상금·급부금 산정 등에 대하여 진행 중인 평가 또는 판단에 관한 업무 
+                        ○ 다른 법률에 따라 진행 중인 감사 및 조사에 관한 업무
+                        
+                        나. 개인정보의 정정·삭제 요구
+                        자신의 개인정보를 열람한 정보주체는 법 제36조에 따라 정정·삭제를 요구할 수 있습니다. 다만, 다른 법령에서 그 개인정보가 수집 대상으로 명시되어 있는 경우에는 그 삭제를 요구할 수 없습니다.
+                        
+                        다. 개인정보의 처리정지 요구
+                        정보주체는 법 제37조에 따라 자신의 개인정보 처리의 정지를 요구할 수 있습니다. 다만, 다음의 경우에는 처리정지 요구가 거절될 수 있습니다.
+                        ○ 법률에 특별한 규정이 있거나 법령상 의무를 준수하기 위하여 불가피한 경우
+                        ○ 다른 사람의 생명·신체를 해할 우려가 있거나 다른 사람의 재산과 그 밖의 이익을 부당하게 침해할 우려가 있는 경우 
+                        ○ 공공기관이 개인정보를 처리하지 아니하면 다른 법률에서 정하는 소관업무를 수행할 수 없는 경우 
+                        ○ 개인정보를 처리하지 아니하면 정보주체와 약정한 서비스를 제공하지 못하는 등 계약의 이행이 곤란한 경우로서 정보주체가 그 계약의 해지의사를 명확하게 밝히지 아니한 경우
+                        위에 따른 권리행사는 서면, 전자우편, 모사전송(FAX) 등을 통하여 할 수 있으며, 본원은 이에 대해 지체 없이 조치하겠습니다.
+                        7. 개인정보의 파기 절차 및 방법
+                        본원은 원칙적으로 보유한 개인정보가 불필요하게 되었을 때(보존기간 경과, 처리목적 달성 등) 지체없이 해당 개인정보를 파기합니다. 다만, 다른 법령에 따라 보존하여야 하는 경우에는 그러하지 않을 수 있습니다. 파기의 절차, 기한 및 방법은 다음과 같습니다.
+                        가. 파기절차 
+                        불필요한 개인정보 및 개인정보파일은 개인정보 보호책임자의 책임 하에 내부방침 및 법령절차에 따라 처리함
+                        
+                        나. 파기기한 
+                        보유기간이 만료되었거나 개인정보의 처리목적 달성, 해당 업무의 폐지 등 그 개인정보가 불필요하게 되었을 때에는 지체 없이 파기함
+                        
+                        다. 파기방법 
+                        전자적 파일형태인 경우에는 기록을 재생할 수 없는 기술적 방법으로 영구 삭제하며, 종이에 출력된 개인정보는 분쇄기로 파쇄하거나 소각을 통하여 파기함
+                        8. 개인정보의 안전성 확보조치
+                        본원은 개인정보의 안전성 확보를 위해 다음과 같은 조치를 취하고 있습니다.
+                        가. 개인정보에 대한 접근 제한 
+                        개인정보를 처리하는 데이터베이스시스템에 대한 접근권한의 부여·변경·말소를 통하여 개인정보에 대한 접근 통제를 위한 필요한 조치를 하고 있으며, 침입차단시스템을 이용하여 외부로부터의 무단접근을 통제함
+                        
+                        나. 접속기록의 보관 
+                        개인정보처리시스템에 접속한 기록(웹로그, 요약정보 등)을 최소 6개월 이상 보관·관리함
+                        
+                        다. 개인정보의 암호화 
+                        개인정보는 암호화 등을 통하여 안전하게 저장 및 관리되고 있으며, 중요한 데이터는 저장 및 전송 시 암호화하여 사용하는 등의 별도 보안기능을 사용함
+                        
+                        라. 개인정보 취급 직원의 최소화 및 교육 
+                        개인정보를 취급하는 직원은 반드시 필요한 인원에 한하여 지정·관리하고 있으며, 취급직원을 대상으로 안전한 관리를 위한 교육을 실시함
+                        
+                        마. 보안 프로그램 설치 및 주기적 점검·갱신 
+                        해킹이나 컴퓨터 바이러스 등에 의한 개인정보 유출 및 훼손을 막기 위하여 보안 프로그램을 설치하고 주기적으로 갱신·점검함
+                        
+                        바. 비인가자에 대한 출입 통제 
+                        개인정보를 보관하고 있는 개인정보시스템의 물리적 보관 장소를 별도로 두고 이에 대한 출입 통제절차를 수립·운영함
+                        7. 권익침해 구제방법
+                        정보주체는 개인정보 침해로 인한 피해를 구제받기 위하여 개인정보 분쟁조정위원회, 개인정보 침해신고센터 등에 분쟁해결이나 상담 등을 신청할 수 있습니다.
+                        보완자료 목록 구분 연락처 
+                        개인정보 분쟁조정위원회 02-405-5150(kopico.or.kr), 118(privacy.kisa.or.kr) 
+                        개인정보 침해신고센터 118(privacy.kisa.or.kr) 
+                        대검찰청 사이버범죄수사단 02-3480-3571(cybercid@spo.go.kr) 
+                        경찰청 사이버안전국 182(www.netan.go.kr)
+                        또한 개인정보의 열람, 정정·삭제, 처리정지 등에 대한 정보주체자의 요구에 대하여 본원이 행한 처분 또는 부작위로 인하여 권리 또는 이익을 침해 받은 자는 본원에 이의신청을 할 수 있으며, 행정심판법이 정하는 바에 따라 행정심판을 청구할 수 있습니다. 
+                        
+                        이의신청 제기: [별지 제3호서식]의 개인정보 열람 등 이의신청서를 본원에 제출 
+                        행정심판 청구: [별지 제4호서식]의 행정심판 청구서(2부)를 행정심판위원회 또는 본원에 제출
+                        
+                        ※ 행정심판위원회: ☎110(www.simpan.go.kr) 안내 참조
+                        9. 개인정보 보호책임자 및 담당자 연락처
+                        개인정보 보호책임자 등은 다음과 같습니다. 
+                        개인정보보호책임자: 원무보험팀 이철규(02-6925-1111 내선번호 3008)
+                        개인정보보호실무담당자: 원무보험팀 박완진(02-6925-1111 내선번호 3003)
+                        10 영상정보처리기기 설치 운영
+                        가. 영상정보처리기기 운영 및 관리
+                        설치 근거 및 설치 목적: 시설안전 및 화재 예방, 민원인의 안전을 위한 범죄 예방, 차량도난 및 파손 방지
+                        
+                        나. 설치 대수, 설치 위치 및 촬영 범위
+                        -설치대수 : 46대
+                        -설치 위치 및 촬영 범위 : 영상정보처리기기 운영관리 방침에 의거하여 설치
+                        
+                        다. 관리책임자 및 접근 권한자
+                        -총괄책임자 : 총무팀장 유근호
+                        -운영책임자 : 개인정보보호실무담당자 박완진
+                        
+                        라. 정보의 촬영시간, 보관시간, 보관장소 및 처리방법
+                        -촬영시간 : 24시간 촬영
+                        -보관기간 : 촬영일로부터 30일 
+                        -보관장소 : 본원 지하 1층 중앙관제실
+                        -처리방법 : 개인영상정보의 목적 외 이용, 제3자 제공, 파기, 열람 등 요구에 관한 사항을 기록·관리하고, 보관기간 만료 시 복원이 불가능한 방법으로 영구삭제(종이출력물의 경우 파쇄)한다.
+                        
+                        마. 개인영상정보의 확인 방법 및 장소에 관한 사항
+                        -확인 방법 : 영상정보 관리책임자에게 미리 연락하고 본원 내원 시 확인 가능
+                        -확인 장소 : 본원 지하 1층 중앙관제실
+                        
+                        바. 정보주체의 영상정보 열람 등 요구에 대한 조치
+                        -개인영상정보에 관하여 열람 또는 존재확인 및 삭제를 원하는 경우 개인영상정보청구서 를 제출하면 관리책임자 관리하에 가능
+                        -다만 다음 각호의 사항에 해당되는 경우, 열람 등 청구를 거부할 수 있음.
+                        -범죄수사, 공소유지, 재판수행에 중대한 지장을 초래하는 경우
+                        -특정 정보주체의 영상정보만을 삭제하는 것이 기술적으로 현저히 곤란한 경우
+                        -정보주체의 영상정보 열람 등 요구가 타인의 사생활권이 침해될 우려가 큰 경우
+                        기타 열람 등의 요청을 거절할 만한 정당한 공익적 사유가 존재하는 경우
+                        
+                        사. 영상정보의 안정성 확보조치
+                        -개인영상정보의 위.변조 방지를 위하여 개인영상정보의 생성 일시, 열람 시 열람 목적, 열람열람 일시 등을 기록하여 관리함. 
+                        -이 외에도 개인영상정보의 안전한 물리적 보관을 위하여 시금장치 설치함.
+                        11. 개인정보 처리방침 변경에 관한 사항
+                        이 방침은 2022년 1월 1일에 개정되었으며, 법령ㆍ정책 또는 보안기술의 변경에 따라 내용의 추가, 삭제 및 수정이 있을 때에는 시행 7일전까지 본원 홈페이지를 통하여 그 변경 내용 등을 공지하도록 하겠습니다. 
+                        
+                        ο 공고일자 : 2022년 01월 1일
+                        ο 시행일자 : 2017년 06월 19일</textarea>
+                    </div>
+                        <label class="inputcheckbox">
+                        <input type="checkbox" value="Y" >
+                        <span>동의합니다.</span>
+                        </label>
+                        <label class="inputcheckbox">
+                        <input type="checkbox" value="N" >
+                        <span>동의하지 않습니다.</span>
+                        </label>
+               <form name="reserveform" id="rsvfrm">
+                <div class="reservediv">
+                 <table>
+                    <caption>온라인상담내용</caption>
+                    <tbody>
+                    <tr>
+                        <th scope="row">질환분야</th>
+                            <td>
+                                <select name="reserve">
+                                    <option >::주 병명::</option>
+                                    <option value="a">::선::</option>
+                                    <option value="b">::택::</option>
+                                    <option value="c">::사::</option>
+                                    <option value="d">::항::</option>
+                                    <option value="e">::입::</option>
+                                    <option value="f">::력::</option>
+                                </select>
+                                <select name="reserve">
+                                    <option>::병명입력::</option>
+                                </select>
+                            </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">담당의료진</th>
+                            <td>
+                                <select name="reserve">
+                                    <option value="a">::선택::</option>
+                                    <option value="b">::여승원::</option>
+                                    <option value="c">::여승원1::</option>
+                                    <option value="d">::여승원2::</option>
+                                    <option value="e">::여승원3::</option>
+                                    <option value="f">::여승원4::</option>
+                                    <option value="g">::여승원5::</option>
+                                </select>
+                            </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">이름</th>
+                            <td>
+                              <input type="text" class="inputtext" title="이름입력" placeholder="이름을 입력해주세요">
+                            </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">진료여부</th>
+                            <td>
+                                <label class="inputcheckbox">
+                                <input type="checkbox" value="A">
+                                <span>초진</span>
+                                 </label>
+                                 <label class="inputcheckbox">
+                                <input type="checkbox" value="B">
+                                <span>재진</span>
+                                </label>
+                            </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">생년월일</th>
+                            <td>
+                                <input type="text" placeholder="생년월일을 입력해 주세요" class="inputtext">
+                                <span>예 970904</span>
+                            </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">휴대전화</th>
+                            <td>
+                               <span class="span phone">
+                                <span class="cell"></span>
+                                <select titlt="휴대폰 앞자리 선택">
+                                    <option value>::선택::</option>-
+                                    <option value="010">::010::</option>
+                                    <option value="011">::011::</option>
+                                    <option value="016">::016::</option>
+                                    <option value="018">::018::</option>
+                                    <option value="019">::019::</option>
+                                </select>
+                               -</span>
+                               <span class="span phone">
+                                <input type="text" class="inputtext" title="휴대폰 번호 입력" maxlength="4" value>
+                               </span>-
+                               <span class="span phone">
+                                <input type="text" class="inputtext" title="휴대폰 번호 입력" maxlength="4" value>
+                               </span>
+                            </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">희망예약일</th>
+                            <td class="maincalWarp">
+                                <div id="cal">
+                                <div id="calWrap">
+                                    <p class="calHead">
+                                        <button type="button" class="prev" onclick="ch_cal('2022-06-23','');">
+                                            <span>이전달</span>
+                                        </button>
+                                        <strong>2022년 06월</strong>
+                                        <button type="button" class="next" onclick="ch_cal('2022-08-23','');">
+                                            <span>다음달</span>
+                                        </button>
+                                    </p>
+                                    <div class="calbody">
+                                        <table>
+                                            <caption>진료일정 선택</caption>
+                                            <colgroup>
+                                                <col style="width: 14%">
+                                                <col style="width: 14%">
+                                                <col style="width: 14%">
+                                                <col style="width: 14%">
+                                                <col style="width: 14%">
+                                                <col style="width: 14%">
+                                                <col style="width: 14%">
+                                            </colgroup>
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col" class="sun">일</th>
+                                                    <th scope="col" >월</th>
+                                                    <th scope="col" >화</th>
+                                                    <th scope="col" >수</th>
+                                                    <th scope="col" >목</th>
+                                                    <th scope="col" >금</th>
+                                                    <th scope="col" >토</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                    <td tilte="일정없음" class="non">1</td>
+                                                    <td tilte="일정없음" class="non">2</td>
+                                                    <td tilte="일정없음" class="non">3</td>
+                                                    <td tilte="일정없음" class="non">4</td>
+                                                </tr>
+                                                <tr>
+                                                    <td tilte="일정없음" class="non">5</td>
+                                                    <td tilte="일정없음" class="non">6</td>
+                                                    <td tilte="일정없음" class="non">7</td>
+                                                    <td tilte="일정없음" class="non">8</td>
+                                                    <td tilte="일정없음" class="non">9</td>
+                                                    <td tilte="일정없음" class="non">10</td>
+                                                    <td tilte="일정없음" class="non">11</td>
+                                                </tr>
+                                                <tr>
+                                                    <td tilte="일정없음" class="non">12</td>
+                                                    <td tilte="일정없음" class="non">13</td>
+                                                    <td tilte="일정없음" class="non">14</td>
+                                                    <td tilte="일정없음" class="non">15</td>
+                                                    <td tilte="일정없음" class="non">16</td>
+                                                    <td tilte="일정없음" class="non">17</td>
+                                                    <td tilte="일정없음" class="non">18</td>
+                                                </tr>
+                                                <tr>
+                                                    <td tilte="일정없음" class="non">19</td>
+                                                    <td tilte="일정없음" class="non">20</td>
+                                                    <td tilte="일정없음" class="non">21</td>
+                                                    <td tilte="일정없음" class="non">22</td>
+                                                    <td class="today" title>
+                                                        <button type="button">23
+                                                        </button>
+                                                    </td>
+                                                    <td tilte="일정없음" class="non">24</td>
+                                                    <td tilte="일정없음" class="non">25</td>
+                                                </tr>
+                                                <tr>
+                                                    <td tilte="일정없음" class="non">26</td>
+                                                    <td tilte="일정없음" class="non">27</td>
+                                                    <td tilte="일정없음" class="non">28</td>
+                                                    <td tilte="일정없음" class="non">29</td>
+                                                    <td tilte="일정없음" class="non">30</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>&nbsp;</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                  
+                                    </div>
+                                </div>
+                                </div>
+                                <div class="reservinfo">
+                                    <p class="reservtit">
+                                        <label for="lab_tit">진료시간을 선택하세요.</label>
+                                        <select title="진료시간 선택">
+                                            <option value="진료시간을 선택하세요."></option>
+                                        </select>
+                                    </p>
+                                <div class="roundbox">
+                                    <p>
+                                        <span>
+                                            <b>실시간 예약이 아닙니다</b>
+                                        </span>
+                                        <br>
+                                    <span>
+                                        <b>상담원이 전화를 드린 후 예약이 확정됩니다</b>
+                                    </span>
+                                    <br>
+                                    <span>
+                                        <b>부재중 시 아래 번호로 다시 연락 부탁드립니다.</b>
+                                    </span>
+                                    </p>
+                                    <br>
+                                    <p class="tel">
+                                        <strong class="roundtel">
+                                        <u>예약문의</u>
+                                        </strong>
+                                        <br>
+                                        <p>010-????-????<p>
+                                    </p>
+                                </div>
+                                </div>
+                            </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">본문</th>
+                            <td>
+                                <textarea name="mb_con" cols="125" rows="5"></textarea>
+                            </td>
+                    </tr>
+                    <tr>
+                        <th scope="row" class="F5">자동입력방지</th>
+                        <td>
+                            <img src="/img/zmSpamFree.png" id="zsfimg" alt="아래 새로고침을 클릭해 주세요" style="vertical-align:middle;">
+                            <input type="text" class="inputext" title="자동입력 방지" name="zsfCode" id="zsfCode">
+                            <a href="#;" class="btn btnReplace" onclick="document.getElementById('zsfImg').src='http://www.hanaent.co.kr/bbs/zmSpamFree/zmSpamFree.php?re&amp;zsfimg=' + new Date().getTime(); return false;">새로고침</a>
+                        </td>
+                    </tr>
+                </tbody>
+                </table> 
+                </div>
+                <div class="reserveft">
+                    <div class="reserveft-1">
+                        <a href="reserve.html" class="button0">
+                        <span>등록</span>
+                        </a>
+                        <a href="index.html" class="button1">
+                            <span>취소</span>
+                            </a>
+                    </div>
+                </div>
+                
+            </form>
+            
+
+            </div>
+            </div>
+                <footer id="ft" class="clrfx">
+                    <div class="ftwarp">
+                        <div class="ft_line">
+                            <p>정석소아청소년과병원</p>
+                            <a href="" class="ft_link1"></a>
+                            <a href="" class="ft_link2"></a>
+                            <a href="" class="ft_link3"></a>
+                            <a href="" class="ft_link4"></a>
+                            <a href="" class="ft_link5"></a>
+                            <a href="" class="ft_link6"></a>
+                             </div>
+                            
+                        <div class="fnb">
+                            <div class="inner">
+                                <span><a href="">이용약관</a></span>
+                                <span><a href="">개인정보처리방침</a></span>
+                                <span><a href="">환자의 권리와 의무</a></span>
+                                <span><a href="">비급여안내</a></span>
+                            </div>
+                        </div>
+                        <div class="snb">
+                            <div class="inner">
+                                <div class="copy_warp">
+                                    <b>정석소아청소년과병원</b>
+                                    <p>주소 : 경기도 남양주시 진접음 해밀예당1로 221 지안빌딩 6층
+                                        (경기도 남양주시 진접음 금곡리 1021-2 지안빌딩 6층)
+                                    </p>
+                                    <span>대표자 : 남윤호</span>
+                                    <span>사업자등록번호  132-82-12264</span>
+                                    <span>대표번호. 031-573-6678 팩스번호. 031-573-6604 </span>
+                                    <p class="copy">Copyright ⓒ JUNGSEOK CHILDREN’S HOSPITAL. All Rights Reserved.</p>
+                                </div>
+                                <div class="ft_logo">
+                                    <img src="./img/foot_logo.jpg" alt="ft_logo">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+               
+        </body>
+            </html>

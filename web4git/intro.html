@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--메타포 문서정보-->
+    <!-- 웹 아이콘 XEIcon -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+    <!-- 오픈 그래프 -->
+    <meta property="og:url" content="https://sohe1036.github.io/web1/index.html">
+    <meta property="og:title" content="">
+    <meta property="og:description" content="">
+    <meta property="og:image" href="./img/logo_brand.png">
+     <!-- 기본 플러그인 연결 -->
+    <!--폰트-->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <title>메인페이지</title>
+    <script src="./js/jquery-1.9.1.js"></script>
+    <script src="./js/jquery-ui-1.9.2.custom.js"></script>
+    <link rel="stylesheet" href="./css/slick.css">
+    <link rel="stylesheet" href="./css/slick-theme.css">
+    <script src="./js/slick.js"></script>
+    <!--문서 로딩전 스트립트(부트스트립,불마 등..)-->
+<style>
+/*초기화*/
+*{ margin: 0; padding: 0; text-decoration: none; list-style: none; }        
+#header {width:100%;}
+body, html{ width: 100%; overflow-x: hidden;}
+ul {list-style: none;}
+a {text-decoration: none; color: #333;}
+.wrap {clear: both; width: 100%;}
+.content {clear: both; width: 100%;}
+
+/* logo */
+.logo {float: left; padding-top: 25px; }
+/* tnb */
+.tnb {padding-top: 27px;}
+.login {float: right; border:2px solid#eee; border-radius: 46px; padding: 10px; font-size: 14px; padding-right: 25px; padding-left: 25px;}
+.login .sign::before {content: ""; background: url("./img/icon_login.png"); width: 15px; height: 18px;display: inline-block; margin-right: 10px; vertical-align: -3px;}
+.line {font-size: 12px; vertical-align: 2px; color: #ddd; padding: 5px;}
+.login span a {color: #000; font-weight: 500; font-size: 14px; font-family: 'Noto Sans KR', sans-serif;}
+.login span:hover a{color:blue;}
+/* gnb */
+.top_hd_wrap {height: 50px; clear: both;}
+.top_nav_wrap {height: 100px; width: 1400px; margin: 0 auto;}
+.gnb{height: 70px; clear: both; width: 100%; border-top: 1px solid #ddd;background-color: #fbfbfb; z-index: 99; border-bottom: 1px solid #ddd;}
+.gnb_wrap {margin: 0 auto; height: 300px; z-index: 1;}
+.background {clear: both;width: 100%; position:absolute; width: 1920px; background-color: #fff; height:0; top:156px; z-index:1; left: 0;} 
+.main_ul {margin: 0 auto; height: 70px; width: 1400px;}
+.main_ul .mainmenu {margin: 0 auto; position: relative; width: 16.66%; height: 100%; display: block; float:left; box-sizing: border-box;}
+.mainmenu>a{font-size: 18px; color: #222222; line-height: 70px; display: block; text-align: center; border-left: 1px solid #ddd; font-family: 'Noto Sans KR', sans-serif; font-weight: 400;}
+.mainmenu:hover>a{background-color: rgb(31, 117, 176); color: #fff;}
+.mainmenu:hover .sub_ul {background-color: rgb(244,248,251);}
+
+.sub_menu {width: 1400px; margin: 0 auto;}
+.sub_ul {float:left;width:100%;height: 0px; border-left: 1px solid#ddd; box-sizing: border-box; position: absolute;}
+.sub_ul1 {border-right: 1px solid#ddd;} 
+.submenu {width: 100%; line-height: 0px;}
+.sub_ul a:hover {text-decoration: underline; color: rgb(31, 117, 176);}
+.submenu a {font-size: 16px; padding-left: 14%; display: none; color:#666}
+.sub_ul li:first-child a {margin-top: 15px;}
+
+.main_ul:hover .sub_ul {height: 200px; transition-duration: 0.5s; z-index: 2;}
+.main_ul:hover .background {height: 200px; transition-duration: 0.5s; box-shadow :  0 8px 8px -6px rgb(73, 72, 72);}
+.main_ul:hover .submenu {line-height: 40px; transition-duration: 0.5s;}
+.main_ul:hover .sub_ul a {display: block;}
+
+.sm_last, .mm_last { border-right: 1px solid #ddd;}
+/* 콘텐츠 스타일*/
+.content {width: 100%;}
+.content_wrap {width: 1400px; margin: 0 auto;}
+hr {border: 0; border-top: 1px solid rgb(200,200,200);}
+
+/* 오른쪽 버튼 스타일 */
+.right_btn {width: 65px; height: 200px; position:fixed; right: 55px; bottom: 45px; z-index: 999;}
+.right_btn img {width: 90%; padding-bottom: 11px;}
+
+/*푸터*/
+#ft { clear: both; width: 100%; height: 263px; margin-top: 60px;}
+.fnb { clear: both; width: 100%; height: 20px; border: 1px solid #ddd; padding: 10px 0; }
+.ft_line {width: 100%; height: 45px; background-color: #327cb6; padding: 18px; color: #fff; font-size: 16px;}
+.ft_line p {float:left; padding-right: 10px; margin-top: 12px; padding-left: 11%; font-weight: 500;}
+.ft_link1 ,.ft_link2,.ft_link3,.ft_link4,.ft_link5,.ft_link6 {display: inline-block; width: 45px; height: 45px; margin: 0 10px;vertical-align: middle; background-size: cover}
+.ft_link1 {background-image:url("./img/icon_quick_link1.png")}
+.ft_link2 {background-image:url("./img/icon_quick_link2.png")}
+.ft_link3 {background-image:url("./img/icon_quick_link3.png")}
+.ft_link4 {background-image:url("./img/icon_quick_link4.png")}
+.ft_link5 {background-image:url("./img/icon_quick_link5.png")}
+.ft_link6 {background-image:url("./img/icon_quick_link6.png")}
+.fnb .inner { width: 1450px; height: 100%; margin-left: 30px; margin: 0 auto; }
+.fnb span { margin: 0 10px; font-size: 13px; }
+.fnb span:after { content: "|"; padding-left: 20px; color: #ddd; }
+.fnb span:last-child:after { content: ""; }
+.snb { clear: both; width: 100%; height: 100px; padding: 20px 10px; }
+.snb .inner{ width: 1450px; height: 100%; margin-left: 40px; margin: 0 auto; }
+.copy_warp { float: left; }
+.ft_logo { float: right; }
+.copy_warp b { display: block; margin-bottom: 10px; }
+.copy_warp p, .copy_warp span { font-size: 13px; padding-right: 10px; color: #666; }
+.copy { margin-top: 10px; color: #444; }
+
+/* 서브 */
+.sub_bg_img{height: 142px; background-image: url("./img/bg_sub_top1.jpg");}
+.sub_bg_menu h2 {width: 1120px; margin: 0 auto; line-height: 142px; color: #fff; font-size: 38px;font-weight: 300; font-family: 'Noto Sans KR', sans-serif}
+.sub_bg_line {height: 75px;background: #327cb6;}
+.sub_bg_text {width: 1120px; margin: 0 auto; height: 100%; text-align: center;}
+.sub_bg_line a {font-size: 18px; color:#addcf6; line-height: 90px; width: 33%; height: 20px; display: block; float:left; display: block; font-family: 'Noto Sans KR', sans-serif}  
+.sub_bg_text a b {color: #fff; font-weight: normal; position: relative;}         
+.sub_bg_text a b:after {content:""; background-color: #91e9ff; position: absolute; left: 0;bottom:-18px ;width: 100%; height: 10px; text-align: center;}
+
+.sub_top, .sub_content {width: 1120px; margin: 0 auto;}
+.inner_top {width: 100%; border-bottom: 1px solid #e4e4e4; height: 110px;line-height: 130px; margin-bottom: 40px;}
+.inner_top h2 {float:left; font-size: 40px; font-weight: 400; font-family: 'Noto Sans KR', sans-serif}
+.inner_top p {float:right; font-size: 14px; line-height: 160px; font-family: 'Noto Sans KR', sans-serif}
+
+
+
+
+.intro_bg_img img{width: 1120px;}
+.intro_tit {text-align: center; padding-top: 60px;}
+.intro_tit h2 {color:rgb(65,105,225); font-family: 'Noto Sans KR', sans-serif; font-size: 36px; font-weight: 600; margin-bottom: 10px;}
+.intro_tit p {font-family: 'Noto Sans KR', sans-serif; font-size: 24px; font-weight: 400;}
+.intro_imgbox {text-align: center; position:relative; margin-top: 40px;}
+.intro_left_cmt {position: absolute; top:80px; left: 200px; text-align: right; }
+.intro_right_cmt {position: absolute; top:80px; right: 155px; text-align: left;}
+.intro_center_cmt {margin-bottom: 50px;}
+.intro_center_cmt , .intro_right_cmt , .intro_left_cmt {font-size: 12px;font-family: 'Noto Sans KR', sans-serif}
+.intro_center_cmt span, .intro_right_cmt span, .intro_left_cmt span {font-size: 20px; color:rgb(65, 105, 225) ;font-family: 'Noto Sans KR', sans-serif} 
+.img_cmt {position: absolute; top:52px; right: 45.3%; font-size: 14px; color: #fff; font-family: 'Noto Sans KR', sans-serif}
+
+
+        
+    </style>
+   <link rel="stylesheet" href="./css/slickstyle.css">
+</head>
+<body>
+<!--DOM구조설계-->    
+    <div class="wap">
+        <header class="header" id="header">
+            <div class="" id="header_wrap">
+                <div class="tob_nav_wrap">
+                <div class="logo">
+                    <a href="index.html"><img src="./img/logo.png" alt="로고"></a> 
+                    <div class="right_btn">
+                        <a href=""><img src="./img/btn-calling.png" alt=""></a>
+                        <a href=""><img src="./img/btn-chat-kakao.png" alt=""></a>
+                        <a href="#header_wrap"><img src="./img/btn_top.png" alt=""></a>
+                    </div>
+                </div>
+                    <nav class="tnb">
+                        <div class="login">
+                            <span class="sign">
+                                <a href="login.html">로그인</a>
+                            </span> 
+                            <span class="line">|</span>
+                             <span>
+                                <a href="agree.html">회원가입</a>
+                            </span>
+                        </div>
+                    </nav>
+                </div>
+                    <nav class="gnb" id="gnb">
+                        <div class="gnb_wrap">
+                            <ul class="main_ul">
+                                <div class="background">
+                                </div>
+                                <ll class="mainmenu"><a href="intro.html">병원소개</a>
+                                    <ul class="sub_ul">
+                                        <li class="submenu"><a href="intro.html">병원안내</a></li>
+                                        <li class="submenu"><a href="drintro.html">의료진 소개</a></li>
+                                        <li class="submenu"><a href="map.html">오시는 길</a></li>
+                                    </ul>
+                                </ll>  
+                                <ll class="mainmenu"><a href="info.html">진료안내</a>
+                                    <ul class="sub_ul">
+                                        <li class="submenu"><a href="info.html">진료안내</a></li>
+                                        <li class="submenu"><a href="reserve.html">진료예약</a></li>
+                                        <li class="submenu"><a href="time.html">진료시간</a></li>
+                                    </ul>
+                                </ll>  
+                                <ll class="mainmenu"><a href="treat1.html">진료1</a>
+                                    <ul class="sub_ul">
+                                        <li class="submenu"><a href="treat1_sub1.html">진료1</a></li>
+                                        <li class="submenu"><a href="treat1_sub2.html">진료2</a></li>
+                                        <li class="submenu"><a href="treat1_sub3.html">진료3</a></li>
+                                    </ul>
+                                </ll>  
+                                <ll class="mainmenu"><a href="treat2.html">진료2</a>
+                                    <ul class="sub_ul">
+                                        <li class="submenu"><a href="treat2_sub1.html">진료1</a></li>
+                                        <li class="submenu"><a href="treat2_sub2.html">진료2</a></li>
+                                        <li class="submenu"><a href="treat2_sub3.html">진료3</a></li>
+                                    </ul>
+                                </ll>  
+                                <ll class="mainmenu"><a href="treat3.html">진료3</a>
+                                    <ul class="sub_ul">
+                                        <li class="submenu"><a href="treat3_sub1.html">진료1</a></li>
+                                        <li class="submenu"><a href="treat3_sub2.html">진료2</a></li>
+                                        <li class="submenu"><a href="treat3_sub3.html">진료3</a></li>
+                                    </ul>
+                                </ll>        
+                                <ll class="mainmenu mm_last"><a href="news.html#notice">병원소식</a>
+                                    <ul class="sub_ul sub_ul1">
+                                        <li class="submenu"><a href="news.html#notice">공지사항</a></li>
+                                        <li class="submenu"><a href="news.html#data">자료실</a></li>
+                                        <li class="submenu"><a href="board.html">게시판</a></li>
+                                        <li class="submenu"><a href="qna.html">Q&A</a></li>
+                                    </ul>
+                                </ll>            
+                            </ul>                          
+                        </div>
+                    </nav>
+            </div>
+        </header>
+    <article class="content">        
+        <div class="sub_wrap">
+            <div class="right_btn">
+                <a href=""><img src="./img/btn-calling.png" alt=""></a>
+                <a href=""><img src="./img/btn-chat-kakao.png" alt=""></a>
+                <a href="#header_wrap"><img src="./img/btn_top.png" alt=""></a>
+            </div>
+            <div class="sub_bg_menu">
+                <div class="sub_bg_img">
+                    <!-- 메인메뉴에 따라 이름을 바꿔주세요 -->
+                    <h2>병원소개</h2> 
+                </div>
+                <div class="sub_bg_line">
+                    <div class="sub_bg_text">
+                        <!-- 현재 페이지에 맞게 <b>태그를 넣어주세요 -->
+                        <!-- 메뉴가 4개인 페이지는 .sub_bg_line a 스타일의 width를 25%로 줄여주세요 -->
+                        <a href="intro.html"><b>병원안내</b></a>
+                        <a href="drintro.html">의료진 소개</a>
+                        <a href="map.html">오시는 길</a>
+                        <!-- <a href="">4번째 메뉴</a> -->
+                    </div>
+                </div>
+            </div>
+            <div class="sub_top">
+                <div class="inner_top">
+                    <h2>병원안내</h2>
+                    <p><a href="/">HOME</a> > 병원소개 > 병원안내</p>
+                    <!-- 페이지에 따라 메인메뉴와 서브메뉴 이름을 적어주세요 -->
+                </div>
+            </div>
+            <div class="sub_content">
+                <div class="inner">
+                    <div class="intro_bg_img">
+                     <img src="./img/TopBgSub0101.jpg" alt=""> 
+                    </div>
+                    <div class="intro_tit">
+                        <h2>일산이비인후과는 3가지의 신념을 갖고 있습니다.</h2>
+                        <p>일산이비인후과를 방문하는 모든 환자분들에게 좋은 치료가 될 수 있도록 노력하겠습니다.</p>                        
+                    </div>
+                    <div class="intro_imgbox">
+                        <img src="./img/introimg.png" alt="">
+                        <p class="intro_left_cmt">일산이비인후과 POINT<br><span>환자를 먼저 생각하는 병원</span></p>
+                        <p class="intro_right_cmt">일산이비인후과 POINT<br><span>환자를 내 가족처럼 섬기는 병원</span></p>
+                        <p class="intro_center_cmt">일산이비인후과 POINT<br><span>환자 만족을 최우선으로 하는 병원</span></p>
+                        <p class="img_cmt">일산이비인후과의<br>신념</p>
+                        <img src="./img/introimg2.png" alt="">
+                    </div>
+                    <div class="intro_tit">
+                        <h2>일산이비인후과만의 특별한 진료시스템</h2>
+                        <p>안심하세요.일산이비인후과가 환자 한분 한분에게 맞춤 진료를 진행하고 있습니다.</p>         
+                    
+                    </div>
+                    <div class="intro_bg_img">
+                        <img src="./img/intro_img3.png" alt="">               
+                    </div>
+                </div>
+            </div>
+        </div>    
+    </article>
+        <footer id="ft">
+            <div class="ftwrap">
+                <div class="ft_line">
+                    <p>일산이비인후과병원 SNS</p>
+                    <a href="" class="ft_link1"></a>
+                    <a href="" class="ft_link2"></a>
+                    <a href="" class="ft_link3"></a>
+                    <a href="" class="ft_link4"></a>
+                    <a href="" class="ft_link5"></a>
+                    <a href="" class="ft_link6"></a>
+                </div>
+                <div class="fnb">
+                    <div class="inner">
+                        <span><a href="">이용약관</a></span>
+                        <span><a href="">개인정보처리방침</a></span>
+                        <span><a href="">환자의 권리와 의무</a></span>
+                        <span><a href="">비급여안내</a></span>
+                    </div>
+                </div>
+                <div class="snb">
+                    <div class="inner">
+                        <div class="copy_warp">
+                            <b>일산 이비인후과</b>
+                            <p>주소 : 경기도 고양시 일산동구 무궁화로39 삼라마이다스 3차 2층 206호</p>
+                            <span>대표자 : 이호선</span>
+                            <span>사업자등록번호 : 124-96-10753</span>
+                            <span>대표전화 : T. 031)917-1155 F.031)917-1120</span>
+                            <p class="copy">Copyrightⓒ 일산이비인후과의원. All right reserved.</p>
+                        </div>
+                        <div class="ft_logo">
+                            <img src="./img/logo.png" alt="ft_logo">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+</body>
+</html>

@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--메타포 문서정보-->
+        <!-- 웹 아이콘 XEIcon -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+        <!-- 오픈 그래프 -->
+        <meta property="og:url" content="https://sohe1036.github.io/web1/index.html">
+        <meta property="og:title" content="">
+        <meta property="og:description" content="">
+        <meta property="og:image" href="./img/logo_brand.png">
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+         <!-- 기본 플러그인 연결 -->
+        <script src="https://code.jquery.com/jquery-latest.js"></script>
+        <link rel="stylesheet" href="./css/common.css">
+   
+     
+        <title>서브페이지</title>
+    
+
+        <style>
+/* 스타일 초기화 */
+#header {width:100%;}
+*{margin: 0; padding: 0;}
+body, html { width: 100vw;font-family: 'Noto Sans KR', sans-serif; overflow-x: hidden;}
+ul{list-style: none;}
+a{text-decoration: none; }
+input, button{outline: 0; border: 0;}
+table, .table{display: table; border-collapse:collapse;}
+tr, .tr { display: table-row;}
+.wrap { clear:both; width: 100%; }
+
+.clrfx::after{content: 0;display: block; width: 100%; clear: both;}
+.content {clear: both; width: 100%;}
+/* 헤더부분 스타일 */
+/* logo */
+.logo {float: left; padding-top: 25px;}
+/* tnb */
+        .tnb {padding-top: 27px;}
+        .login {float: right; border:2px solid#eee; border-radius: 46px; padding: 10px; font-size: 14px; padding-right: 25px; padding-left: 25px;}
+        .login .sign::before {content: ""; background: url("./img/icon_login.png"); width: 15px; height: 18px;display: inline-block; margin-right: 10px; vertical-align: -3px;}
+        .line {font-size: 12px; vertical-align: 2px; color: #ddd; padding: 5px;}
+        .login span a {color: #000; font-weight: 500; font-size: 14px; font-family: 'Noto Sans KR', sans-serif;}
+        .login span:hover a{color:blue;}
+/* gnb */
+        .top_hd_wrap {height: 50px; clear: both;}
+        .top_nav_wrap {height: 100px; width: 1400px; margin: 0 auto;}
+        .gnb{height: 70px; clear: both; width: 100%; border-top: 1px solid #ddd;background-color: #fbfbfb; z-index: 99; border-bottom: 1px solid #ddd;}
+        .gnb_wrap {margin: 0 auto; height: 300px; z-index: 1;}
+        .background {clear: both;width: 100%; position:absolute; width: 1920px; background-color: #fff; height:0; top:171px; z-index:1; left: 0;} 
+        .main_ul {margin: 0 auto; height: 70px; width: 1400px;}
+        .main_ul .mainmenu {margin: 0 auto; position: relative; width: 16.66%; height: 100%; display: block; float:left; box-sizing: border-box;}
+        .mainmenu>a{font-size: 18px; color: #222222; line-height: 70px; display: block; text-align: center; border-left: 1px solid #ddd; font-family: 'Noto Sans KR', sans-serif; font-weight: 400;}
+        .mainmenu:hover>a{background-color: rgb(31, 117, 176); color: #fff;}
+        .mainmenu:hover .sub_ul {background-color: rgb(244,248,251);}
+        
+        .sub_menu {width: 1400px; margin: 0 auto;}
+        .sub_ul {float:left;width:100%;height: 0px; border-left: 1px solid#ddd; box-sizing: border-box; position: absolute;}
+        .sub_ul1 {border-right: 1px solid#ddd;} 
+        .submenu {width: 100%; line-height: 0px;}
+        .sub_ul a:hover {text-decoration: underline; color: rgb(31, 117, 176);}
+        .submenu a {font-size: 16px; padding-left: 14%; display: none; color:#666}
+        .sub_ul li:first-child a {margin-top: 15px;}
+
+        .main_ul:hover .sub_ul {height: 200px; transition-duration: 0.5s; z-index: 2;}
+        .main_ul:hover .background {height: 200px; transition-duration: 0.5s; box-shadow :  0 8px 8px -6px rgb(73, 72, 72);}
+        .main_ul:hover .submenu {line-height: 40px; transition-duration: 0.5s;}
+        .main_ul:hover .sub_ul a {display: block;}
+        .sm_last, .mm_last { border-right: 1px solid #ddd;}
+
+.content_wrap {width: 1400px; margin: 0 auto; }
+            
+/* 오른쪽 버튼 스타일 */
+.right_btn {width: 65px; height: 200px; position:fixed; right: 55px; bottom: 45px; z-index: 999;}
+.right_btn img {width: 90%; padding-bottom: 11px;}
+/* 게시판 스타일 */
+.medical li{display: block; width: 300px; height: 84px; border: 1px solid #ddd; margin: 0 auto; float: left; text-align: center; font-size: 24px; }
+.medical a{color: #0087ab; line-height: 80px;}
+.medical_box{width: 1350px; margin: 0 auto; height: 400px; margin-top: 40px; margin-bottom: 100px;   border:1px solid #0087ab ; background-image: url("./img/bg_main1.jpg");}
+.medical_leftbox{width: 65%; height: 100%; background-color: rgb(255, 255, 255);}
+.main {display: block;  width: 400px;}
+.medical_title{width: 100%; margin-left: 60px;font-size: 30px; color: #0087ab; padding-top: 15px; }
+.medical_comment{width: 100%; margin-left: 60px;font-size: 26px; color: #000; padding-top: 15px;}
+.medical{padding-left: 60px; padding-top: 20px;}
+.medical li:hover{background-color: #0087ab; }
+.medical li:hover a{color: #fff; }
+.backcolor{position: absolute;left: 0; width: 1920px; top: 750px; height: 520px; background-color: #f6f6fa; z-index: -1;}
+    /*푸터*/
+        .ft_link1 ,.ft_link2,.ft_link3,.ft_link4,.ft_link5,.ft_link6 {display: inline-block; width: 45px; height: 45px; margin: 0 10px;vertical-align: middle; background-size: cover}
+        .ft_link1 {background-image:url("./img/icon_quick_link1.png")}
+        .ft_link2 {background-image:url("./img/icon_quick_link2.png")}
+        .ft_link3 {background-image:url("./img/icon_quick_link3.png")}
+        .ft_link4 {background-image:url("./img/icon_quick_link4.png")}
+        .ft_link5 {background-image:url("./img/icon_quick_link5.png")}
+        .ft_link6 {background-image:url("./img/icon_quick_link6.png")}
+        .ft_line {width: 100%; height: 45px; background-color: #327cb6; padding: 18px; color: #fff; font-size: 16px;}
+        .ft_line p {float:left; padding-right: 10px; margin-top: 12px; padding-left: 11%; font-weight: 500;}
+
+        #ft { clear: both; width: 100%; height: 300px; }
+        .fnb { clear: both; width: 100%; height: 20px; border: 1px solid #ddd; padding: 10px 0; }
+        .fnb .inner { width: 1450px; height: 100%; margin-left: 30px; margin: 0 auto; }
+        .fnb span { margin: 0 10px; font-size: 13px; }
+        .fnb span:after { content: "|"; padding-left: 20px; color: #ddd; }
+        .fnb span:last-child:after { content: ""; }
+        .snb { clear: both; width: 100%; height: 100px; padding: 20px 10px; }
+        .snb .inner{ width: 1450px; height: 100%; margin-left: 40px; margin: 0 auto; }
+        .copy_warp { float: left; }
+        .ft_logo { float: right; }
+        .copy_warp b { display: block; margin-bottom: 10px; }
+        .copy_warp p, .copy_warp span { font-size: 13px; padding-right: 10px; color: #666; }
+        .copy { margin-top: 10px; color: #444; }
+
+            
+            /*서브메뉴*/
+             /* #header {  clear: both; position: fixed; top: 0; left: 0; width: 100%; }  */
+            .page { clear:both; min-height:100vh; display:none; width: 100%;}
+            .page:target { display:block; }
+            .content { clear: both; width: 100%; height: auto; overflow: hidden; }
+            .sub_content { clear: both; width: 100%; height: auto; }
+            .content_wrap {width: 1400px; margin: 0 auto;}
+
+
+            .page_tit { width: 100%; height: 70px; margin-top: 30px; border-bottom: 1px solid #ddd; }
+            .page_tit .inner { width: 1120px; height: 100%; margin: 0 auto; }
+            .page_tit h3 { float: left; font-size: 36px; padding-top: 5px; }
+            .page_tit p { float: right; font-size: 14px; line-height: 80px; color: rgb(123, 123, 123); }
+            .page_tit p a { color: rgb(123, 123, 123); }
+            .page_tit .loca2 { color: #000; }
+
+
+            .page_top {  width: 100%; height: 1150px;  }
+            .page_top .inner { width: 1120px; margin: 0 auto; }
+            .page_top > .inner > p { font-size: 30px; color: #1f75b0; height: 150px; line-height: 160px;}
+            .page_top .tit { float: left; font-size: 30px; color: #1f75b0; padding-left: 40px; width: 250px;
+                border-top: 2px solid #1f75b0; padding-top: 20px;
+                background-image: url(./img/bt_check.png);  background-repeat: no-repeat; background-size: 35px; background-position: 0 20px;}
+            .box > ul {  margin-left: 340px; height: 280px; background-color: #f6f6fa; border: 1px solid #ddd; }
+            .box1 > ul { margin-left: 340px; height: 330px; }
+            .box { margin-bottom: 30px; } 
+            .page_top .con { display: table; padding: 40px 40px; }          
+            .page_top .con1 { display: table; float: left; height: 300px; width: 310px; margin-right: 36px; background-color: #f6f6fa; border: 1px solid #ddd;
+                padding: 20px 20px; background-image: url(./img/cure.jpg); background-size: cover; background-repeat: no-repeat; }
+            .page_top .con2 { float: left; height: 300px; width: 310px; background-color: #f6f6fa; border: 1px solid #ddd;
+            padding: 20px 40px; }
+            .con_box { display: table-cell; height: 100%; }
+            .con_box > p { display: inline-block; vertical-align: middle; font-size: 18px; line-height: 35px;  }
+
+
+            .page_video { clear: both; width: 100%; height: 800px; background-image: url(./img/bg_cont.jpg); background-size: cover; }
+            .page_video p { width: 1120px; margin: 0 auto; text-align: center; color: #fff; font-size: 36px; }
+            .page_video p > span { display: block; width: 1120px; margin: 0 auto; text-align: center; color: #a9cee7; letter-spacing: 20px; padding-top: 50px;
+                background-image: url(./img/icon_logo.png); background-repeat: no-repeat; background-position: center 50px; font-size: 16px; padding-bottom: 15px; }
+            .screen { width: 1120px; margin: 0 auto; margin-top: 40px; }
+
+
+            .page_middle { width: 100%; height: 450px; margin-top: 90px; }
+            .page_middle > .inner { width: 1120px; margin: 0 auto; height: auto; }
+            .page_middle .inner h4:before { content: ""; display: inline-block; width: 64px; height: 64px; background: url(./img/bul_logo.png); vertical-align: -15px; margin-right: 15px; }
+            .page_middle .inner h4 { font-size: 36px; height: 70px; text-align: center; }
+            .page_middle b { color: #1f75b0;  }       
+            .iconlist { width: 100%; margin-top: 30px; }
+            .iconlist li { float: left; width: 16.4%; height: 250px; border: 1px solid #ddd; border-collapse: collapse;}
+            .iconlist span { display: block; text-align: center; }
+            .icon_tit { font-size: 18px; padding: 40px; }
+            .icon_con { font-size: 14px; display: block; padding-top: 90px;}
+            .icon1 { background-image: url(./img/icon_list01.png); background-repeat: no-repeat; background-position: center; }
+            .icon2 { background-image: url(./img/icon_list02.png); background-repeat: no-repeat; background-position: center; }
+            .icon3 { background-image: url(./img/icon_list03.png); background-repeat: no-repeat; background-position: center; }
+            .icon4 { background-image: url(./img/icon_list04.png); background-repeat: no-repeat; background-position: center; }
+            .icon5 { background-image: url(./img/icon_list05.png); background-repeat: no-repeat; background-position: center; }
+            .icon6 { background-image: url(./img/icon_list06.png); background-repeat: no-repeat; background-position: center; }
+
+            
+            .page_bottom { width: 100%; height: 500px; padding-top: 70px; background-color: #f6f6fa; }
+            .page_bottom .inner { width: 1120px; height: 100%; margin: 0 auto; }
+            .page_bottom .inner h4:before { content: ""; display: inline-block; width: 64px; height: 64px; background: url(./img/bul_logo.png); vertical-align: -15px; margin-right: 15px; }
+            .page_bottom .inner h4 { font-size: 36px; height: 70px; text-align: center; padding-bottom: 30px; }
+            .page_bottom b { color: #1f75b0; } 
+            .page_bottom .list { text-align: center; width: 100%; height: 250px; margin: 0 auto; font-size: 22px;  }
+            .page_bottom .list li { height: 70px; line-height: 70px; }
+            .list1, .list3 { background-color: #fff; }
+            .list2 { background-color: #dcebf8; }
+            .btn_wrap { width: 100%; height: 0px; margin-top: 20px; }
+            .btn_wrap a:before { content: ""; display: inline-block; background: url(./img/btn1.png); width: 32px; height: 30px; vertical-align: -5px; margin-right: 5px; }
+            .btn_wrap span { display: inline-block; width: 357px; height: 60px; line-height: 60px; text-align: center; 
+                font-size: 24px; background-color: #1f75b0; margin-right: 20px; }  
+            .btn_wrap span a { color: #fff; }    
+            .btn_wrap span:last-child { margin-right: 0; }  
+            
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <header class="header" id="header">
+            <div class="" id="header_wrap">
+                <div class="top_nav_wrap">
+                    <div class="logo">
+                        <a href="index.html"><img src="./img/logo.png" alt="로고"></a> 
+                        <div class="right_btn">
+                            <a href=""><img src="./img/btn-calling.png" alt=""></a>
+                            <a href=""><img src="./img/btn-chat-kakao.png" alt=""></a>
+                            <a href="#header_wrap"><img src="./img/btn_top.png" alt=""></a>
+                        </div>
+                    </div>
+                    <nav class="tnb">
+                        <div class="login">
+                            <span class="sign">
+                                <a href="login.html">로그인</a>
+                            </span> 
+                            <span class="line">|</span>
+                             <span>
+                                <a href="agree.html">회원가입</a>
+                            </span>
+                        </div>
+                    </nav>
+                </div>
+                    <nav class="gnb" id="gnb">
+                        <div class="gnb_wrap">
+                            <ul class="main_ul">
+                                <div class="background">
+                                </div>
+                                <ll class="mainmenu"><a href="intro.html">병원소개</a>
+                                    <ul class="sub_ul">
+                                        <li class="submenu"><a href="intro.html">병원안내</a></li>
+                                        <li class="submenu"><a href="drintro.html">의료진 소개</a></li>
+                                        <li class="submenu"><a href="map.html">오시는 길</a></li>
+                                    </ul>
+                                </ll>  
+                                <ll class="mainmenu"><a href="info.html">진료안내</a>
+                                    <ul class="sub_ul">
+                                        <li class="submenu"><a href="info.html">진료안내</a></li>
+                                        <li class="submenu"><a href="reserve.html">진료예약</a></li>
+                                        <li class="submenu"><a href="time.html">진료시간</a></li>
+                                    </ul>
+                                </ll>  
+                                <ll class="mainmenu"><a href="treat1.html">진료1</a>
+                                    <ul class="sub_ul">
+                                        <li class="submenu"><a href="treat1_sub1.html">진료1</a></li>
+                                        <li class="submenu"><a href="treat1_sub2.html">진료2</a></li>
+                                        <li class="submenu"><a href="treat1_sub3.html">진료3</a></li>
+                                    </ul>
+                                </ll>  
+                                <ll class="mainmenu"><a href="treat2.html">진료2</a>
+                                    <ul class="sub_ul">
+                                        <li class="submenu"><a href="treat2_sub1.html">진료1</a></li>
+                                        <li class="submenu"><a href="treat2_sub2.html">진료2</a></li>
+                                        <li class="submenu"><a href="treat2_sub3.html">진료3</a></li>
+                                    </ul>
+                                </ll>  
+                                <ll class="mainmenu"><a href="treat3.html">진료3</a>
+                                    <ul class="sub_ul">
+                                        <li class="submenu"><a href="treat3_sub1.html">진료1</a></li>
+                                        <li class="submenu"><a href="treat3_sub2.html">진료2</a></li>
+                                        <li class="submenu"><a href="treat3_sub3.html">진료3</a></li>
+                                    </ul>
+                                </ll>        
+                                <ll class="mainmenu mm_last"><a href="news.html#notice">병원소식</a>
+                                    <ul class="sub_ul sub_ul1">
+                                        <li class="submenu"><a href="news.html#notice">공지사항</a></li>
+                                        <li class="submenu"><a href="news.html#data">자료실</a></li>
+                                        <li class="submenu"><a href="board.html">게시판</a></li>
+                                        <li class="submenu"><a href="qna.html">Q&A</a></li>
+                                    </ul>
+                                </ll>            
+                            </ul>                          
+                        </div>
+                    </nav>
+            </div>
+        </header>
+        <div class="content">            
+            <div class="sub_content">
+                <div class="content_wrap">
+                    <div class="right_btn">
+                        <a href=""><img src="./img/btn-calling.png" alt=""></a>
+                        <a href=""><img src="./img/btn-chat-kakao.png" alt=""></a>
+                        <a href="#header_wrap"><img src="./img/btn_top.png" alt=""></a>
+                     </div>       
+                    <section class="page" id="sub1">
+                        <div class="page_tit">
+                            <div class="inner">
+                                <h3>백내장</h3>
+                                <p>
+                                    <span><a href="index.html">HOME</a></span>
+                                    &nbsp;&nbsp;
+                                    |
+                                    &nbsp;&nbsp;
+                                    <span class="loca1">수정체/망막질환</span>
+                                    &nbsp;&nbsp;
+                                    >
+                                    &nbsp;&nbsp;
+                                    <span class="loca2">백내장</span>
+                                </p>
+                            </div>    
+                        </div>
+                        <div class="page_top">
+                            <div class="inner">
+                                <p>"근본원인을 찾아 최적화된 치료법 적용!”</p>
+                                <ul>
+                                    <li class="tit">증상</li>
+                                    <div class="box">
+                                        <ul>
+                                            <li class="con">
+                                                <div class="con_box">
+                                                    <p>
+                                                    백내장의 증상은 우선 안개가 낀 것처럼 시야가 뿌옇게 보이게 되는 것이 대표적입니다. 멀리있는 사물이 불분명하게 보이는 증상이 서서히 진행하게 되기도 합니다.
+                                                    사물이 이중으로 겹쳐 보이는 증상도 나타나며, 노안이 있던 분들이 갑자기 돋보기 없이 가까운 것이 잘보이는 경우도 간혹 있습니다.
+                                                    </p>    
+                                                </div>    
+                                            </li>
+                                        </ul>    
+                                    </div>
+                                </ul>
+                                <ul>
+                                    <li class="tit">질환</li>
+                                    <div class="box">
+                                        <ul>
+                                            <li class="con">
+                                                <div class="con_box">
+                                                    <p>
+                                                        백내장은 카메라의 렌즈 역할을 하는 우리 눈 속의 투명한 수정체에 혼탁이 생겨 사물을 뚜렷하게 보이지 않고 안개 낀 것 처럼 보이는 것을 말합니다.
+                                                        원인은 나이가 들어 발생하는 노인성 백내장이 가장 흔합니다. 그러나 선천성, 당뇨, 스테로이트제제의 사용, 외상 후 백내장 등으로 발병하는 경우도 있습니다.
+                                                    </p>
+                                                </div>    
+                                            </li>
+                                        </ul>
+                                    </div>        
+                                </ul>
+                                <ul>
+                                    <li class="tit">치료</li>
+                                    <div class="box1">
+                                        <ul>
+                                            <li class="con1">
+                                            </li>
+                                            <li class="con2">
+                                                <div class="con_box">
+                                                    <p>
+                                                        백내장의 수술 시기는 시력저하로 인해 직업이나 일상생활에 불편함을 느끼는 경우가 되겠습니다. 
+                                                        백내장으로 인해 급성 녹내장이나 포도막염이 발생할 수려가 있는 경우에는 즉시 수술할 것을 고려하기도 합니다.<br>
+                                                        백내장 수술은 기본적으로 국소 마취 후 혼택한 수정체를 제거하고 인공수정체를 삽입하는 과정을 거칩니다.
+                                                    </p>
+                                                </div>    
+                                            </li>
+                                        </ul>
+                                    </div>        
+                                </ul>
+                            </div>    
+                        </div>
+                        <div class="page_video">
+                            <div class="inner">
+                                <p>
+                                    <span>ASAN EYE &nbsp;&nbsp;&nbsp; HOSPITAL</span>                                   
+                                    "안전하고 정확한 시스템으로 치료합니다."
+                                </p>
+                                <div class="screen">
+                                    <iframe width="1120" height="550" src="https://www.youtube.com/embed/hufL-3NUO84" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="page_middle">
+                            <div class="inner">
+                                <h4>아산안과  <b>백내장 수술</b></h4>
+                                <div class="iconlist">
+                                    <ul>
+                                        <li class="icon1">
+                                            <span class="icon_tit">수술비용</span>
+                                            <span class="icon_con">실비보험 적용가능</span>
+                                        </li>
+                                        <li class="icon2">
+                                            <span class="icon_tit">수술시간</span>
+                                            <span class="icon_con">약1시간</span>
+                                        </li>
+                                        <li class="icon3">
+                                            <span class="icon_tit">마취방법</span>
+                                            <span class="icon_con">수면마취+국소마취</span>
+                                        </li>
+                                        <li class="icon4">
+                                            <span class="icon_tit">입원기간</span>
+                                            <span class="icon_con">1박2일 또는 2박3일</span>
+                                        </li>
+                                        <li class="icon5">
+                                            <span class="icon_tit">내원치료</span>
+                                            <span class="icon_con">수술 후 8~12회</span>
+                                        </li>
+                                        <li class="icon6">
+                                            <span class="icon_tit">회복기간</span>
+                                            <span class="icon_con">약 3주~4주</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>    
+                        </div>
+                        <div class="page_bottom">
+                            <div class="inner">
+                                <h4>아산안과 <b>백내장 치료장점</b></h4>
+                                <div class="list">
+                                    <ul>
+                                        <li class="list1">풍부한 임상경험의 실력있는 의료진</li>
+                                        <li class="list2">마취과 전문의의 안전한 마취, 통증 완화</li>
+                                        <li class="list3">체계적인 진단-치료 시스템</li>
+                                    </ul>
+                                </div>
+                                <div class="btn_wrap">
+                                    <span><a href="">치료사례</a></span>
+                                    <span><a href="">예약하기</a></span>
+                                    <span><a href="">상담하기</a></span>
+                                </div>
+                            </div>    
+                        </div>
+                    </section>
+                    <section class="page" id="sub2">
+                        <div class="page_tit">
+                            <div class="inner">
+                                <h3>녹내장</h3>
+                                <p>
+                                    <span><a href="index.html">HOME</a></span>
+                                    &nbsp;&nbsp;
+                                    |
+                                    &nbsp;&nbsp;
+                                    <span class="loca1">수정체/망막질환</span>
+                                    &nbsp;&nbsp;
+                                    >
+                                    &nbsp;&nbsp;
+                                    <span class="loca2">녹내장</span>
+                                </p>
+                            </div>    
+                        </div>
+                        <div class="page_top">
+                            <div class="inner">
+                                <p>"근본원인을 찾아 최적화된 치료법 적용!”</p>
+                                <ul>
+                                    <li class="tit">증상</li>
+                                    <div class="box">
+                                        <ul>
+                                            <li class="con">
+                                                <div class="con_box">
+                                                    <p>
+                                                        녹내장은 시신경에 이상이 생겨 시야 결손이 나타나는 질환입니다.
+                                                        시신경에 이상이 발향하여 시야결손이 생기기 되고 치료를 받지 않고 방치하면 시신경이 지속적으로 손상되어 결국 실명에 이를 수 있습니다.
+                                                        안압이 높아지는 것이 발병의 가장 큰 원인으로 알려져 있지만 안압이 정상이어도 안압의 하루 중 변동폭이 크거나 시신경으로 가는 혈액 순환이 잘 안되는 경우 등의 원인으로도 발생할 수 있습니다.
+                                                    </p>    
+                                                </div>    
+                                            </li>
+                                        </ul>    
+                                    </div>
+                                </ul>
+                                <ul>
+                                    <li class="tit">질환</li>
+                                    <div class="box">
+                                        <ul>
+                                            <li class="con">
+                                                <div class="con_box">
+                                                    <p>
+                                                        녹내장 환자의 대부분은 만성 녹내장으로, 이 경우 환자들이 느끼는 증상은 초기에는 없습니다.
+                                                        시야 손상이 점점 악화되어 말기에 이르게 되면 터널 속에서 밖을 보듯 주변 시야가 좁아져 중심부만 보이게 됩니다.
+                                                        이 경우 길을 걷다 자주 부딪히고 계단을 오르내릴 때 넘어지는 일이 많거나 조그만 물건을 찾는데 오래 걸리게 됩니다.
+                                                        여기서 더 진행하면 중심시력마저 저하되어 결국 실명에 이르게 됩니다.
+                                                        급성 녹내장의 경우에 눈이 갑작스런 통증이 있고 충혈과 함께 두통과 구토를 호소하며 시력이 떨어지게 되고, 불빛 주위로 달무리 현상이 나타날 수 있습니다.
+                                                    </p>
+                                                </div>    
+                                            </li>
+                                        </ul>
+                                    </div>        
+                                </ul>
+                                <ul>
+                                    <li class="tit">치료</li>
+                                    <div class="box1">
+                                        <ul>
+                                            <li class="con1">
+                                            </li>
+                                            <li class="con2">
+                                                <div class="con_box">
+                                                    <p>
+                                                        급성인 경우 빨리 안압을 떨어뜨려 시신경을 보존하는 것이 중요합니다. 먼저 안압을 내리는 안약을 점안하고, 
+                                                        안압하강제를 복용하고, 고삼투압제를 정맥주사로 투여하는 등의 처치를 통해 신속히 안압을 내립니다. 
+                                                        안압이 내려간 후에는 홍채에 레이저를 이용하여 작은 구멍을 뚫어 방수의 순환 및 배출을 돕습니다. 
+                                                    </p>
+                                                </div>    
+                                            </li>
+                                        </ul>
+                                    </div>        
+                                </ul>
+                            </div>    
+                        </div>
+                        <div class="page_video">
+                            <div class="inner">
+                                <p>
+                                    <span>ASAN EYE &nbsp;&nbsp;&nbsp; HOSPITAL</span>                                   
+                                    "안전하고 정확한 시스템으로 치료합니다."
+                                </p>
+                                <div class="screen">
+                                    <iframe width="1200" height="550" src="https://www.youtube.com/embed/hufL-3NUO84" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="page_middle">
+                            <div class="inner">
+                                <h4>아산안과  <b>녹내장 수술</b></h4>
+                                <div class="iconlist">
+                                    <ul>
+                                        <li class="icon1">
+                                            <span class="icon_tit">수술비용</span>
+                                            <span class="icon_con">실비보험 적용가능</span>
+                                        </li>
+                                        <li class="icon2">
+                                            <span class="icon_tit">수술시간</span>
+                                            <span class="icon_con">약1시간</span>
+                                        </li>
+                                        <li class="icon3">
+                                            <span class="icon_tit">마취방법</span>
+                                            <span class="icon_con">수면마취+국소마취</span>
+                                        </li>
+                                        <li class="icon4">
+                                            <span class="icon_tit">입원기간</span>
+                                            <span class="icon_con">1박2일 또는 2박3일</span>
+                                        </li>
+                                        <li class="icon5">
+                                            <span class="icon_tit">내원치료</span>
+                                            <span class="icon_con">수술 후 8~12회</span>
+                                        </li>
+                                        <li class="icon6">
+                                            <span class="icon_tit">회복기간</span>
+                                            <span class="icon_con">약 3주~4주</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>    
+                        </div>
+                        <div class="page_bottom">
+                            <div class="inner">
+                                <h4>아산안과 <b>녹내장 치료장점</b></h4>
+                                <div class="list">
+                                    <ul>
+                                        <li class="list1">풍부한 임상경험의 실력있는 의료진</li>
+                                        <li class="list2">마취과 전문의의 안전한 마취, 통증 완화</li>
+                                        <li class="list3">체계적인 진단-치료 시스템</li>
+                                    </ul>
+                                </div>
+                                <div class="btn_wrap">
+                                    <span><a href="">치료사례</a></span>
+                                    <span><a href="">예약하기</a></span>
+                                    <span><a href="">상담하기</a></span>
+                                </div>
+                            </div>    
+                        </div>
+                    </section>
+                    <section class="page" id="sub3">
+                        <div class="page_tit">
+                            <div class="inner">
+                                <h3>당뇨망막병증</h3>
+                                <p>
+                                    <span><a href="index.html">HOME</a></span>
+                                    &nbsp;&nbsp;
+                                    |
+                                    &nbsp;&nbsp;
+                                    <span class="loca1">수정체/망막질환</span>
+                                    &nbsp;&nbsp;
+                                    >
+                                    &nbsp;&nbsp;
+                                    <span class="loca2">당뇨망막병증</span>
+                                </p>
+                            </div>    
+                        </div>
+                        <div class="page_top">
+                            <div class="inner">
+                                <p>"근본원인을 찾아 최적화된 치료법 적용!”</p>
+                                <ul>
+                                    <li class="tit">증상</li>
+                                    <div class="box">
+                                        <ul>
+                                            <li class="con">
+                                                <div class="con_box">
+                                                    <p>
+                                                        초기에는 대부분 아무런 증상이 나타나지 않으며, 시력도 정상인 경우가 많습니다.
+                                                        하지만 당뇨망막병증이 심해지면서 눈부심이 심해지거나, 시력이 서서히 저하될 수 있으며, 눈 안에 출혈이 생기면 갑작스러운 시력저하를 느끼기도 합니다.
+                                                    </p>    
+                                                </div>    
+                                            </li>
+                                        </ul>    
+                                    </div>
+                                </ul>
+                                <ul>
+                                    <li class="tit">질환</li>
+                                    <div class="box">
+                                        <ul>
+                                            <li class="con">
+                                                <div class="con_box">
+                                                    <p>
+                                                        안약을 사용해서 동공을 확대시킨 뒤 망막검사를 시행하며, 당뇨망막병증이 확인되면 형광안저혈관조영술과 망막단층촬영 등의 정밀 검사를 하게 됩니다.
+                                                        당뇨병을 진단 받은 초기에 즉시 검사를 받아야 하며, 정상 소견이어도 1년에 한번씩 검사를 꼭 해야 합니다.
+                                                        진단을 받은 후에는 당뇨망막병증의 상태에 따라 1년에 2~3회 이상은 검진을 받을 필요가 있습니다.
+                                                        또한 당뇨병이 있는 여성이 임신을 한 경우에도 3개월마다 안과적 검사를 받아야 하며, 분만 뒤 3개월~6개월 후에도 검사를 하여야 합니다.
+                                                    </p>
+                                                </div>    
+                                            </li>
+                                        </ul>
+                                    </div>        
+                                </ul>
+                                <ul>
+                                    <li class="tit">치료</li>
+                                    <div class="box1">
+                                        <ul>
+                                            <li class="con1">
+                                            </li>
+                                            <li class="con2">
+                                                <div class="con_box">
+                                                    <p>
+                                                        발생한 망막병증, 특히 증식성 망막병증에 대해서는 레이저 광선을 이용한 '광응고 요법'을 시행할 수 있습니다. 적절한 시기에 이를 잘 치료하면 실명 확률을 현저히 낮출 수 있습니다. 
+                                                        한편 초자체의 출혈이나 망막의 박리 등으로 시력이 더욱 저하된 경우에는 초자체 제거술과 같은 외과적 수술을 고려할 수 있습니다. 
+                                                    </p>
+                                                </div>    
+                                            </li>
+                                        </ul>
+                                    </div>        
+                                </ul>
+                            </div>    
+                        </div>
+                        <div class="page_video">
+                            <div class="inner">
+                                <p>
+                                    <span>ASAN EYE &nbsp;&nbsp;&nbsp; HOSPITAL</span>                                   
+                                    "안전하고 정확한 시스템으로 치료합니다."
+                                </p>
+                                <div class="screen">
+                                    <iframe width="1200" height="550" src="https://www.youtube.com/embed/hufL-3NUO84" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="page_middle">
+                            <div class="inner">
+                                <h4>아산안과  <b>당뇨망막병증 수술</b></h4>
+                                <div class="iconlist">
+                                    <ul>
+                                        <li class="icon1">
+                                            <span class="icon_tit">수술비용</span>
+                                            <span class="icon_con">실비보험 적용가능</span>
+                                        </li>
+                                        <li class="icon2">
+                                            <span class="icon_tit">수술시간</span>
+                                            <span class="icon_con">약1시간</span>
+                                        </li>
+                                        <li class="icon3">
+                                            <span class="icon_tit">마취방법</span>
+                                            <span class="icon_con">수면마취+국소마취</span>
+                                        </li>
+                                        <li class="icon4">
+                                            <span class="icon_tit">입원기간</span>
+                                            <span class="icon_con">1박2일 또는 2박3일</span>
+                                        </li>
+                                        <li class="icon5">
+                                            <span class="icon_tit">내원치료</span>
+                                            <span class="icon_con">수술 후 8~12회</span>
+                                        </li>
+                                        <li class="icon6">
+                                            <span class="icon_tit">회복기간</span>
+                                            <span class="icon_con">약 3주~4주</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>    
+                        </div>
+                        <div class="page_bottom">
+                            <div class="inner">
+                                <h4>아산안과 <b>당뇨망막병증 치료장점</b></h4>
+                                <div class="list">
+                                    <ul>
+                                        <li class="list1">풍부한 임상경험의 실력있는 의료진</li>
+                                        <li class="list2">마취과 전문의의 안전한 마취, 통증 완화</li>
+                                        <li class="list3">체계적인 진단-치료 시스템</li>
+                                    </ul>
+                                </div>
+                                <div class="btn_wrap">
+                                    <span><a href="">치료사례</a></span>
+                                    <span><a href="">예약하기</a></span>
+                                    <span><a href="">상담하기</a></span>
+                                </div>
+                            </div>    
+                        </div>
+                        <div class="page_con">
+                            <div class="page_wrap">
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>    
+        </div>
+        <footer id="ft">
+            <div class="ftwrap">
+                <div class="ft_line">
+                    <p>김포아산안과 SNS</p>
+                    <a href="" class="ft_link1"></a>
+                    <a href="" class="ft_link2"></a>
+                    <a href="" class="ft_link3"></a>
+                    <a href="" class="ft_link4"></a>
+                    <a href="" class="ft_link5"></a>
+                    <a href="" class="ft_link6"></a>
+                </div>      
+                <div class="fnb">
+                    <div class="inner">
+                        <span><a href="">이용약관</a></span>
+                        <span><a href="">개인정보처리방침</a></span>
+                        <span><a href="">환자의 권리와 의무</a></span>
+                        <span><a href="">비급여안내</a></span>
+                    </div>
+                </div>
+                <div class="snb">
+                    <div class="inner">
+                        <div class="copy_wrap">
+                            <b>아산안과</b>
+                            <p>주소 : 경기도 김포시 김포한강4로 113, 402호(장기동)
+                                신한프라자(4층)</p>
+                            <span>대표자 : 남윤호</span>
+                            <span>사업자등록번호 : 454-95-00993</span>
+                            <span>대표전화 : T. 031)992-0083 F.031)992-0096</span>
+                            <p class="copy">COPYRIGHT© 2021 ASAN EYE HOSPITAL. ALL RIGHT RESERVED.</p>
+                        </div>
+                        <div class="ft_logo">
+                            <img src="./img/logo2.png" alt="ft_logo">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
