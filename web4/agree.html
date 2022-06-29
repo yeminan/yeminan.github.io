@@ -21,7 +21,7 @@
     /* 스타일 초기화 */
     #header {width:100%;}
 *{margin: 0; padding: 0;}
-body, html { width: 100%;font-family: 'Noto Sans KR', sans-serif; overflow-x: hidden;}
+body, html { width: 100vw;font-family: 'Noto Sans KR', sans-serif; overflow-x: hidden;}
 ul{list-style: none;}
 a{text-decoration: none; }
 input, button{outline: 0; border: 0;}
@@ -33,7 +33,7 @@ tr, .tr { display: table-row;}
 .content {clear: both; width: 100%;}
 /* 헤더부분 스타일 */
 /* logo */
-.logo {float: left; padding-top: 25px;}
+.logo {padding-top: 15px;}
 /* tnb */
         .tnb {padding-top: 27px;}
         .login {float: right; border:2px solid#eee; border-radius: 46px; padding: 10px; font-size: 14px; padding-right: 25px; padding-left: 25px;}
@@ -46,7 +46,7 @@ tr, .tr { display: table-row;}
         .top_nav_wrap {height: 100px; width: 1400px; margin: 0 auto;}
         .gnb{height: 70px; clear: both; width: 100%; border-top: 1px solid #ddd;background-color: #fbfbfb; z-index: 99; border-bottom: 1px solid #ddd;}
         .gnb_wrap {margin: 0 auto; height: 300px; z-index: 1;}
-        .background {clear: both;width: 100%; position:absolute; width: 1920px; background-color: #fff; height:0; top:171px; z-index:1; left: 0;} 
+        .background {clear: both;width: 100%; position:absolute; width: 1820px; background-color: #fff; height:0; top:171px; z-index:1; left: 0;} 
         .main_ul {margin: 0 auto; height: 70px; width: 1400px;}
         .main_ul .mainmenu {margin: 0 auto; position: relative; width: 16.66%; height: 100%; display: block; float:left; box-sizing: border-box;}
         .mainmenu>a{font-size: 18px; color: #222222; line-height: 70px; display: block; text-align: center; border-left: 1px solid #ddd; font-family: 'Noto Sans KR', sans-serif; font-weight: 400;}
@@ -76,8 +76,8 @@ tr, .tr { display: table-row;}
 .sub_bg_text a b:after {content:""; background-color: #91e9ff; position: absolute; left: 0;bottom:-18px ;width: 100%; height: 10px; text-align: center;}
 
 .sub_top, .sub_content {width: 1120px; margin: 0 auto;}
-.inner_top {width: 100%; border-bottom: 1px solid #e4e4e4; height: 110px;line-height: 130px; margin-bottom: 40px;}
-.inner_top h2 {float:left; font-size: 40px; font-weight: 400; font-family: 'Noto Sans KR', sans-serif}
+.inner_top {width: 100%; border-bottom: 1px solid #e4e4e4; height: 110px;line-height: 130px;  margin-bottom: 40px;}
+.inner_top h2 {float:left; font-size: 40px; font-weight: 400;  font-family: 'Noto Sans KR', sans-serif}
 .inner_top p {float:right; font-size: 14px; line-height: 160px; font-family: 'Noto Sans KR', sans-serif}
 
 
@@ -98,7 +98,7 @@ tr, .tr { display: table-row;}
 .medical li:hover{background-color: #0087ab; }
 .medical li:hover a{color: #fff; }
 .backcolor{position: absolute;left: 0; width: 1920px; top: 750px; height: 520px; background-color: #f6f6fa; z-index: -1;}
- /*푸터*/
+    /*푸터*/
         .ft_link1 ,.ft_link2,.ft_link3,.ft_link4,.ft_link5,.ft_link6 {display: inline-block; width: 45px; height: 45px; margin: 0 10px;vertical-align: middle; background-size: cover}
         .ft_link1 {background-image:url("./img/icon_quick_link1.png")}
         .ft_link2 {background-image:url("./img/icon_quick_link2.png")}
@@ -109,7 +109,7 @@ tr, .tr { display: table-row;}
         .ft_line {width: 100%; height: 45px; background-color: #327cb6; padding: 18px; color: #fff; font-size: 16px;}
         .ft_line p {float:left; padding-right: 10px; margin-top: 12px; padding-left: 11%; font-weight: 500;}
 
-        #ft { clear: both; width: 100%; height: 185px; }
+        #ft { clear: both; width: 100%; height: 500px; }
         .fnb { clear: both; width: 100%; height: 20px; border: 1px solid #ddd; padding: 10px 0; }
         .fnb .inner { width: 1450px; height: 100%; margin-left: 30px; margin: 0 auto; }
         .fnb span { margin: 0 10px; font-size: 13px; }
@@ -122,7 +122,6 @@ tr, .tr { display: table-row;}
         .copy_warp b { display: block; margin-bottom: 10px; }
         .copy_warp p, .copy_warp span { font-size: 13px; padding-right: 10px; color: #666; }
         .copy { margin-top: 10px; color: #444; }
-
     /*회원약관동의*/
     .content { clear: both; width: 100%; height: 1000px; }
     .agree { clear: both; width: 100%; height: 100%; }
@@ -204,9 +203,9 @@ tr, .tr { display: table-row;}
                             <ll class="mainmenu mm_last"><a href="news.html#notice">병원소식</a>
                                 <ul class="sub_ul sub_ul1">
                                     <li class="submenu"><a href="news.html#notice">공지사항</a></li>
-                                    <li class="submenu"><a href="news.html#data">자료실</a></li>
-                                    <li class="submenu"><a href="board.html">게시판</a></li>
-                                    <li class="submenu"><a href="qna.html">Q&A</a></li>
+                                        <li class="submenu"><a href="news.html#data">자료실</a></li>
+                                        <li class="submenu"><a href="news.html#board">게시판</a></li>
+                                        <li class="submenu"><a href="news.html#qna">Q&A</a></li>
                                 </ul>
                             </ll>             
                         </ul>                          
@@ -700,6 +699,16 @@ CT판독
     </article>
     <footer id="ft">
         <div class="ftwarp">
+            <div class="ft_line">
+                <p>정석소아청소년과병원</p>
+                <a href="" class="ft_link1"></a>
+                <a href="" class="ft_link2"></a>
+                <a href="" class="ft_link3"></a>
+                <a href="" class="ft_link4"></a>
+                <a href="" class="ft_link5"></a>
+                <a href="" class="ft_link6"></a>
+                 </div>
+                
             <div class="fnb">
                 <div class="inner">
                     <span><a href="">이용약관</a></span>
@@ -712,15 +721,16 @@ CT판독
                 <div class="inner">
                     <div class="copy_warp">
                         <b>정석소아청소년과병원</b>
-                        <p>주소 : 경기도 김포시 김포한강4로 113, 402호(장기동)
-                            신한프라자(4층)</p>
+                        <p>주소 : 경기도 남양주시 진접음 해밀예당1로 221 지안빌딩 6층
+                            (경기도 남양주시 진접음 금곡리 1021-2 지안빌딩 6층)
+                        </p>
                         <span>대표자 : 남윤호</span>
-                        <span>사업자등록번호 : 454-95-00993</span>
-                        <span>대표전화 : T. 031)992-0083 F.031)992-0096</span>
-                        <p class="copy">COPYRIGHT© 2021 ASAN EYE HOSPITAL. ALL RIGHT RESERVED.</p>
+                        <span>사업자등록번호  132-82-12264</span>
+                        <span>대표번호. 031-573-6678 팩스번호. 031-573-6604 </span>
+                        <p class="copy">Copyright ⓒ JUNGSEOK CHILDREN’S HOSPITAL. All Rights Reserved.</p>
                     </div>
                     <div class="ft_logo">
-                        <img src="./img/logo2.png" alt="ft_logo">
+                        <img src="./img/foot_logo.jpg" alt="ft_logo">
                     </div>
                 </div>
             </div>

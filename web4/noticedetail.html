@@ -16,13 +16,13 @@
     <script src="https://code.jquery.com/jquery-latest.js"></script>
     <link rel="stylesheet" href="./css/common.css">
 
-    <title>공지사항추가</title>
+    <title>공지사항 디테일</title>
 
     <style>
-    /* 스타일 초기화 */
+/* 스타일 초기화 */
 #header {width:100%;}
 *{margin: 0; padding: 0;}
-body, html { width: 100%;font-family: 'Noto Sans KR', sans-serif;}
+body, html { width: 100vw;font-family: 'Noto Sans KR', sans-serif; overflow-x: hidden;}
 ul{list-style: none;}
 a{text-decoration: none; }
 input, button{outline: 0; border: 0;}
@@ -30,9 +30,7 @@ table, .table{display: table; border-collapse:collapse;}
 tr, .tr { display: table-row;}
 .wrap { clear:both; width: 100%; }
 
-.clrfx::after{content:""; display: block; width: 100%; clear: both;}
-
-
+.clrfx::after{content: 0;display: block; width: 100%; clear: both;}
 .content {clear: both; width: 100%;}
 /* 헤더부분 스타일 */
 /* logo */
@@ -46,7 +44,7 @@ tr, .tr { display: table-row;}
         .login span:hover a{color:blue;}
 /* gnb */
         .top_hd_wrap {height: 50px; clear: both;}
-        .top_nav_wrap {height: 100px; width: 1400px; margin: 0 auto;}
+        .top_nav_wrap {height: 100px; width: 100%; margin: 0 auto;}
         .gnb{height: 70px; clear: both; width: 100%; border-top: 1px solid #ddd;background-color: #fbfbfb; z-index: 99; border-bottom: 1px solid #ddd;}
         .gnb_wrap {margin: 0 auto; height: 300px; z-index: 1;}
         .background {clear: both;width: 100%; position:absolute; width: 1920px; background-color: #fff; height:0; top:171px; z-index:1; left: 0;} 
@@ -69,67 +67,65 @@ tr, .tr { display: table-row;}
         .main_ul:hover .submenu {line-height: 40px; transition-duration: 0.5s;}
         .main_ul:hover .sub_ul a {display: block;}
         .sm_last, .mm_last { border-right: 1px solid #ddd;}
+
+.content_wrap {width: 1400px; margin: 0 auto; }
+            
 /* 오른쪽 버튼 스타일 */
 .right_btn {width: 65px; height: 200px; position:fixed; right: 55px; bottom: 45px; z-index: 999;}
 .right_btn img {width: 90%; padding-bottom: 11px;}
 /* 게시판 스타일 */
 .medical li{display: block; width: 300px; height: 84px; border: 1px solid #ddd; margin: 0 auto; float: left; text-align: center; font-size: 24px; }
 .medical a{color: #0087ab; line-height: 80px;}
-.medical_box{width: 1350px; margin: 0 auto; height: 400px; margin-top: 40px; margin-bottom: 100px;   border:1px solid #0087ab ; background-image: url("bg_main1.jpg");}
+.medical_box{width: 1350px; margin: 0 auto; height: 400px; margin-top: 40px; margin-bottom: 100px;   border:1px solid #0087ab ; background-image: url("./img/bg_main1.jpg");}
 .medical_leftbox{width: 65%; height: 100%; background-color: rgb(255, 255, 255);}
 .main {display: block;  width: 400px;}
 .medical_title{width: 100%; margin-left: 60px;font-size: 30px; color: #0087ab; padding-top: 15px; }
 .medical_comment{width: 100%; margin-left: 60px;font-size: 26px; color: #000; padding-top: 15px;}
 .medical{padding-left: 60px; padding-top: 20px;}
 .medical li:hover{background-color: #0087ab; }
-.medical li:hover a{color: #fff;}
+.medical li:hover a{color: #fff; }
 .backcolor{position: absolute;left: 0; width: 1920px; top: 750px; height: 520px; background-color: #f6f6fa; z-index: -1;}
-/*푸터*/
-#ft {clear: both; width: 100%; height: 263px; margin-top: 60px;  }
-.fnb { clear: both; width: 100%; height: 20px; border: 1px solid #ddd; padding: 10px 0; }
-.ft_line {width: 100%; height: 45px; background-color: #327cb6; padding: 18px; color: #fff; font-size: 16px;}
-.ft_line p {float:left; padding-right: 10px; margin-top: 12px; padding-left: 11%; font-weight: 500;}
-.ft_link1 ,.ft_link2,.ft_link3,.ft_link4,.ft_link5,.ft_link6 {display: inline-block; width: 45px; height: 45px; margin: 0 10px;vertical-align: middle; background-size: cover}
-.ft_link1 {background-image:url("./img/icon_quick_link1.png")}
-.ft_link2 {background-image:url("./img/icon_quick_link2.png")}
-.ft_link3 {background-image:url("./img/icon_quick_link3.png")}
-.ft_link4 {background-image:url("./img/icon_quick_link4.png")}
-.ft_link5 {background-image:url("./img/icon_quick_link5.png")}
-.ft_link6 {background-image:url("./img/icon_quick_link6.png")}
-.fnb .inner { width: 1450px; height: 100%; margin-left: 30px; margin: 0 auto; }
-.fnb span { margin: 0 10px; font-size: 13px; }
-.fnb span:after { content: "|"; padding-left: 20px; color: #ddd; }
-.fnb span:last-child:after { content: ""; }
-.snb { clear: both; width: 100%; height: 100px; padding: 20px 10px; }
-.snb .inner{ width: 1450px; height: 100%; margin-left: 40px; margin: 0 auto; }
-.copy_warp { float: left; }
-.ft_logo { float: right; }
-.copy_warp b { display: block; margin-bottom: 10px; }
-.copy_warp p, .copy_warp span { font-size: 13px; padding-right: 10px; color: #666; }
-.copy { margin-top: 10px; color: #444; }
+    /*푸터*/
+        .ft_link1 ,.ft_link2,.ft_link3,.ft_link4,.ft_link5,.ft_link6 {display: inline-block; width: 45px; height: 45px; margin: 0 10px;vertical-align: middle; background-size: cover}
+        .ft_link1 {background-image:url("./img/icon_quick_link1.png")}
+        .ft_link2 {background-image:url("./img/icon_quick_link2.png")}
+        .ft_link3 {background-image:url("./img/icon_quick_link3.png")}
+        .ft_link4 {background-image:url("./img/icon_quick_link4.png")}
+        .ft_link5 {background-image:url("./img/icon_quick_link5.png")}
+        .ft_link6 {background-image:url("./img/icon_quick_link6.png")}
+        .ft_line {width: 100%; height: 45px; background-color: #327cb6; padding: 18px; color: #fff; font-size: 16px;}
+        .ft_line p {float:left; padding-right: 10px; margin-top: 12px; padding-left: 11%; font-weight: 500;}
 
-/* 콘텐츠 */
+        #ft { clear: both; width: 100%; height: 300px; }
+        .fnb { clear: both; width: 100%; height: 20px; border: 1px solid #ddd; padding: 10px 0; }
+        .fnb .inner { width: 1450px; height: 100%; margin-left: 30px; margin: 0 auto; }
+        .fnb span { margin: 0 10px; font-size: 13px; }
+        .fnb span:after { content: "|"; padding-left: 20px; color: #ddd; }
+        .fnb span:last-child:after { content: ""; }
+        .snb { clear: both; width: 100%; height: 100px; padding: 20px 10px; }
+        .snb .inner{ width: 1450px; height: 100%; margin-left: 40px; margin: 0 auto; }
+        .copy_warp { float: left; }
+        .ft_logo { float: right; }
+        .copy_warp b { display: block; margin-bottom: 10px; }
+        .copy_warp p, .copy_warp span { font-size: 13px; padding-right: 10px; color: #666; }
+        .copy { margin-top: 10px; color: #444; }
 
-/* 서브메뉴 */
-.sub_bg_img{height: 142px; background-image: url("./img/bg_sub_top1.jpg");}
-.sub_bg_menu h2 {width: 1120px; margin: 0 auto; line-height: 120px; color: #fff; font-size: 38px;font-weight: 300; font-family: 'Noto Sans KR', sans-serif}
-.sub_bg_line {height: 75px;background: #327cb6;}
-.sub_bg_text {width: 1120px; margin: 0 auto; height: 100%; text-align: center;}
-.sub_bg_line a {font-size: 18px; color:#addcf6; line-height: 90px; width: 33%; height: 20px; display: block; float:left; display: block; font-family: 'Noto Sans KR', sans-serif}  
-.sub_bg_text a b {color: #fff; font-weight: normal; position: relative;}         
-.sub_bg_text a b:after {content:""; background-color: #91e9ff; position: absolute; left: 0;bottom:-18px ;width: 100%; height: 10px; text-align: center;}
+        /*서브메뉴*/
+            .content { clear: both; width: 100%; height: auto; overflow: hidden; }
+            .sub_content { clear: both; width: 100%; height: auto; }
+            .content_wrap {width: 100%; margin: 0 auto;} /*width값 수정*/
+            input { border: 1px solid #ddd; width: 380px; height: 40px; }
+            input:focus { border: 2.5px solid #1f75b0; }
+            textarea { border: 1px solid #ddd; }
+            textarea:focus { outline-color: #1f75b0;}
+            .file { border: 0; padding-top: 15px;}
 
-.sub_top, .sub_content {width: 1120px; margin: 0 auto;}
-.inner_top {width: 100%; border-bottom: 1px solid #e4e4e4; height: 110px;line-height: 130px; margin-bottom: 40px;}
-.inner_top h2 {float:left; font-size: 40px; font-weight: 400; font-family: 'Noto Sans KR', sans-serif}
-.inner_top p {float:right; font-size: 14px; line-height: 160px; font-family: 'Noto Sans KR', sans-serif}
-.info_1-1{width: 1120px; margin: 0 auto; line-height: 76px; color: rgb(0, 0, 0); font-size: 14px;font-weight: 100; font-family: 'Noto Sans KR', sans-serif}
             /*추가*/
             .sub_bg_img{height: 142px; background-image: url("./img/bg_sub_top1.jpg");}
             .sub_bg_menu h2 {width: 1120px; margin: 0 auto; line-height: 142px; color: #fff; font-size: 38px;font-weight: 300;}
             .sub_bg_line {height: 75px;background: #327cb6;}
             .sub_bg_text {width: 1120px; margin: 0 auto; height: 100%; text-align: center;}
-            .sub_bg_line a {font-size: 18px; color:#addcf6; line-height: 90px; width: 25%; height: 20px; display: block; float:left; display: block;}  
+            .sub_bg_line a {font-size: 18px; color:#addcf6; line-height: 90px; width: 33%; height: 20px; display: block; float:left; display: block;}  
             .sub_bg_text a b {color: #fff; font-weight: normal; position: relative;}         
             .sub_bg_text a b:after {content:""; background-color: #91e9ff; position: absolute; left: 0;bottom:-18px ;width: 100%; height: 10px; text-align: center;}
 
@@ -143,16 +139,14 @@ tr, .tr { display: table-row;}
 
             .page_table { width: 100%; height: 650px; margin-top: 100px; }
             .page_table .inner { width: 1120px; margin: 0 auto; }
-            .page_table .form_tb { display: table; width: 1000px; margin: 0 auto; }
-            .page_table .form_tb tr { border-bottom: 1px solid #ddd; }
+            .page_table .detail_tb { display: table; width: 1000px; margin: 0 auto; }
+            .page_table .detail_tb tr { border-bottom: 1px solid #ddd; }
 
-            .page_table .form_tb tr:first-child { border-top: 2px solid #1f75b0; }
-            .page_table .form_tb tr:last-child { border: 0; }
-            .page_table .form_tb th { width: 20%; font-size: 20px; height: 60px; line-height: 20px; }
-            .page_table .form_tb td input { font-size: 16px; text-align: center; }
+            .page_table .detail_tb tr:first-child { border-top: 2px solid #1f75b0; }
+            .page_table .detail_tb tr:last-child { border: 0; }
+            .page_table .detail_tb th { width: 20%; font-size: 20px; height: 60px; line-height: 20px; }
+            .page_table .detail_tb td input { font-size: 16px; text-align: center; }
          
-            .button { float: right; width: 120px; margin: 10px 20px 30px 0; color: #fff; font-size: 15px; margin-top: 30px;
-                background-color: #1f75b0; }
 
 
     </style>        
@@ -165,6 +159,11 @@ tr, .tr { display: table-row;}
                 <div class="top_nav_wrap">
                     <div class="logo">
                         <a href="index.html"><img src="./img/logo.png" alt="로고"></a> 
+                        <div class="right_btn">
+                            <a href=""><img src="./img/btn-calling.png" alt=""></a>
+                            <a href=""><img src="./img/btn-chat-kakao.png" alt=""></a>
+                            <a href="#header_wrap"><img src="./img/btn_top.png" alt=""></a>
+                        </div>
                     </div>
                     <nav class="tnb">
                         <div class="login">
@@ -222,110 +221,99 @@ tr, .tr { display: table-row;}
                                     <ul class="sub_ul sub_ul1">
                                         <li class="submenu"><a href="news.html#notice">공지사항</a></li>
                                         <li class="submenu"><a href="news.html#data">자료실</a></li>
-                                        <li class="submenu"><a href="board.html">게시판</a></li>
-                                        <li class="submenu"><a href="qna.html">Q&A</a></li>
+                                        <li class="submenu"><a href="news.html#board">게시판</a></li>
+                                        <li class="submenu"><a href="news.html#qna">Q&A</a></li>
                                     </ul>
-                                </ll>             
+                                </ll>          
                             </ul>                          
                         </div>
                     </nav>
             </div>
         </header>
         <div class="content">            
-            <div class="sub_wrap">
+            <div class="sub_content">
                 <div class="content_wrap">
                     <div class="right_btn">
                         <a href=""><img src="./img/btn-calling.png" alt=""></a>
                         <a href=""><img src="./img/btn-chat-kakao.png" alt=""></a>
                         <a href="#header_wrap"><img src="./img/btn_top.png" alt=""></a>
                     </div>
+                    <!--추가-->
                     <div class="sub_bg_menu">
                         <div class="sub_bg_img">
                             <!-- 메인메뉴에 따라 이름을 바꿔주세요 -->
-                            <h2>병원소식</h2> 
+                            <h2>공지사항</h2> 
                         </div>
-                        <div class="sub_bg_line">
-                            <div class="sub_bg_text">
-                                <!-- 현재 페이지에 맞게 <b>태그를 넣어주세요 -->
-                                <!-- 메뉴가 4개인 페이지는 .sub_bg_line a 스타일의 width를 25%로 줄여주세요 -->
-                                <a href="intro.html"><b>공지사항</b></a>
-                                <a href="board.html">자료실</a>
-                                <a href="board.html">게시판</a>
-                                <a href="map.html">QnA</a>
-                                <!-- <a href="">4번째 메뉴</a> -->
-                            </div>
-                        </div>
-                    </div>
-                    <div class="sub_top">
-                        <div class="inner_top">
-                            <h2>게시판</h2>
-                            <p><a href="/">HOME</a> > <b>공지사항</b> > 자료실 > 게시판 > QnA</p>
-                            <!-- 페이지에 따라 메인메뉴와 서브메뉴 이름을 적어주세요 -->
-                        </div>
+                    </div>    
+                    <div class="page_tit">
+                        <div class="inner">
+                            <h3>공지사항</h3>
+                            <p>
+                                <span><a href="index.html">HOME</a></span>
+                                &nbsp;&nbsp;
+                                |
+                                &nbsp;&nbsp;
+                                <span class="loca1">병원소식</span>
+                                &nbsp;&nbsp;
+                                >
+                                &nbsp;&nbsp;
+                                <span class="loca1">공지사항</span>
+                                &nbsp;&nbsp;
+                                >
+                                &nbsp;&nbsp;
+                                <span class="loca2">공지사항상세</span>
+                            </p>
+                        </div>    
                     </div>
                     <div class="page_table">
                         <div class="inner">                            
-                            <form method="post" action="">
-                                <table class="form_tb">
-                                    <tbody>
-                                        <!--필요한 내용 추가하기 
-                                        <tr>
-                                            <th></th>
-                                            <td></td>
-                                        </tr>
-                                         -->
-                                        <tr>
-                                            <th>NO</th>
-                                            <td><input type="text"></td>
-                                        </tr>
-                                        <tr>
-                                            <th>제목</th>
-                                            <td><input type="text"></td>
-                                        </tr>
-                                        <tr>
-                                            <th>내용</th>
-                                            <td>
-                                                <textarea name="" cols="100" rows="12"></textarea>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th>첨부파일</th>
-                                            <td><input type="file" class="file"></td>
-                                        </tr>
-                                        <tr>
-                                            <th>작성자</th>
-                                            <td><input type="text"></td>
-                                        </tr>
-                                        <tr>
-                                            <th>작성일</th>
-                                            <td><input type="date"></td>
-                                        </tr>
-                                        <tr>
-                                            <td colspan="2">
-                                                <input type="submit" value="추가" class="button">
-                                                &nbsp;&nbsp;
-                                                <input type="reset" value="취소" class="button">
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </form>
+                            <table class="detail_tb">
+                                <tbody>
+                                    <tr>
+                                        <th>NO</th>
+                                        <td>10</td>
+                                    </tr>
+                                    <tr>
+                                        <th>제목</th>
+                                        <td>공지사항 10 제목입니다. </td>
+                                    </tr>
+                                    <tr>
+                                        <th>내용</th>
+                                        <td>
+                                            <textarea name="" cols="100" rows="12" readonly>공지사항10 내용입니다.</textarea>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>첨부파일</th>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <th>작성자</th>
+                                        <td>관리자</td>
+                                    </tr>
+                                    <tr>
+                                        <th>작성일</th>
+                                        <td>2022.06.19</td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
                     </div>            
                 </div>
             </div>
         </div>
         <footer id="ft">
-            <div class="ftwrap">
+            <div class="ftwarp">
                 <div class="ft_line">
-                    <p>정석소아청소년과 SNS</p>
+                    <p>정석소아청소년과병원</p>
                     <a href="" class="ft_link1"></a>
                     <a href="" class="ft_link2"></a>
                     <a href="" class="ft_link3"></a>
                     <a href="" class="ft_link4"></a>
                     <a href="" class="ft_link5"></a>
                     <a href="" class="ft_link6"></a>
-                </div>      
+                     </div>
+                    
                 <div class="fnb">
                     <div class="inner">
                         <span><a href="">이용약관</a></span>
@@ -336,22 +324,23 @@ tr, .tr { display: table-row;}
                 </div>
                 <div class="snb">
                     <div class="inner">
-                        <div class="copy_wrap">
-                            <b>정석소아청소년과</b>
-                            <p>주소 : 경기도 김포시 김포한강4로 113, 402호(장기동)
-                                신한프라자(4층)</p>
+                        <div class="copy_warp">
+                            <b>정석소아청소년과병원</b>
+                            <p>주소 : 경기도 남양주시 진접음 해밀예당1로 221 지안빌딩 6층
+                                (경기도 남양주시 진접음 금곡리 1021-2 지안빌딩 6층)
+                            </p>
                             <span>대표자 : 남윤호</span>
-                            <span>사업자등록번호 : 454-95-00993</span>
-                            <span>대표전화 : T. 031)992-0083 F.031)992-0096</span>
-                            <p class="copy">COPYRIGHT© 2021 ASAN EYE HOSPITAL. ALL RIGHT RESERVED.</p>
+                            <span>사업자등록번호  132-82-12264</span>
+                            <span>대표번호. 031-573-6678 팩스번호. 031-573-6604 </span>
+                            <p class="copy">Copyright ⓒ JUNGSEOK CHILDREN’S HOSPITAL. All Rights Reserved.</p>
                         </div>
                         <div class="ft_logo">
-                            <img src="./img/logo2.png" alt="ft_logo">
+                            <img src="./img/foot_logo.jpg" alt="ft_logo">
                         </div>
                     </div>
                 </div>
             </div>
-        </footer> 
+        </footer>
     </div>
 </body>
 </html>

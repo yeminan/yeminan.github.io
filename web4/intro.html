@@ -15,7 +15,7 @@
      <!-- 기본 플러그인 연결 -->
     <!--폰트-->
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
-    <title>메인페이지</title>
+    <title>병원안내</title>
     <script src="./js/jquery-1.9.1.js"></script>
     <script src="./js/jquery-ui-1.9.2.custom.js"></script>
     <link rel="stylesheet" href="./css/slick.css">
@@ -33,7 +33,7 @@ a {text-decoration: none; color: #333;}
 .content {clear: both; width: 100%;}
 
 /* logo */
-.logo {float: left; padding-top: 25px; }
+.logo {float: left; padding-top: 20px; padding-left: 13.3%; }
 /* tnb */
 .tnb {padding-top: 27px;}
 .login {float: right; border:2px solid#eee; border-radius: 46px; padding: 10px; font-size: 14px; padding-right: 25px; padding-left: 25px;}
@@ -44,7 +44,7 @@ a {text-decoration: none; color: #333;}
 /* gnb */
 .top_hd_wrap {height: 50px; clear: both;}
 .top_nav_wrap {height: 100px; width: 1400px; margin: 0 auto;}
-.gnb{height: 70px; clear: both; width: 100%; border-top: 1px solid #ddd;background-color: #fbfbfb; z-index: 99; border-bottom: 1px solid #ddd;}
+.gnb{height: 74px; clear: both; width: 100%; border-top: 1px solid #ddd;background-color: #fbfbfb; z-index: 99; border-bottom: 1px solid #ddd;}
 .gnb_wrap {margin: 0 auto; height: 300px; z-index: 1;}
 .background {clear: both;width: 100%; position:absolute; width: 1920px; background-color: #fff; height:0; top:156px; z-index:1; left: 0;} 
 .main_ul {margin: 0 auto; height: 70px; width: 1400px;}
@@ -79,7 +79,7 @@ hr {border: 0; border-top: 1px solid rgb(200,200,200);}
 /*푸터*/
 #ft { clear: both; width: 100%; height: 263px; margin-top: 60px;}
 .fnb { clear: both; width: 100%; height: 20px; border: 1px solid #ddd; padding: 10px 0; }
-.ft_line {width: 100%; height: 45px; background-color: #327cb6; padding: 18px; color: #fff; font-size: 16px;}
+.ft_line {width: 100%; height: 45px; background-color: #ff9361; padding: 18px; color: #fff; font-size: 16px;}
 .ft_line p {float:left; padding-right: 10px; margin-top: 12px; padding-left: 11%; font-weight: 500;}
 .ft_link1 ,.ft_link2,.ft_link3,.ft_link4,.ft_link5,.ft_link6 {display: inline-block; width: 45px; height: 45px; margin: 0 10px;vertical-align: middle; background-size: cover}
 .ft_link1 {background-image:url("./img/icon_quick_link1.png")}
@@ -103,11 +103,11 @@ hr {border: 0; border-top: 1px solid rgb(200,200,200);}
 /* 서브 */
 .sub_bg_img{height: 142px; background-image: url("./img/bg_sub_top1.jpg");}
 .sub_bg_menu h2 {width: 1120px; margin: 0 auto; line-height: 142px; color: #fff; font-size: 38px;font-weight: 300; font-family: 'Noto Sans KR', sans-serif}
-.sub_bg_line {height: 75px;background: #327cb6;}
+.sub_bg_line {height: 75px;background: #faa6ad;}
 .sub_bg_text {width: 1120px; margin: 0 auto; height: 100%; text-align: center;}
-.sub_bg_line a {font-size: 18px; color:#addcf6; line-height: 90px; width: 33%; height: 20px; display: block; float:left; display: block; font-family: 'Noto Sans KR', sans-serif}  
-.sub_bg_text a b {color: #fff; font-weight: normal; position: relative;}         
-.sub_bg_text a b:after {content:""; background-color: #91e9ff; position: absolute; left: 0;bottom:-18px ;width: 100%; height: 10px; text-align: center;}
+.sub_bg_line a {font-size: 18px; color:#000000; line-height: 90px; width: 33%; height: 20px; display: block; float:left; display: block; font-family: 'Noto Sans KR', sans-serif}  
+.sub_bg_text a b {color: rgb(255, 255, 255); font-weight: normal; position: relative;}         
+.sub_bg_text a b:after {content:""; background-color: #fd8f00; position: absolute; left: 0;bottom:-18px ;width: 100%; height: 10px; text-align: center;}
 
 .sub_top, .sub_content {width: 1120px; margin: 0 auto;}
 .inner_top {width: 100%; border-bottom: 1px solid #e4e4e4; height: 110px;line-height: 130px; margin-bottom: 40px;}
@@ -117,16 +117,17 @@ hr {border: 0; border-top: 1px solid rgb(200,200,200);}
 
 
 
-.intro_bg_img img{width: 1120px;}
+.intro_bg_img img{width: 100%;}
 .intro_tit {text-align: center; padding-top: 60px;}
-.intro_tit h2 {color:rgb(65,105,225); font-family: 'Noto Sans KR', sans-serif; font-size: 36px; font-weight: 600; margin-bottom: 10px;}
+.intro_tit h2 {color:rgb(250, 121, 0); font-family: 'Noto Sans KR', sans-serif; font-size: 36px; font-weight: 600; margin-bottom: 10px;}
 .intro_tit p {font-family: 'Noto Sans KR', sans-serif; font-size: 24px; font-weight: 400;}
-.intro_imgbox {text-align: center; position:relative; margin-top: 40px;}
+.intro_imgbox { text-align: center; position:relative; margin-top: 40px; }
+.intro_imgbox img{width: 100%;}
 .intro_left_cmt {position: absolute; top:80px; left: 200px; text-align: right; }
 .intro_right_cmt {position: absolute; top:80px; right: 155px; text-align: left;}
 .intro_center_cmt {margin-bottom: 50px;}
 .intro_center_cmt , .intro_right_cmt , .intro_left_cmt {font-size: 12px;font-family: 'Noto Sans KR', sans-serif}
-.intro_center_cmt span, .intro_right_cmt span, .intro_left_cmt span {font-size: 20px; color:rgb(65, 105, 225) ;font-family: 'Noto Sans KR', sans-serif} 
+.intro_center_cmt span, .intro_right_cmt span, .intro_left_cmt span {font-size: 20px; color:rgb(255, 174, 0) ;font-family: 'Noto Sans KR', sans-serif} 
 .img_cmt {position: absolute; top:52px; right: 45.3%; font-size: 14px; color: #fff; font-family: 'Noto Sans KR', sans-serif}
 
 
@@ -204,8 +205,8 @@ hr {border: 0; border-top: 1px solid rgb(200,200,200);}
                                     <ul class="sub_ul sub_ul1">
                                         <li class="submenu"><a href="news.html#notice">공지사항</a></li>
                                         <li class="submenu"><a href="news.html#data">자료실</a></li>
-                                        <li class="submenu"><a href="board.html">게시판</a></li>
-                                        <li class="submenu"><a href="qna.html">Q&A</a></li>
+                                        <li class="submenu"><a href="news.html#board">게시판</a></li>
+                                        <li class="submenu"><a href="news.html#qna">Q&A</a></li>
                                     </ul>
                                 </ll>            
                             </ul>                          
@@ -246,67 +247,69 @@ hr {border: 0; border-top: 1px solid rgb(200,200,200);}
             <div class="sub_content">
                 <div class="inner">
                     <div class="intro_bg_img">
-                     <img src="./img/TopBgSub0101.jpg" alt=""> 
+                     <img src="./img/intro_img01.jpg" alt=""> 
                     </div>
                     <div class="intro_tit">
-                        <h2>일산이비인후과는 3가지의 신념을 갖고 있습니다.</h2>
-                        <p>일산이비인후과를 방문하는 모든 환자분들에게 좋은 치료가 될 수 있도록 노력하겠습니다.</p>                        
+                        <h2>정석소아청소년과는 3가지의 신념을 갖고 있습니다.</h2>
+                        <p>정석소아청소년과를 방문하는 모든 환자분들에게 좋은 치료가 될 수 있도록 노력하겠습니다.</p>                        
                     </div>
                     <div class="intro_imgbox">
-                        <img src="./img/introimg.png" alt="">
-                        <p class="intro_left_cmt">일산이비인후과 POINT<br><span>환자를 먼저 생각하는 병원</span></p>
-                        <p class="intro_right_cmt">일산이비인후과 POINT<br><span>환자를 내 가족처럼 섬기는 병원</span></p>
-                        <p class="intro_center_cmt">일산이비인후과 POINT<br><span>환자 만족을 최우선으로 하는 병원</span></p>
-                        <p class="img_cmt">일산이비인후과의<br>신념</p>
-                        <img src="./img/introimg2.png" alt="">
+                        <img src="./img/intro_img02.jpg" alt="">
+                        <p class="intro_left_cmt">정석소아청소년과 POINT<br><span>환자를 먼저 생각하는 병원</span></p>
+                        <p class="intro_right_cmt">정석소아청소년과 POINT<br><span>환자를 내 가족처럼 섬기는 병원</span></p>
+                        <p class="intro_center_cmt">정석소아청소년과 POINT<br><span>환자 만족을 최우선으로 하는 병원</span></p>
+                        <p class="img_cmt">정석소아청소년과의<br>신념</p>
                     </div>
                     <div class="intro_tit">
-                        <h2>일산이비인후과만의 특별한 진료시스템</h2>
-                        <p>안심하세요.일산이비인후과가 환자 한분 한분에게 맞춤 진료를 진행하고 있습니다.</p>         
+                        <h2>정석소아청소년과만의 특별한 진료시스템</h2>
+                        <p>안심하세요.정석소아청소년과가 환자 한분 한분에게 맞춤 진료를 진행하고 있습니다.</p>         
                     
                     </div>
                     <div class="intro_bg_img">
-                        <img src="./img/intro_img3.png" alt="">               
+                        <img src="./img/intro_img03.jpg" alt="">               
                     </div>
                 </div>
             </div>
         </div>    
     </article>
-        <footer id="ft">
-            <div class="ftwrap">
-                <div class="ft_line">
-                    <p>일산이비인후과병원 SNS</p>
-                    <a href="" class="ft_link1"></a>
-                    <a href="" class="ft_link2"></a>
-                    <a href="" class="ft_link3"></a>
-                    <a href="" class="ft_link4"></a>
-                    <a href="" class="ft_link5"></a>
-                    <a href="" class="ft_link6"></a>
+    <footer id="ft">
+        <div class="ftwarp">
+            <div class="ft_line">
+                <p>정석소아청소년과병원</p>
+                <a href="" class="ft_link1"></a>
+                <a href="" class="ft_link2"></a>
+                <a href="" class="ft_link3"></a>
+                <a href="" class="ft_link4"></a>
+                <a href="" class="ft_link5"></a>
+                <a href="" class="ft_link6"></a>
+                 </div>
+                
+            <div class="fnb">
+                <div class="inner">
+                    <span><a href="">이용약관</a></span>
+                    <span><a href="">개인정보처리방침</a></span>
+                    <span><a href="">환자의 권리와 의무</a></span>
+                    <span><a href="">비급여안내</a></span>
                 </div>
-                <div class="fnb">
-                    <div class="inner">
-                        <span><a href="">이용약관</a></span>
-                        <span><a href="">개인정보처리방침</a></span>
-                        <span><a href="">환자의 권리와 의무</a></span>
-                        <span><a href="">비급여안내</a></span>
+            </div>
+            <div class="snb">
+                <div class="inner">
+                    <div class="copy_warp">
+                        <b>정석소아청소년과병원</b>
+                        <p>주소 : 경기도 남양주시 진접음 해밀예당1로 221 지안빌딩 6층
+                            (경기도 남양주시 진접음 금곡리 1021-2 지안빌딩 6층)
+                        </p>
+                        <span>대표자 : 남윤호</span>
+                        <span>사업자등록번호  132-82-12264</span>
+                        <span>대표번호. 031-573-6678 팩스번호. 031-573-6604 </span>
+                        <p class="copy">Copyright ⓒ JUNGSEOK CHILDREN’S HOSPITAL. All Rights Reserved.</p>
                     </div>
-                </div>
-                <div class="snb">
-                    <div class="inner">
-                        <div class="copy_warp">
-                            <b>일산 이비인후과</b>
-                            <p>주소 : 경기도 고양시 일산동구 무궁화로39 삼라마이다스 3차 2층 206호</p>
-                            <span>대표자 : 이호선</span>
-                            <span>사업자등록번호 : 124-96-10753</span>
-                            <span>대표전화 : T. 031)917-1155 F.031)917-1120</span>
-                            <p class="copy">Copyrightⓒ 일산이비인후과의원. All right reserved.</p>
-                        </div>
-                        <div class="ft_logo">
-                            <img src="./img/logo.png" alt="ft_logo">
-                        </div>
+                    <div class="ft_logo">
+                        <img src="./img/foot_logo.jpg" alt="ft_logo">
                     </div>
                 </div>
             </div>
-        </footer>
+        </div>
+    </footer>
 </body>
 </html>

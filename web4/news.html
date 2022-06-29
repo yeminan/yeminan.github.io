@@ -37,14 +37,14 @@ tr, .tr { display: table-row;}
 .logo {float: left; padding-top: 25px;}
 /* tnb */
         .tnb {padding-top: 27px;}
-        .login {float: right; border:2px solid#eee; border-radius: 46px; padding: 10px; font-size: 14px; padding-right: 25px; padding-left: 25px;}
-        .login .sign::before {content: ""; background: url("./img/icon_login.png"); width: 15px; height: 18px;display: inline-block; margin-right: 10px; vertical-align: -3px;}
+        .login {float: right; border:2px solid#eee; border-radius: 46px; padding: 20px; font-size: 14px; padding-right: 25px; padding-left: 25px; margin-right: 15%;}
+        .login .sign::before {content: ""; background: url("./img/icon_login.png"); width: 15px; height: 18px;display: inline-block; margin-right: 30px; vertical-align: -3px;}
         .line {font-size: 12px; vertical-align: 2px; color: #ddd; padding: 5px;}
         .login span a {color: #000; font-weight: 500; font-size: 14px; font-family: 'Noto Sans KR', sans-serif;}
         .login span:hover a{color:blue;}
 /* gnb */
         .top_hd_wrap {height: 50px; clear: both;}
-        .top_nav_wrap {height: 100px; width: 1400px; margin: 0 auto;}
+        .top_nav_wrap {height: 100px; width: 100%; margin: 0 auto;}
         .gnb{height: 70px; clear: both; width: 100%; border-top: 1px solid #ddd;background-color: #fbfbfb; z-index: 99; border-bottom: 1px solid #ddd;}
         .gnb_wrap {margin: 0 auto; height: 300px; z-index: 1;}
         .background {clear: both;width: 100%; position:absolute; width: 1920px; background-color: #fff; height:0; top:171px; z-index:1; left: 0;} 
@@ -68,7 +68,7 @@ tr, .tr { display: table-row;}
         .main_ul:hover .sub_ul a {display: block;}
         .sm_last, .mm_last { border-right: 1px solid #ddd;}
 
-.content_wrap {width: 1400px; margin: 0 auto; }
+
             
 /* 오른쪽 버튼 스타일 */
 .right_btn {width: 65px; height: 200px; position:fixed; right: 55px; bottom: 45px; z-index: 999;}
@@ -96,9 +96,9 @@ tr, .tr { display: table-row;}
         .ft_line {width: 100%; height: 45px; background-color: #327cb6; padding: 18px; color: #fff; font-size: 16px;}
         .ft_line p {float:left; padding-right: 10px; margin-top: 12px; padding-left: 11%; font-weight: 500;}
 
-        #ft { clear: both; width: 100%; height: 300px; }
+        #ft { clear: both; width: 100%; height: 500px; }
         .fnb { clear: both; width: 100%; height: 20px; border: 1px solid #ddd; padding: 10px 0; }
-        .fnb .inner { width: 1450px; height: 100%; margin-left: 30px; margin: 0 auto; }
+        .fnb .inner { width: 1400px; height: 100%; margin-left: 30px; margin: 0 auto; }
         .fnb span { margin: 0 10px; font-size: 13px; }
         .fnb span:after { content: "|"; padding-left: 20px; color: #ddd; }
         .fnb span:last-child:after { content: ""; }
@@ -112,12 +112,25 @@ tr, .tr { display: table-row;}
 
 
         /*서브메뉴*/
+        .sub_bg_img{height: 142px; background-image: url("./img/bg_sub_top1.jpg");}
+        .sub_bg_menu h2 {width: 1220px; margin: 0 auto; line-height: 142px; color: #fff; font-size: 38px;font-weight: 300; font-family: 'Noto Sans KR', sans-serif}
+        .sub_bg_line {height: 75px;background: #faa6ad;}
+        .sub_bg_text {width: 1120px; margin: 0 auto; height: 100%; text-align: center;}
+        .sub_bg_line a {font-size: 18px; color:#000000; line-height: 90px; width: 25%; height: 20px; display: block; float:left; display: block; font-family: 'Noto Sans KR', sans-serif}  
+        .sub_bg_text a b {color: rgb(255, 255, 255); font-weight: normal; position: relative;}         
+        .sub_bg_text a b:after {content:""; background-color: #fd8f00; position: absolute; left: 0;bottom:-18px ;width: 100%; height: 10px; text-align: center;}
+
+        .sub_top, .sub_content {width: 1120px; margin: 0 auto;}
+        .inner_top {width: 100%; border-bottom: 1px solid #e4e4e4; height: 110px;line-height: 130px; margin-bottom: 40px;}
+        .inner_top h2 {width: 1120px; font-size: 40px; font-weight: 400; margin: 0 auto; font-family: 'Noto Sans KR', sans-serif}
+        .inner_top p {float:right; font-size: 14px; line-height: 160px; font-family: 'Noto Sans KR', sans-serif}
+
             /* #header {  clear: both; position: fixed; top: 0; left: 0; width: 100%; }  */
             .page { clear:both; min-height:100vh; display:none; width: 100%;}
-            .page:target { display:block; }
+            .content .page:target { display:block; }
             .content { clear: both; width: 100%; height: auto; overflow: hidden; }
             .sub_content { clear: both; width: 100%; height: auto; }
-            .content_wrap {width: 1400px; margin: 0 auto;}
+            .content_wrap {width: 1920px; margin: 0 auto;}
 
 
             .page_tit { width: 100%; height: 70px; margin-top: 30px; border-bottom: 1px solid #ddd; }
@@ -226,8 +239,8 @@ tr, .tr { display: table-row;}
                                     <ul class="sub_ul sub_ul1">
                                         <li class="submenu"><a href="news.html#notice">공지사항</a></li>
                                         <li class="submenu"><a href="news.html#data">자료실</a></li>
-                                        <li class="submenu"><a href="board.html">게시판</a></li>
-                                        <li class="submenu"><a href="qna.html">Q&A</a></li>
+                                        <li class="submenu"><a href="news.html#board">게시판</a></li>
+                                        <li class="submenu"><a href="news.html#qna">Q&A</a></li>
                                     </ul>
                                 </ll>           
                             </ul>                          
@@ -242,6 +255,23 @@ tr, .tr { display: table-row;}
                         <a href=""><img src="./img/btn-calling.png" alt=""></a>
                         <a href=""><img src="./img/btn-chat-kakao.png" alt=""></a>
                         <a href="#header_wrap"><img src="./img/btn_top.png" alt=""></a>
+                    </div>
+                    <div class="sub_bg_menu">
+                        <div class="sub_bg_img">
+                            <!-- 메인메뉴에 따라 이름을 바꿔주세요 -->
+                            <h2>병원소식</h2> 
+                        </div>
+                        <div class="sub_bg_line">
+                            <div class="sub_bg_text">
+                                <!-- 현재 페이지에 맞게 <b>태그를 넣어주세요 -->
+                                <!-- 메뉴가 4개인 페이지는 .sub_bg_line a 스타일의 width를 25%로 줄여주세요 -->
+                                <a href="news.html#notice">공지사항</a>
+                                <a href="news.html#data">자료실</a>
+                                <a href="board.html">게시판</a>
+                                <a href="news.html#qna">Q&A</a>
+                                <!-- <a href="">4번째 메뉴</a> -->
+                            </div>
+                        </div>
                     </div>
                     <section class="page" id="notice">
                         <div class="page_tit">
@@ -399,7 +429,7 @@ tr, .tr { display: table-row;}
                                     </table>
                                 </form>
                                 <div class="button">
-                                    <a href="addnotice.html">글 추가</a>
+                                    <a href="adddata.html">글 추가</a>
                                 </div>
                                 <table>
                                     <thead>
@@ -413,61 +443,61 @@ tr, .tr { display: table-row;}
                                     <tbody>
                                         <tr>
                                             <td>10</td>
-                                            <td><a href="noticedetail.html">자료실 제목10</a></td>
+                                            <td><a href="datadetail.html">자료실 제목10</a></td>
                                             <td>관리자</td>
                                             <td>2022.06.19</td>
                                         </tr>
                                         <tr>
                                             <td>9</td>
-                                            <td><a href="noticedetail.html">자료실 제목9</a></td>
+                                            <td><a href="datadetail.html">자료실 제목9</a></td>
                                             <td>관리자</td>
                                             <td>2022.06.19</td>
                                         </tr>
                                         <tr>
                                             <td>8</td>
-                                            <td><a href="noticedetail.html">자료실 제목8</a></td>
+                                            <td><a href="datadetail.html">자료실 제목8</a></td>
                                             <td>관리자</td>
                                             <td>2022.06.19</td>
                                         </tr>
                                         <tr>
                                             <td>7</td>
-                                            <td><a href="noticedetail.html">자료실 제목7</a></td>
+                                            <td><a href="datadetail.html">자료실 제목7</a></td>
                                             <td>관리자</td>
                                             <td>2022.06.19</td>
                                         </tr>
                                         <tr>
                                             <td>6</td>
-                                            <td><a href="noticedetail.html">자료실 제목6</a></td>
+                                            <td><a href="datadetail.html">자료실 제목6</a></td>
                                             <td>관리자</td>
                                             <td>2022.06.19</td>
                                         </tr>
                                         <tr>
                                             <td>5</td>
-                                            <td><a href="noticedetail.html">자료실 제목5</a></td>
+                                            <td><a href="datadetail.html">자료실 제목5</a></td>
                                             <td>관리자</td>
                                             <td>2022.06.19</td>
                                         </tr>
                                         <tr>
                                             <td>4</td>
-                                            <td><a href="noticedetail.html">자료실 제목4</a></td>
+                                            <td><a href="datadetail.html">자료실 제목4</a></td>
                                             <td>관리자</td>
                                             <td>2022.06.19</td>
                                         </tr>
                                         <tr>
                                             <td>3</td>
-                                            <td><a href="noticedetail.html">자료실 제목3</a></td>
+                                            <td><a href="datadetail.html">자료실 제목3</a></td>
                                             <td>관리자</td>
                                             <td>2022.06.19</td>
                                         </tr>
                                         <tr>
                                             <td>2</td>
-                                            <td><a href="noticedetail.html">자료실 제목2</a></td>
+                                            <td><a href="datadetail.html">자료실 제목2</a></td>
                                             <td>관리자</td>
                                             <td>2022.06.19</td>
                                         </tr>
                                         <tr>
                                             <td>1</td>
-                                            <td><a href="noticedetail.html">자료실 제목1</a></td>
+                                            <td><a href="datadetail.html">자료실 제목1</a></td>
                                             <td>관리자</td>
                                             <td>2022.06.19</td>
                                         </tr>
@@ -521,7 +551,7 @@ tr, .tr { display: table-row;}
                                     </table>
                                 </form>
                                 <div class="button">
-                                    <a href="addnotice.html">글 추가</a>
+                                    <a href="addboard.html">글 추가</a>
                                 </div>
                                 <table>
                                     <thead>
@@ -535,61 +565,61 @@ tr, .tr { display: table-row;}
                                     <tbody>
                                         <tr>
                                             <td>10</td>
-                                            <td><a href="">게시판 제목10</a></td>
+                                            <td><a href="boarddetail.html">게시판 제목10</a></td>
                                             <td>작성자</td>
                                             <td>2022.06.19</td>
                                         </tr>
                                         <tr>
                                             <td>9</td>
-                                            <td><a href="">게시판 제목9</a></td>
+                                            <td><a href="boarddetail.html">게시판 제목9</a></td>
                                             <td>작성자</td>
                                             <td>2022.06.19</td>
                                         </tr>
                                         <tr>
                                             <td>8</td>
-                                            <td><a href="">게시판 제목8</a></td>
+                                            <td><a href="boarddetail.html">게시판 제목8</a></td>
                                             <td>작성자</td>
                                             <td>2022.06.19</td>
                                         </tr>
                                         <tr>
                                             <td>7</td>
-                                            <td><a href="">게시판 제목7</a></td>
+                                            <td><a href="boarddetail.html">게시판 제목7</a></td>
                                             <td>작성자</td>
                                             <td>2022.06.19</td>
                                         </tr>
                                         <tr>
                                             <td>6</td>
-                                            <td><a href="">게시판 제목6</a></td>
+                                            <td><a href="boarddetail.html">게시판 제목6</a></td>
                                             <td>작성자</td>
                                             <td>2022.06.19</td>
                                         </tr>
                                         <tr>
                                             <td>5</td>
-                                            <td><a href="">게시판 제목5</a></td>
+                                            <td><a href="boarddetail.html">게시판 제목5</a></td>
                                             <td>작성자</td>
                                             <td>2022.06.19</td>
                                         </tr>
                                         <tr>
                                             <td>4</td>
-                                            <td><a href="">게시판 제목4</a></td>
+                                            <td><a href="boarddetail.html">게시판 제목4</a></td>
                                             <td>작성자</td>
                                             <td>2022.06.19</td>
                                         </tr>
                                         <tr>
                                             <td>3</td>
-                                            <td><a href="">게시판 제목3</a></td>
+                                            <td><a href="boarddetail.html">게시판 제목3</a></td>
                                             <td>작성자</td>
                                             <td>2022.06.19</td>
                                         </tr>
                                         <tr>
                                             <td>2</td>
-                                            <td><a href="">게시판 제목2</a></td>
+                                            <td><a href="boarddetail.html">게시판 제목2</a></td>
                                             <td>작성자</td>
                                             <td>2022.06.19</td>
                                         </tr>
                                         <tr>
                                             <td>1</td>
-                                            <td><a href="">게시판 제목1</a></td>
+                                            <td><a href="boarddetail.html">게시판 제목1</a></td>
                                             <td>작성자</td>
                                             <td>2022.06.19</td>
                                         </tr>
@@ -643,7 +673,7 @@ tr, .tr { display: table-row;}
                                     </table>
                                 </form>
                                 <div class="button">
-                                    <a href="">글 추가</a>
+                                    <a href="addQ&A.html">글 추가</a>
                                 </div>
                                 <table>
                                     <thead>
@@ -657,61 +687,61 @@ tr, .tr { display: table-row;}
                                     <tbody>
                                         <tr>
                                             <td>10</td>
-                                            <td><a href="">Q&A 제목10</a></td>
+                                            <td><a href="Q&Adetail.html">Q&A 제목10</a></td>
                                             <td>작성자</td>
                                             <td>2022.06.19</td>
                                         </tr>
                                         <tr>
                                             <td>9</td>
-                                            <td><a href="">Q&A 제목9</a></td>
+                                            <td><a href="Q&Adetail.html">Q&A 제목9</a></td>
                                             <td>작성자</td>
                                             <td>2022.06.19</td>
                                         </tr>
                                         <tr>
                                             <td>8</td>
-                                            <td><a href="">Q&A 제목8</a></td>
+                                            <td><a href="Q&Adetail.html">Q&A 제목8</a></td>
                                             <td>작성자</td>
                                             <td>2022.06.19</td>
                                         </tr>
                                         <tr>
                                             <td>7</td>
-                                            <td><a href="">Q&A 제목7</a></td>
+                                            <td><a href="Q&Adetail.html">Q&A 제목7</a></td>
                                             <td>작성자</td>
                                             <td>2022.06.19</td>
                                         </tr>
                                         <tr>
                                             <td>6</td>
-                                            <td><a href="">Q&A 제목6</a></td>
+                                            <td><a href="Q&Adetail.html">Q&A 제목6</a></td>
                                             <td>작성자</td>
                                             <td>2022.06.19</td>
                                         </tr>
                                         <tr>
                                             <td>5</td>
-                                            <td><a href="">Q&A 제목5</a></td>
+                                            <td><a href="Q&Adetail.html">Q&A 제목5</a></td>
                                             <td>작성자</td>
                                             <td>2022.06.19</td>
                                         </tr>
                                         <tr>
                                             <td>4</td>
-                                            <td><a href="">Q&A 제목4</a></td>
+                                            <td><a href="Q&Adetail.html">Q&A 제목4</a></td>
                                             <td>작성자</td>
                                             <td>2022.06.19</td>
                                         </tr>
                                         <tr>
                                             <td>3</td>
-                                            <td><a href="">Q&A 제목3</a></td>
+                                            <td><a href="Q&Adetail.html">Q&A 제목3</a></td>
                                             <td>작성자</td>
                                             <td>2022.06.19</td>
                                         </tr>
                                         <tr>
                                             <td>2</td>
-                                            <td><a href="">Q&A 제목2</a></td>
+                                            <td><a href="Q&Adetail.html">Q&A 제목2</a></td>
                                             <td>작성자</td>
                                             <td>2022.06.19</td>
                                         </tr>
                                         <tr>
                                             <td>1</td>
-                                            <td><a href="">Q&A 제목1</a></td>
+                                            <td><a href="Q&Adetail.html">Q&A 제목1</a></td>
                                             <td>작성자</td>
                                             <td>2022.06.19</td>
                                         </tr>
@@ -735,16 +765,17 @@ tr, .tr { display: table-row;}
             </div>
         </div>
         <footer id="ft">
-            <div class="ftwrap">
+            <div class="ftwarp">
                 <div class="ft_line">
-                    <p>김포아산안과 SNS</p>
+                    <p>정석소아청소년과병원</p>
                     <a href="" class="ft_link1"></a>
                     <a href="" class="ft_link2"></a>
                     <a href="" class="ft_link3"></a>
                     <a href="" class="ft_link4"></a>
                     <a href="" class="ft_link5"></a>
                     <a href="" class="ft_link6"></a>
-                </div>      
+                     </div>
+                    
                 <div class="fnb">
                     <div class="inner">
                         <span><a href="">이용약관</a></span>
@@ -755,22 +786,23 @@ tr, .tr { display: table-row;}
                 </div>
                 <div class="snb">
                     <div class="inner">
-                        <div class="copy_wrap">
-                            <b>아산안과</b>
-                            <p>주소 : 경기도 김포시 김포한강4로 113, 402호(장기동)
-                                신한프라자(4층)</p>
+                        <div class="copy_warp">
+                            <b>정석소아청소년과병원</b>
+                            <p>주소 : 경기도 남양주시 진접음 해밀예당1로 221 지안빌딩 6층
+                                (경기도 남양주시 진접음 금곡리 1021-2 지안빌딩 6층)
+                            </p>
                             <span>대표자 : 남윤호</span>
-                            <span>사업자등록번호 : 454-95-00993</span>
-                            <span>대표전화 : T. 031)992-0083 F.031)992-0096</span>
-                            <p class="copy">COPYRIGHT© 2021 ASAN EYE HOSPITAL. ALL RIGHT RESERVED.</p>
+                            <span>사업자등록번호  132-82-12264</span>
+                            <span>대표번호. 031-573-6678 팩스번호. 031-573-6604 </span>
+                            <p class="copy">Copyright ⓒ JUNGSEOK CHILDREN’S HOSPITAL. All Rights Reserved.</p>
                         </div>
                         <div class="ft_logo">
-                            <img src="./img/logo2.png" alt="ft_logo">
+                            <img src="./img/foot_logo.jpg" alt="ft_logo">
                         </div>
                     </div>
                 </div>
             </div>
-        </footer>    
+        </footer>
     </div>    
 </body>
 </html>

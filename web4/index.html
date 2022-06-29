@@ -137,15 +137,15 @@ tr, .tr { display: table-row;}
 .right_btn {width: 65px; height: 200px; position:fixed; right: 55px; bottom: 45px; z-index: 999;}
 .right_btn img {width: 90%; padding-bottom: 11px;}
 /* 게시판 스타일 */
-.medical li{display: block; width: 300px; height: 84px; border: 1px solid #ddd; margin: 0 auto; float: left; text-align: center; font-size: 24px; }
-.medical a{color: #0087ab; line-height: 80px;}
-.medical_box{width: 1350px; margin: 0 auto; height: 400px; margin-top: 40px; margin-bottom: 100px;   border:1px solid #0087ab ; background-image: url("./img/bg_main1.jpg");}
-.medical_leftbox{width: 65%; height: 100%; background-color: rgb(255, 255, 255);}
+.medical li{display: block; width: 500px; height: 84px; border: 1px solid #ddd; margin: 0 auto; float: left; text-align: center; font-size: 24px; }
+.medical a{color: #000000; line-height: 80px;}
+.medical_box{width: 1450px; margin: 0 auto; height: 400px; margin-top: 40px; margin-bottom: 100px;   border:1px solid #ffae00 ;background: rgb(255,205,0);
+background: linear-gradient(90deg, rgba(255,205,0,0.006039915966386533) 47%, rgba(255,141,0,1) 76%, rgba(121,63,9,1) 88%, rgba(36,22,0,1) 95%);}
 .main {display: block;  width: 400px;}
-.medical_title{width: 100%; margin-left: 60px;font-size: 30px; color: #0087ab; padding-top: 15px; }
+.medical_title{width: 100%; margin-left: 60px;font-size: 30px; color: #000000; padding-top: 15px; }
 .medical_comment{width: 100%; margin-left: 60px;font-size: 26px; color: #000; padding-top: 15px;}
 .medical{padding-left: 60px; padding-top: 20px;}
-.medical li:hover{background-color: #0087ab; }
+.medical li:hover{background-color: #fdb75c; }
 .medical li:hover a{color: #fff; }
 .backcolor{position: absolute;left: 0; width: 1920px; top: 750px; height: 520px; background-color: #f6f6fa; z-index: -1;}
     /*푸터*/
@@ -159,7 +159,7 @@ tr, .tr { display: table-row;}
         .ft_line {width: 100%; height: 45px; background-color: #327cb6; padding: 18px; color: #fff; font-size: 16px;}
         .ft_line p {float:left; padding-right: 10px; margin-top: 12px; padding-left: 11%; font-weight: 500;}
 
-        #ft { clear: both; width: 100%; height: 500px; }
+        #ft { clear: both; width: 100%; height: 300px; }
         .fnb { clear: both; width: 100%; height: 20px; border: 1px solid #ddd; padding: 10px 0; }
         .fnb .inner { width: 1450px; height: 100%; margin-left: 30px; margin: 0 auto; }
         .fnb span { margin: 0 10px; font-size: 13px; }
@@ -222,9 +222,9 @@ tr, .tr { display: table-row;}
                                     <li class="submenu"><a href="time.html">진료시간</a></li>
                                 </ul>
                             </ll>  
-                            <ll class="mainmenu"><a href="treat1.html">진료1</a>
+                            <ll class="mainmenu"><a href="treat1.html">클리닉</a>
                                 <ul class="sub_ul">
-                                    <li class="submenu"><a href="treat1_sub1.html">진료1</a></li>
+                                    <li class="submenu"><a href="treat1_sub1.html">황달</a></li>
                                     <li class="submenu"><a href="treat1_sub2.html">진료2</a></li>
                                     <li class="submenu"><a href="treat1_sub3.html">진료3</a></li>
                                 </ul>
@@ -247,14 +247,15 @@ tr, .tr { display: table-row;}
                                 <ul class="sub_ul sub_ul1">
                                     <li class="submenu"><a href="news.html#notice">공지사항</a></li>
                                     <li class="submenu"><a href="news.html#data">자료실</a></li>
-                                    <li class="submenu"><a href="board.html">게시판</a></li>
-                                    <li class="submenu"><a href="qna.html">Q&A</a></li>
+                                    <li class="submenu"><a href="news.html#board">게시판</a></li>
+                                    <li class="submenu"><a href="news.html#qna">Q&A</a></li>
                                 </ul>
                             </ll>             
                         </ul>                          
                     </div>
                 </nav>
         </div>
+        
     </header>
     
     <div id="content">
@@ -309,10 +310,10 @@ tr, .tr { display: table-row;}
                                         빠른 회복을 돕겠습니다.<p></div>
                                     <ul class="medical">
                                     <!-- <img src="./bg_main1.jpg" alt="" class="main"> -->
-                                    <li><a href="">의료진소개</a></li>
-                                    <li><a href="">진료안내</a></li>
-                                    <li><a href="">진료예약</a></li>
-                                    <li><a href="">진료상담</a></li>     
+                                    <li><a href="drintro.html">의료진소개</a></li>
+                                    <li><a href="info.html">진료안내</a></li>
+                                    <li><a href="reserve.html">진료예약</a></li>
+                                    <li><a href="time.html">의료진 진료시간</a></li>     
                                     </ul>
                                     
                                 </div>
@@ -322,22 +323,22 @@ tr, .tr { display: table-row;}
         <div class="news_section">
             <section class="notice">
                 <div class="box">
-                    <h2 class="title"><a href="noticedetail.html">공지사항</a></h2>
+                    <h2 class="title"><a href="news.html#notice">공지사항</a></h2>
                     <ul class="table">
                         <li>
-                            <a href="">공지 1 타이틀입니다.</a>
+                            <a href="noticedetail.html">공지 1 </a>
                             <span>2022.06.15</span>
                         </li>
                         <li>
-                            <a href="">공지 2 타이틀입니다.</a>
+                            <a href="noticedetail.html">공지 2</a>
                             <span>2022.06.15</span>
                         </li>
                         <li>
-                            <a href="">공지 3 타이틀입니다.</a>
+                            <a href="noticedetail.html">공지 3 </a>
                             <span>2022.06.15</span>
                         </li>
                         <li>
-                            <a href="">공지 4 타이틀입니다.</a>
+                            <a href="noticedetail.html">공지 4 </a>
                             <span>2022.06.15</span>
                         </li>
                     </ul>
@@ -345,19 +346,19 @@ tr, .tr { display: table-row;}
             </section>
             <section class="board">
                 <div class="box">
-                    <h2 class="title"><a href="">게시판</a></h2>
+                    <h2 class="title"><a href="news.html#board">게시판</a></h2>
                     <ul class="table">
                         <li>
-                            <a href="">게시판 1 타이틀입니다.</a>
+                            <a href="news.html#board">게시판 내용 </a>
                         </li>
                         <li>
-                            <a href="">게시판 2 타이틀입니다.</a>
+                            <a href="news.html#board">게시판 내용2</a>
                         </li>
                         <li>
-                            <a href="">게시판 3 타이틀입니다.</a>
+                            <a href="news.html#board">게시판 내용3</a>
                         </li>
                         <li>
-                            <a href="">게시판 4 타이틀입니다.</a>
+                            <a href="news.html#board">게시판 내용4</a>
                         </li>
                     </ul>    
                 </div>
@@ -368,15 +369,15 @@ tr, .tr { display: table-row;}
                 <div class="box">
                     <h2 class="title">
                         <i class="xi-map-o"></i>
-                        <a href="">
+                        <a href="map.html">
                             &nbsp;찾아오시는 길</a>
                     </h2>
                     <span><b>주소</b> 경기도 남양주시 진접음 해밀예당1로 221 지안빌딩 6층</span> 
                     <ul>
-                        <li><a href=""><i class="xi-bus"></i>버스</a></li>
-                        <li><a href=""><i class="xi-subway"></i>지하철</a></li>
-                        <li><a href=""><i class="xi-park"></i>주차안내</a></li>
-                        <li><a href=""><i class="xi-maker"></i>지도</a></li>
+                        <li><a href="map.html#bus"><i class="xi-bus"></i>버스</a></li>
+                        <li><a href="map.html#subway"><i class="xi-subway"></i>지하철</a></li>
+                        <li><a href="map.html#car"><i class="xi-park"></i>자가용</a></li>
+                        <li><a href="map.html#map-1"><i class="xi-maker"></i>지도</a></li>
                     </ul>
                 </div>
             </section>
@@ -384,12 +385,12 @@ tr, .tr { display: table-row;}
                 <div class="box">
                     <h2 class="title">
                         <i class="xi-time-o"></i>
-                        <a href="">
+                        <a href="time.html">
                             &nbsp;진료시간</a>
                     </h2>
                     <ul class="table">
                         <li>
-                            <span><b>평일 진료</b>09:00~21:00
+                            <span><b>평일 진료</b>09:00~18:00
                             </span>
                         </li>
                         <li>
@@ -397,15 +398,15 @@ tr, .tr { display: table-row;}
                             </span>
                         </li>
                         <li>
-                            <span><b>토요일 진료</b>09:00~13:00
+                            <span><b>토요일 진료</b>09:00~17:00
                             </span>
                         </li>
                         <li>
-                            <span><b>공휴일</b>09:00~17:00(전화문의)
+                            <span><b>공휴일</b>09:00~17:00
                             </span>
                         </li>
                         <li>
-                            <span class="call">031.992.0083</span>&nbsp;
+                            <span class="call">031.573.6678</span>&nbsp;
                             <i class="xi-whatsapp"></i>
                         </li>
                     </ul>

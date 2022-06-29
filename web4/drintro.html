@@ -167,20 +167,19 @@ hr {border: 0; border-top: 1px solid rgb(200,200,200);}
 
 
         /* 서브 */
-        .sub_bg_img{height: 142px; background-image: url("./img/bg_sub_top1.jpg");}
-        .sub_bg_menu h2 {width: 1120px; margin: 0 auto; line-height: 142px; color: #fff; font-size: 38px;font-weight: 300;}
-        .sub_bg_line {height: 75px;background: #327cb6;}
-        .sub_bg_text {width: 1120px; margin: 0 auto; height: 100%; text-align: center;}
-        .sub_bg_line a {font-size: 18px; color:#addcf6; line-height: 90px; width: 33%; height: 20px; display: block; float:left; display: block;}  
-        .sub_bg_text a b {color: #fff; font-weight: normal; position: relative;}         
-        .sub_bg_text a b:after {content:""; background-color: #91e9ff; position: absolute; left: 0;bottom:-18px ;width: 100%; height: 10px; text-align: center;}
+.sub_bg_img{height: 142px; background-image: url("./img/bg_sub_top1.jpg");}
+.sub_bg_menu h2 {width: 1120px; margin: 0 auto; line-height: 142px; color: #fff; font-size: 38px;font-weight: 300; font-family: 'Noto Sans KR', sans-serif}
+.sub_bg_line {height: 75px;background: #faa6ad;}
+.sub_bg_text {width: 1120px; margin: 0 auto; height: 100%; text-align: center;}
+.sub_bg_line a {font-size: 18px; color:#000000; line-height: 90px; width: 33%; height: 20px; display: block; float:left; display: block; font-family: 'Noto Sans KR', sans-serif}  
+.sub_bg_text a b {color: rgb(255, 255, 255); font-weight: normal; position: relative;}         
+.sub_bg_text a b:after {content:""; background-color: #fd8f00; position: absolute; left: 0;bottom:-18px ;width: 100%; height: 10px; text-align: center;}
 
-        .sub_top, .sub_content {width: 1120px; margin: 0 auto;}
-        .inner_top {width: 100%; border-bottom: 1px solid #e4e4e4; height: 110px;line-height: 130px; margin-bottom: 40px;}
-        .inner_top h2 {float:left; font-size: 40px; font-weight: 400;}
-        .inner_top p {float:right; font-size: 14px; line-height: 160px;}
-
-        .dr_intro {height: 730px;}
+.sub_top, .sub_content {width: 1120px; margin: 0 auto;}
+.inner_top {width: 100%; border-bottom: 1px solid #e4e4e4; height: 110px;line-height: 130px; margin-bottom: 40px;}
+.inner_top h2 {float:left; font-size: 40px; font-weight: 400; font-family: 'Noto Sans KR', sans-serif}
+.inner_top p {float:right; font-size: 14px; line-height: 160px; font-family: 'Noto Sans KR', sans-serif}
+        .dr_intro {height: 750px;}
 
         .dr_imgbox {border: 1px solid #ddd; width: 350px; height: 500px; float:left; margin-top: 20px;}
         .dr_imgbox img{width: 350px; height: 500px;}
@@ -211,14 +210,14 @@ hr {border: 0; border-top: 1px solid rgb(200,200,200);}
         .dr_button_box a:last-child p { text-align: center; padding-left: 0px;width: 210px; font-size: 18px;}
         .dr_button_box a:last-child p::before {background: url(./img/icon_cal.png); width: 22px;height: 22px; content:""; display: inline-block; vertical-align: -3px; margin-right: 5px;}
 
-        #dr_career, #dr_career2 {max-height: 400px; clear:both; width: 700px; display:none ; font-size: 16px; background-color: rgb(246,246,250); margin-bottom: 40px;}
-        #dr_career ul, #dr_career2 ul {margin-top: 12%; padding-top: 20px; padding-bottom: 20px; padding-left: 20px;}
-        #dr_career li, #dr_career2 li { padding: 4px; margin-left: 28px; list-style: outside;}         
+        #dr_career, #dr_career1 {max-height: 400px; clear:both; width: 700px; display:none ; font-size: 16px; background-color: rgb(246,246,250); margin-bottom: 40px;}
+        #dr_career ul, #dr_career1 ul {margin-top: 12%; padding-top: 20px; padding-bottom: 20px; padding-left: 20px;}
+        #dr_career li, #dr_career1 li { padding: 4px; margin-left: 28px; list-style: outside;}         
         .dr_career_btn:hover {cursor: pointer;}
 
-        #dr_research {max-height: 400px; clear:both; width: 700px; display:none ; font-size: 16px; background-color: rgb(246,246,250); margin-bottom: 40px;}
-        #dr_research ul {margin-top: 12%; padding-top: 20px; padding-bottom: 20px; padding-left: 20px;}
-        #dr_research li { padding: 4px; margin-left: 28px; list-style: outside;}         
+        #dr_research , #dr_research1 {max-height: 400px; clear:both; width: 700px; display:none ; font-size: 16px; background-color: rgb(246,246,250); margin-bottom: 40px;}
+        #dr_research ul, #dr_research1 ul {margin-top: 12%; padding-top: 20px; padding-bottom: 20px; padding-left: 20px;}
+        #dr_research li , #dr_research1 li{ padding: 4px; margin-left: 28px; list-style: outside;}         
     </style>
         <link rel="stylesheet" href="./slickstyle.css">
 </head>
@@ -287,8 +286,8 @@ hr {border: 0; border-top: 1px solid rgb(200,200,200);}
                                     <ul class="sub_ul sub_ul1">
                                         <li class="submenu"><a href="news.html#notice">공지사항</a></li>
                                         <li class="submenu"><a href="news.html#data">자료실</a></li>
-                                        <li class="submenu"><a href="board.html">게시판</a></li>
-                                        <li class="submenu"><a href="qna.html">Q&A</a></li>
+                                        <li class="submenu"><a href="news.html#board">게시판</a></li>
+                                        <li class="submenu"><a href="news.html#qna">Q&A</a></li>
                                     </ul>
                                 </ll>           
                             </ul>                          
@@ -331,17 +330,17 @@ hr {border: 0; border-top: 1px solid rgb(200,200,200);}
                     <!-- 의사가 더 있을경우 여기부터 복사-->
                     <div class="dr_intro">
                         <div class="dr_imgbox">
-                            <img src="./img/dr.png" alt="">
+                            <img src="./img/dtimg3.jpg" alt="">
                         </div>
                         <div class="dr_infobox">
                             <div class="dr_name">
-                                <h2>이호선</h2>
-                                <p>원장</p>             
-                                <span>이비인후과 전문의</span>                  
+                                <h2>김지영</h2>
+                                <p>과장</p>             
+                                <span>소아집중영양 전문의</span>                  
                             </div>
                             <div class="dr_info">
-                                <b class="dr_infoline">진료과</b><p class="dr_infoline">코 클리닉, 목 클리닉, 귀 클리닉</p>
-                                <b>전문분야</b><p>구강, 인후두 목 질환,소아이비인후과, 알레르기 비염, 축농증, 비중격만곡증, 코로나회복클리닉(두통, 인후통, 후각·미각 장애, 기침)</p>
+                                <b class="dr_infoline">진료과</b><p class="dr_infoline">초음파,모유수유,소아집중영양</p>
+                                <b>전문분야</b><p>소아집중영양치료,국제모유수유전문가,대한초음파학회</p>
                             </div>
                             <div class="dr_table">
                                 <table class="dr_tb">
@@ -388,20 +387,94 @@ hr {border: 0; border-top: 1px solid rgb(200,200,200);}
                             </div>     
                             <div id="dr_career" style="display: none;">
                                 <ul>
-                                    <li>현 일산이비인후과 원장</li>
-                                    <li>서울 백병원 외래교수 역임</li>
-                                    <li>아주대 외래교수 역임</li>
-                                    <li>삼성 노블카운티 자문의 역임</li>
-                                    <li>대한이비인후과학회 정회원</li>
-                                    <li>대한수면학회 정회원</li>
-                                    <li>대한안면성형재건학회 정회원</li>
-                                    <li>대한비과학회 정회원</li>
-                                    <li>대한평형학회 정회원</li>
-                                    <li>대한성장학회 정회원</li>
-                                    <li>대한영양학회 정회원</li>
+                                    <li>한림대학교 의과대학 졸업</li>
+                                    <li>서울아산병원 인턴과정 수료</li>
+                                    <li>세브란스병원 전공의수료</li>
+                                    <li>대한초음파학회 정회원</li>
+                                    <li>소아집중영양치료 자격증 보유</li>
+                                    <li>국제모유수유전문가 자격증 보유</li>
                                 </ul>
                             </div>  
                             <div id="dr_research" style="display: none;">
+                                <ul>
+                                    <li>논문1</li>
+                                    <li>논문2</li>
+                                    <li>논문3</li>
+                                    <li>연구1</li>
+                                    <li>연구2</li>
+                                    <li>연구3</li>
+                                    <li>연구4</li>
+                                    <li>연구5</li>
+                                </ul>
+                            </div>                 
+                        </div> 
+                    </div>
+                    <div class="dr_intro">
+                        <div class="dr_imgbox">
+                            <img src="./img/drimg6.jpg" alt="">
+                        </div>
+                        <div class="dr_infobox">
+                            <div class="dr_name">
+                                <h2>명관대</h2>
+                                <p>과장</p>             
+                                <span>소아과 전문의</span>                  
+                            </div>
+                            <div class="dr_info">
+                                <b class="dr_infoline">진료과</b><p class="dr_infoline">소아과전문의</p>
+                                <b>전문분야</b><p>소아과전문의</p>
+                            </div>
+                            <div class="dr_table">
+                                <table class="dr_tb">
+                                    <tr>
+                                        <th>시간</th>
+                                        <th>월</th>
+                                        <th>화</th>
+                                        <th>수</th>
+                                        <th>목</th>
+                                        <th>금</th>
+                                        <th>토</th>
+                                    </tr>
+                                    <tr>
+                                        <th>오전</th>
+                                        <td>진료</td>
+                                        <td>진료</td>
+                                        <td>진료</td>
+                                        <td>진료</td>
+                                        <td>진료</td>
+                                        <td>-</td>
+                                    </tr>
+                                    <tr>
+                                        <th>오후</th>
+                                        <td>진료</td>
+                                        <td>진료</td>
+                                        <td>진료</td>
+                                        <td>진료</td>
+                                        <td>진료</td>
+                                        <td>-</td>
+                                    </tr>
+                                    <tr>
+                                        <th>비고</th>
+                                        <td colspan="6" class="td">토요일은 휴진 입니다
+                                            <br>
+                                            ※ 응급 수술 등에 의해 진료시간이 변경될 수 있으니 예약 및 내원 시 확인바랍니다.
+                                        </td>
+                                    </tr>
+                                </table>                                
+                            </div>
+                            <div class="dr_button_box">
+                                <button onclick="car1()" class="dr_career_btn">주요경력</button>
+                                <button onclick="res1()" class="dr_career_btn">논문&연구실적</button>
+                                <a href="reserve.html"><p>온라인예약</p></a>                       
+                            </div>     
+                            <div id="dr_career1" style="display: none;">
+                                <ul>
+                                    <li>건양대학교 의과대학 졸업</li>
+                                    <li>삼성제일병원 인턴 수료</li>
+                                    <li>삼성제일병원 전문의수료</li>
+                                    <li>대한소아과학회 정회원</li>
+                                </ul>
+                            </div>  
+                            <div id="dr_research1" style="display: none;">
                                 <ul>
                                     <li>논문1</li>
                                     <li>논문2</li>
@@ -420,42 +493,45 @@ hr {border: 0; border-top: 1px solid rgb(200,200,200);}
             </div>
         </div>    
     </article>
-        <footer id="ft">
-            <div class="ftwrap">
-                <div class="ft_line">
-                    <p>일산이비인후과병원 SNS</p>
-                    <a href="" class="ft_link1"></a>
-                    <a href="" class="ft_link2"></a>
-                    <a href="" class="ft_link3"></a>
-                    <a href="" class="ft_link4"></a>
-                    <a href="" class="ft_link5"></a>
-                    <a href="" class="ft_link6"></a>
+    <footer id="ft">
+        <div class="ftwarp">
+            <div class="ft_line">
+                <p>정석소아청소년과병원</p>
+                <a href="" class="ft_link1"></a>
+                <a href="" class="ft_link2"></a>
+                <a href="" class="ft_link3"></a>
+                <a href="" class="ft_link4"></a>
+                <a href="" class="ft_link5"></a>
+                <a href="" class="ft_link6"></a>
+                 </div>
+                
+            <div class="fnb">
+                <div class="inner">
+                    <span><a href="">이용약관</a></span>
+                    <span><a href="">개인정보처리방침</a></span>
+                    <span><a href="">환자의 권리와 의무</a></span>
+                    <span><a href="">비급여안내</a></span>
                 </div>
-                <div class="fnb">
-                    <div class="inner">
-                        <span><a href="">이용약관</a></span>
-                        <span><a href="">개인정보처리방침</a></span>
-                        <span><a href="">환자의 권리와 의무</a></span>
-                        <span><a href="">비급여안내</a></span>
+            </div>
+            <div class="snb">
+                <div class="inner">
+                    <div class="copy_warp">
+                        <b>정석소아청소년과병원</b>
+                        <p>주소 : 경기도 남양주시 진접음 해밀예당1로 221 지안빌딩 6층
+                            (경기도 남양주시 진접음 금곡리 1021-2 지안빌딩 6층)
+                        </p>
+                        <span>대표자 : 남윤호</span>
+                        <span>사업자등록번호  132-82-12264</span>
+                        <span>대표번호. 031-573-6678 팩스번호. 031-573-6604 </span>
+                        <p class="copy">Copyright ⓒ JUNGSEOK CHILDREN’S HOSPITAL. All Rights Reserved.</p>
                     </div>
-                </div>
-                <div class="snb">
-                    <div class="inner">
-                        <div class="copy_warp">
-                            <b>일산 이비인후과</b>
-                            <p>주소 : 경기도 고양시 일산동구 무궁화로39 삼라마이다스 3차 2층 206호</p>
-                            <span>대표자 : 이호선</span>
-                            <span>사업자등록번호 : 124-96-10753</span>
-                            <span>대표전화 : T. 031)917-1155 F.031)917-1120</span>
-                            <p class="copy">Copyrightⓒ 일산이비인후과의원. All right reserved.</p>
-                        </div>
-                        <div class="ft_logo">
-                            <img src="./img/logo.png" alt="ft_logo">
-                        </div>
+                    <div class="ft_logo">
+                        <img src="./img/foot_logo.jpg" alt="ft_logo">
                     </div>
                 </div>
             </div>
-        </footer>
+        </div>
+    </footer>
     </article>
     <script>
         function car(){
@@ -469,6 +545,25 @@ hr {border: 0; border-top: 1px solid rgb(200,200,200);}
             function res(){
             var research = document.getElementById("dr_research");
             var career = document.getElementById("dr_career");                
+                if(career.style.display=='block'){career.style.display='none'}
+                if(research.style.display=='none'){
+                    research.style.display='block';
+                }else{research.style.display='none'}
+            }
+        
+    </script>
+       <script>
+        function car1(){
+            var career = document.getElementById("dr_career1");
+            var research = document.getElementById("dr_research1");
+                if(research.style.display=='block'){research.style.display='none'}
+                if(career.style.display=='none'){ 
+                    career.style.display='block';
+                }else{career.style.display='none'}                
+            }
+            function res1(){
+            var research = document.getElementById("dr_research1");
+            var career = document.getElementById("dr_career1");                
                 if(career.style.display=='block'){career.style.display='none'}
                 if(research.style.display=='none'){
                     research.style.display='block';
