@@ -10,7 +10,7 @@ height: 86px; text-indent:-9999px; background-color:rgba(0,0,0,0.4); }
     height: 86px; text-indent:-9999px; background-color:rgba(0,0,0,0.2);  
     position:absolute; cursor:pointer;}
 .slick-prev:after, .slick-next:after { content:""; display:block;
- width: 15px; height: 34px;  background-image: url("/web4git/img/main_sp.png"); 
+ width: 15px; height: 34px;  background-image: url("/img/main_sp.png"); 
 background-repeat: no-repeat; margin:0px auto; margin-top: -10px; }
 .slick-next:after { background-position:-109px -408px; }
 .slick-prev:after { background-position:-21px -408px; }
@@ -18,7 +18,7 @@ background-repeat: no-repeat; margin:0px auto; margin-top: -10px; }
 height: 86px; text-indent:-9999px; background-color:rgba(0,0,0,0.2);  
 position:absolute; cursor:pointer; }
 #play_btn:after { content:""; display:block;
-width: 15px; height: 26px; background-image: url("/web4git/img/main_sp.png"); 
+width: 15px; height: 26px; background-image: url("/img/main_sp.png"); 
 background-repeat: no-repeat; margin:0px auto; margin-top: -7px; 
 background-position:-64px -408px; }
 #play_btn.on:after { background-position:-152px -408px; }
