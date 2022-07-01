@@ -33,20 +33,21 @@ tr, .tr { display: table-row;}
 .content {clear: both; width: 100%;}
 /* 헤더부분 스타일 */
 /* logo */
-.logo {padding-top: 15px;}
-/* tnb */
-        .tnb {padding-top: 27px;}
+ /* logo */
+ .logo {float: left; padding-top: 25px;}
+    /* tnb */
+        .tnb {padding-top: 27px; }
         .login {float: right; border:2px solid#eee; border-radius: 46px; padding: 10px; font-size: 14px; padding-right: 25px; padding-left: 25px;}
         .login .sign::before {content: ""; background: url("./img/icon_login.png"); width: 15px; height: 18px;display: inline-block; margin-right: 10px; vertical-align: -3px;}
         .line {font-size: 12px; vertical-align: 2px; color: #ddd; padding: 5px;}
         .login span a {color: #000; font-weight: 500; font-size: 14px; font-family: 'Noto Sans KR', sans-serif;}
         .login span:hover a{color:blue;}
-/* gnb */
+    /* gnb */
         .top_hd_wrap {height: 50px; clear: both;}
         .top_nav_wrap {height: 100px; width: 1400px; margin: 0 auto;}
-        .gnb{height: 70px; clear: both; width: 100%; border-top: 1px solid #ddd;background-color: #fbfbfb; z-index: 99; border-bottom: 1px solid #ddd;}
+        .gnb{height: 70px; clear: both; width: 100%; border-top: 1px solid #ddd;background-color: #fbfbfb; z-index: 99;}
         .gnb_wrap {margin: 0 auto; height: 300px; z-index: 1;}
-        .background {clear: both;width: 100%; position:absolute; width: 1820px; background-color: #fff; height:0; top:171px; z-index:1; left: 0;} 
+        .background {clear: both;width: 100%; position:absolute; width: 1920px; background-color: #fff; height:0; top:171px; z-index:1; left: 0;} 
         .main_ul {margin: 0 auto; height: 70px; width: 1400px;}
         .main_ul .mainmenu {margin: 0 auto; position: relative; width: 16.66%; height: 100%; display: block; float:left; box-sizing: border-box;}
         .mainmenu>a{font-size: 18px; color: #222222; line-height: 70px; display: block; text-align: center; border-left: 1px solid #ddd; font-family: 'Noto Sans KR', sans-serif; font-weight: 400;}
@@ -65,20 +66,21 @@ tr, .tr { display: table-row;}
         .main_ul:hover .background {height: 200px; transition-duration: 0.5s; box-shadow :  0 8px 8px -6px rgb(73, 72, 72);}
         .main_ul:hover .submenu {line-height: 40px; transition-duration: 0.5s;}
         .main_ul:hover .sub_ul a {display: block;}
+
         .sm_last, .mm_last { border-right: 1px solid #ddd;}
   /* 서브메뉴 */
 .sub_bg_img{height: 142px; background-image: url("./img/bg_sub_top1.jpg");}
 .sub_bg_menu h2 {width: 1120px; margin: 0 auto; line-height: 120px; color: #fff; font-size: 38px;font-weight: 300; font-family: 'Noto Sans KR', sans-serif}
 .sub_bg_line {height: 75px;background: #327cb6;}
-.sub_bg_text {width: 1120px; margin: 0 auto; height: 100%; text-align: center;}
-.sub_bg_line a {font-size: 18px; color:#addcf6; line-height: 90px; width: 33%; height: 20px; display: block; float:left; display: block; font-family: 'Noto Sans KR', sans-serif}  
+.sub_bg_text {width: 1420px; margin: 0 auto; height: 100%; text-align: center;}
+.sub_bg_line a {font-size: 18px; color:#addcf6; line-height: 90px; width: 50%; height: 20px; display: block; float:left; display: block; font-family: 'Noto Sans KR', sans-serif}  
 .sub_bg_text a b {color: #fff; font-weight: normal; position: relative;}         
 .sub_bg_text a b:after {content:""; background-color: #91e9ff; position: absolute; left: 0;bottom:-18px ;width: 100%; height: 10px; text-align: center;}
 
-.sub_top, .sub_content {width: 1120px; margin: 0 auto;}
-.inner_top {width: 100%; border-bottom: 1px solid #e4e4e4; height: 110px;line-height: 130px;  margin-bottom: 40px;}
-.inner_top h2 {float:left; font-size: 40px; font-weight: 400;  font-family: 'Noto Sans KR', sans-serif}
-.inner_top p {float:right; font-size: 14px; line-height: 160px; font-family: 'Noto Sans KR', sans-serif}
+.sub_top, .sub_content {width: 1420px; margin: 0 auto;}
+.inner_top {width: 100%; border-bottom: 1px solid #ddd; height: 120px;line-height: 100px;  margin-bottom: 40px;}
+.inner_top h2 {width: 1120px; font-size: 40px; font-weight: 400; margin: 0 auto; font-family: 'Noto Sans KR', sans-serif}
+.inner_top p {float:right; font-size: 14px; line-height: 0px; margin-right: 22.2%; font-family: 'Noto Sans KR', sans-serif}
 
 
 .info_1-1{width: 1120px; margin: 0 auto; line-height: 76px; color: rgb(0, 0, 0); font-size: 14px;font-weight: 100; font-family: 'Noto Sans KR', sans-serif}
@@ -125,7 +127,7 @@ tr, .tr { display: table-row;}
     /*회원약관동의*/
     .content { clear: both; width: 100%; height: 1000px; }
     .agree { clear: both; width: 100%; height: 100%; }
-    .sub_top { clear: both; width: 100%; height: 150px; background-color: #ddd; }
+    .sub_top { clear: both; width: 100%; height: 150px; background-color: rgb(255, 255, 255); }
     .sub_top .inner { width: 1250px; margin: 0 auto; } 
     .sub_top .inner h2 { padding: 40px 65px; }
     .sub_content { clear: both; width: 100%; height: 800px;}
@@ -147,6 +149,7 @@ tr, .tr { display: table-row;}
                         <a href=""><img src="./img/btn-calling.png" alt=""></a>
                         <a href=""><img src="./img/btn-chat-kakao.png" alt=""></a>
                         <a href="#header_wrap"><img src="./img/btn_top.png" alt=""></a>
+                    </div>
                 </div>
                 <nav class="tnb">
                     <div class="login">
@@ -179,27 +182,27 @@ tr, .tr { display: table-row;}
                                     <li class="submenu"><a href="time.html">진료시간</a></li>
                                 </ul>
                             </ll>  
-                            <ll class="mainmenu"><a href="treat1.html">진료1</a>
+                            <ll class="mainmenu"><a href="treat1_sub1.html">신생아 클리닉</a>
                                 <ul class="sub_ul">
-                                    <li class="submenu"><a href="treat1_sub1.html">진료1</a></li>
-                                    <li class="submenu"><a href="treat1_sub2.html">진료2</a></li>
-                                    <li class="submenu"><a href="treat1_sub3.html">진료3</a></li>
+                                    <li class="submenu"><a href="treat1_sub1.html">황달</a></li>
+                                    <li class="submenu"><a href="treat1_sub2.html">발달성 고관절 이형성증</a></li>
+                                    <li class="submenu"><a href="treat1_sub3.html">천골부 피부병변</a></li>
                                 </ul>
                             </ll>  
-                            <ll class="mainmenu"><a href="treat2.html">진료2</a>
+                            <ll class="mainmenu"><a href="treat2_sub1.html">알레르기 클리닉</a>
                                 <ul class="sub_ul">
-                                    <li class="submenu"><a href="treat2_sub1.html">진료1</a></li>
-                                    <li class="submenu"><a href="treat2_sub2.html">진료2</a></li>
-                                    <li class="submenu"><a href="treat2_sub3.html">진료3</a></li>
+                                    <li class="submenu"><a href="treat2_sub1.html">아토피 피부염</a></li>
+                                    <li class="submenu"><a href="treat2_sub2.html">소아천식</a></li>
+                                    <li class="submenu"><a href="treat2_sub3.html">알레르기 비염</a></li>
                                 </ul>
                             </ll>  
-                            <ll class="mainmenu"><a href="treat3.html">진료3</a>
+                            <ll class="mainmenu"><a href="treat3_sub1.html">성장/비만클리닉</a>
                                 <ul class="sub_ul">
-                                    <li class="submenu"><a href="treat3_sub1.html">진료1</a></li>
-                                    <li class="submenu"><a href="treat3_sub2.html">진료2</a></li>
-                                    <li class="submenu"><a href="treat3_sub3.html">진료3</a></li>
+                                    <li class="submenu"><a href="treat3_sub1.html">성조숙증</a></li>
+                                    <li class="submenu"><a href="treat3_sub2.html">저신장</a></li>
+                                    <li class="submenu"><a href="treat3_sub3.html">소아비만</a></li>
                                 </ul>
-                            </ll>        
+                            </ll>           
                             <ll class="mainmenu mm_last"><a href="news.html#notice">병원소식</a>
                                 <ul class="sub_ul sub_ul1">
                                     <li class="submenu"><a href="news.html#notice">공지사항</a></li>
@@ -211,7 +214,7 @@ tr, .tr { display: table-row;}
                         </ul>                          
                     </div>
                 </nav>
-        </div>
+    
     </header>
 
      <div class="content">            
