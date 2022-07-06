@@ -30,7 +30,7 @@ table, .table{display: table; border-collapse:collapse;}
 tr, .tr { display: table-row;}
 .wrap { clear:both; width: 100%; }
 
-.clrfx::after{content: 0;display: block; width: 100%; clear: both;}
+.clrfx::after{content: "";display: block; width: 100%; clear: both;}
 .content {clear: both; width: 100%;}
 /* 헤더부분 스타일 */
 /* logo */
@@ -180,8 +180,7 @@ tr, .tr { display: table-row;}
                     <nav class="gnb" id="gnb">
                         <div class="gnb_wrap">
                             <ul class="main_ul">
-                                <div class="background">
-                                </div>
+                               <dl class="background"></dl>
                                 <li class="mainmenu"><a href="intro.html">병원소개</a>
                                     <ul class="sub_ul">
                                         <li class="submenu"><a href="intro.html">병원안내</a></li>
@@ -216,7 +215,8 @@ tr, .tr { display: table-row;}
                                         <li class="submenu"><a href="treat3_sub2.html">저신장</a></li>
                                         <li class="submenu"><a href="treat3_sub3.html">소아비만</a></li>
                                     </ul>
-                                </li>              
+                                </li>       
+                                   
                                 <li class="mainmenu mm_last"><a href="news.html#notice">병원소식</a>
                                     <ul class="sub_ul sub_ul1">
                                         <li class="submenu"><a href="news.html#notice">공지사항</a></li>
