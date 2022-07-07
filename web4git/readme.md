@@ -2,7 +2,7 @@
 ![테스트계획서](./data/UItest.jpg)
 
 # 셀레니움
-![셀리니움](./data/seleniumIDE.jpg.png)
+![셀리니움](./data/seleniumIDE.jpg)
 
 # pagepeed insights
 ![페이지 성능평가](./data/pageinsights.jpg)
